@@ -688,28 +688,273 @@
       display: none;
       flex-direction: column;
       align-items: center;
-      gap: 24px;
+      gap: 28px;
       text-align: center;
     }
     .quiz-result.active { display: flex; }
+
+    .quiz-result-ornament {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      opacity: 0;
+      animation: resultFadeUp .8s ease .1s forwards;
+    }
+    .quiz-result-ornament span {
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.25);
+    }
+    .quiz-result-ornament i {
+      font-style: normal;
+      font-family: 'Cinzel', serif;
+      font-size: .55rem;
+      letter-spacing: .3em;
+      color: rgba(255,255,255,0.3);
+    }
+
     .quiz-result-title {
       font-family: 'Cinzel', serif;
       font-weight: 400;
-      font-size: clamp(1.3rem, 2.5vw, 2rem);
-      letter-spacing: .07em;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: .1em;
       color: var(--white);
-    }
-    .quiz-result-sub {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .82rem;
-      letter-spacing: .08em;
-      color: var(--w50);
-      line-height: 1.8;
-      max-width: 400px;
+      line-height: 1.1;
+      opacity: 0;
+      animation: resultFadeUp .9s ease .25s forwards;
     }
 
-    /* ── SECTION 4 — MOUNTAINS ───────────────── */
+    .quiz-result-divider {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.3), transparent);
+      opacity: 0;
+      animation: resultFadeUp .7s ease .4s forwards;
+    }
+
+    .quiz-result-body {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      opacity: 0;
+      animation: resultFadeUp .9s ease .5s forwards;
+    }
+    .quiz-result-main {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .9rem;
+      letter-spacing: .09em;
+      color: var(--w80);
+      line-height: 1.9;
+      max-width: 380px;
+    }
+    .quiz-result-hint {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--w25);
+    }
+
+    @keyframes resultFadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION 4 — FLOOR PLANS ────────────── */
+    .section-plans {
+      width: 100%;
+      background-color: #e8f0f2;
+      background-image: linear-gradient(155deg, #eef5f7 0%, #e8f0f2 35%, #dde7ea 70%, #d6e1e5 100%);
+      padding: 100px 0 120px;
+    }
+    .plans-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+    .plans-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .plans-eyebrow {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .62rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: rgba(28,28,30,0.4);
+      margin-bottom: 16px;
+    }
+    .plans-h-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: .07em;
+      color: #1c1c1e;
+    }
+    .plans-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 72px;
+    }
+    .plans-tab {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(28,28,30,0.5);
+      background: transparent;
+      border: 1px solid rgba(28,28,30,0.2);
+      margin-left: -1px;
+      padding: 14px 28px;
+      cursor: pointer;
+      position: relative;
+      transition: background .25s, color .25s, border-color .25s;
+    }
+    .plans-tab:first-child { margin-left: 0; }
+    .plans-tab.active {
+      background: #1c1c1e;
+      color: #fff;
+      border-color: #1c1c1e;
+      z-index: 1;
+    }
+    .plans-tab:hover:not(.active) {
+      color: rgba(28,28,30,0.8);
+      border-color: rgba(28,28,30,0.4);
+      background: rgba(28,28,30,0.05);
+    }
+    .plan-panel { display: none; }
+    .plan-panel.active {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+      animation: planFadeIn .5s ease forwards;
+    }
+    @keyframes planFadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .plan-images { display: flex; flex-direction: column; gap: 16px; }
+    .plan-img-wrap { display: flex; flex-direction: column; gap: 10px; }
+    .plan-img-box {
+      width: 100%;
+      aspect-ratio: 1/1;
+      border: 1px solid rgba(28,28,30,0.12);
+      background: rgba(28,28,30,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .plan-img-box img { width: 100%; height: 100%; object-fit: contain; }
+    .plan-img-box span {
+      font-family: 'Raleway', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(28,28,30,0.3);
+    }
+    .plan-images.duplex .plan-img-box { aspect-ratio: 1/1; }
+    .plan-floor-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(28,28,30,0.35);
+      text-align: center;
+    }
+    .plan-info { display: flex; flex-direction: column; gap: 20px; }
+    .plan-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.3rem, 1.8vw, 1.9rem);
+      letter-spacing: .07em;
+      color: #1c1c1e;
+    }
+    .plan-subtitle {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .78rem;
+      letter-spacing: .06em;
+      color: rgba(28,28,30,0.55);
+      line-height: 1.85;
+    }
+    .plan-divider { width: 100%; height: 1px; background: rgba(28,28,30,0.1); }
+    .plan-specs { width: 100%; border-collapse: collapse; }
+    .plan-specs tr { border-bottom: 1px solid rgba(28,28,30,0.08); }
+    .plan-specs td {
+      padding: 13px 0;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .72rem;
+      letter-spacing: .07em;
+      color: rgba(28,28,30,0.7);
+    }
+    .plan-specs td:last-child { text-align: right; color: rgba(28,28,30,0.7); font-weight: 600; }
+    .plan-null { color: rgba(28,28,30,0.25) !important; }
+    .plan-floors-info { display: flex; flex-direction: column; gap: 24px; }
+    .plan-floor-heading {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .58rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: rgba(28,28,30,0.35);
+      margin-bottom: 6px;
+    }
+    .plan-explore-btn {
+      align-self: flex-start;
+      margin-top: 8px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #fff;
+      background: #1c1c1e;
+      border: none;
+      padding: 14px 44px;
+      cursor: pointer;
+      transition: background .25s, transform .2s;
+    }
+    .plan-explore-btn:hover {
+      background: rgba(28,28,30,0.82);
+      transform: translateY(-1px);
+    }
+
+    /* ── SECTION 5 — VIDEO ──────────────────── */
+    .section-video {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      overflow: hidden;
+      background: #000;
+    }
+    .section-video video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-fade-overlay {
+      position: absolute;
+      inset: 0;
+      background: #000;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 2;
+      transition: opacity .4s ease;
+    }
+
+    /* ── SECTION 6 — MOUNTAINS ───────────────── */
     .section-mountains {
       position: relative;
       width: 100%;
@@ -821,12 +1066,11 @@
       display: block;
       font-family: 'Cinzel', serif;
       font-weight: 400;
-      font-size: clamp(2rem, 4vw, 4rem);
-      letter-spacing: 0.12em;
+      font-size: clamp(1.73rem, 2.53vw, 2.99rem);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #1c1c1e;
-      margin-top: 14px;
-      line-height: 1.1;
+      line-height: 1.2;
     }
 
     .amenities-sub {
@@ -924,6 +1168,11 @@
     /* ── MOBILE ───────────────────────────────── */
     @media (max-width: 768px) {
       .section-mountains { background-position: center 30%; }
+      .section-video video { object-position: right center; }
+      .plans-wrap { padding: 0 24px; }
+      .plan-panel.active { grid-template-columns: 1fr; gap: 40px; }
+      .plans-tabs { flex-wrap: wrap; gap: 8px; }
+      .plans-tab { margin-left: 0; flex: 1; min-width: 120px; text-align: center; }
       .quiz-options {
         grid-template-columns: 1fr;
       }
@@ -1036,8 +1285,7 @@
     <!-- Header -->
     <header class="amenities-head">
       <h2 class="amenities-title">
-        <span class="at-italic">A Gated Community in Konyaaltı</span>
-        <span class="at-bold">A Private Living Space<br>in Konyaaltı</span>
+        <span class="at-bold">Residential Community at the Foot<br>of the Mountains in Konyaaltı</span>
       </h2>
       <p class="amenities-sub">Designed for everyday living, with everything in place</p>
     </header>
@@ -1107,18 +1355,137 @@
 
     <!-- Result -->
     <div class="quiz-result" id="quizResult">
-      <span class="quiz-eyebrow">Your match</span>
-      <h2 class="quiz-result-title">Thank you</h2>
-      <p class="quiz-result-sub">Our team will review your preferences and get in touch with the most suitable options.</p>
-      <p class="quiz-result-sub" style="margin-top:-8px;font-size:.72rem;">You can also continue exploring the layouts below.</p>
-      <button class="quiz-btn" onclick="quizReset()">Start over</button>
+      <div class="quiz-result-ornament"><span></span><i>SmartAge Residence</i><span></span></div>
+      <h2 class="quiz-result-title">Thank You</h2>
+      <div class="quiz-result-divider"></div>
+      <div class="quiz-result-body">
+        <p class="quiz-result-main">Our team will carefully review your preferences<br>and get in touch with the most suitable options.</p>
+        <p class="quiz-result-hint">You can also continue exploring the layouts below</p>
+      </div>
     </div>
 
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SECTION 4 — MOUNTAINS
+     SECTION 4 — FLOOR PLANS
+═══════════════════════════════════════════ -->
+<section class="section-plans" id="amenities">
+  <div class="plans-wrap">
+
+    <div class="plans-header">
+      <span class="plans-eyebrow">Floor Plans</span>
+      <h2 class="plans-h-title">Choose Your Layout</h2>
+    </div>
+
+    <div class="plans-tabs">
+      <button class="plans-tab active" onclick="switchPlan(0,this)">1+1 Apartment</button>
+      <button class="plans-tab" onclick="switchPlan(1,this)">2+1 Apartment</button>
+      <button class="plans-tab" onclick="switchPlan(2,this)">3+1 Duplex</button>
+    </div>
+
+    <!-- 1+1 -->
+    <div class="plan-panel active" id="plan-0">
+      <div class="plan-images">
+        <div class="plan-img-wrap">
+          <div class="plan-img-box"><img src="images/11.png" alt="1+1 Floor Plan"></div>
+        </div>
+      </div>
+      <div class="plan-info">
+        <h3 class="plan-title">1+1 Apartment</h3>
+        <p class="plan-subtitle">An intelligently designed compact residence, ideal for individuals or couples seeking refined city living with optimal space utilization.</p>
+        <div class="plan-divider"></div>
+        <table class="plan-specs">
+          <tr><td>Living Room</td><td>23.75 m²</td></tr>
+          <tr><td>Bedroom</td><td>13.65 m²</td></tr>
+          <tr><td>Open Kitchen</td><td class="plan-null">—</td></tr>
+          <tr><td>Bathroom</td><td>4.40 m²</td></tr>
+          <tr><td>Entrance Hall</td><td class="plan-null">—</td></tr>
+          <tr><td>Balcony</td><td>6.10 m²</td></tr>
+        </table>
+        <button class="plan-explore-btn">Explore</button>
+      </div>
+    </div>
+
+    <!-- 2+1 -->
+    <div class="plan-panel" id="plan-1">
+      <div class="plan-images">
+        <div class="plan-img-wrap">
+          <div class="plan-img-box"><img src="images/21.png" alt="2+1 Floor Plan"></div>
+        </div>
+      </div>
+      <div class="plan-info">
+        <h3 class="plan-title">2+1 Apartment</h3>
+        <p class="plan-subtitle">A generously proportioned family residence with two bedrooms, open-plan living, and a private balcony overlooking the mountains.</p>
+        <div class="plan-divider"></div>
+        <table class="plan-specs">
+          <tr><td>Living Room</td><td>25.75 m²</td></tr>
+          <tr><td>Bedroom</td><td>13.65 m²</td></tr>
+          <tr><td>Children's Room</td><td>9.05 m²</td></tr>
+          <tr><td>Open Kitchen</td><td class="plan-null">—</td></tr>
+          <tr><td>Bathroom</td><td>4.40 m²</td></tr>
+          <tr><td>Entrance Hall</td><td>6.15 m²</td></tr>
+          <tr><td>Balcony</td><td>6.70 m²</td></tr>
+        </table>
+        <button class="plan-explore-btn">Explore</button>
+      </div>
+    </div>
+
+    <!-- 3+1 Duplex -->
+    <div class="plan-panel" id="plan-2">
+      <div class="plan-images duplex">
+        <div class="plan-img-wrap">
+          <div class="plan-img-box"><img src="images/31.png" alt="3+1 Lower Floor"></div>
+          <span class="plan-floor-label">Lower Floor</span>
+        </div>
+        <div class="plan-img-wrap">
+          <div class="plan-img-box"><img src="images/32.png" alt="3+1 Upper Floor"></div>
+          <span class="plan-floor-label">Upper Floor</span>
+        </div>
+      </div>
+      <div class="plan-info">
+        <h3 class="plan-title">3+1 Duplex</h3>
+        <p class="plan-subtitle">A spacious two-level residence offering the privacy and flow of a private home within the comfort of a managed community. Features an expansive living area, three bedrooms, and a private terrace.</p>
+        <div class="plan-divider"></div>
+        <div class="plan-floors-info">
+          <div>
+            <span class="plan-floor-heading">Lower Floor</span>
+            <table class="plan-specs">
+              <tr><td>Living Room</td><td>40.00 m²</td></tr>
+              <tr><td>Children's Room</td><td>9.05 m²</td></tr>
+              <tr><td>Open Kitchen</td><td class="plan-null">—</td></tr>
+              <tr><td>Bathroom</td><td>4.40 m²</td></tr>
+              <tr><td>Entrance Hall</td><td>6.15 m²</td></tr>
+              <tr><td>Balcony</td><td>6.70 m²</td></tr>
+            </table>
+          </div>
+          <div>
+            <span class="plan-floor-heading">Upper Floor</span>
+            <table class="plan-specs">
+              <tr><td>Master Bedroom</td><td>20.50 m²</td></tr>
+              <tr><td>Children's Room</td><td>13.50 m²</td></tr>
+              <tr><td>Bathroom</td><td>7.40 m²</td></tr>
+              <tr><td>Hallway</td><td>9.15 m²</td></tr>
+              <tr><td>Terrace</td><td>13.70 m²</td></tr>
+            </table>
+          </div>
+        </div>
+        <button class="plan-explore-btn">Explore</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 5 — VIDEO
+═══════════════════════════════════════════ -->
+<section class="section-video">
+  <video id="poolVideo" src="videos/pool_web.mp4" autoplay muted loop playsinline></video>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 6 — MOUNTAINS
 ═══════════════════════════════════════════ -->
 <section class="section-mountains"></section>
 
@@ -1384,6 +1751,12 @@
   function quizShowResult() {
     quizStep = TOTAL;
     document.querySelectorAll('.quiz-question').forEach(el => el.classList.remove('active'));
+    // restart animations
+    quizResult.querySelectorAll('.quiz-result-ornament,.quiz-result-title,.quiz-result-divider,.quiz-result-body').forEach(el => {
+      el.style.animation = 'none';
+      el.offsetHeight; // reflow
+      el.style.animation = '';
+    });
     quizResult.classList.add('active');
     quizFill.style.width = '100%';
     document.querySelectorAll('.quiz-step-dot').forEach(d => d.classList.add('active'));
@@ -1402,6 +1775,21 @@
   };
 
   document.getElementById('quizStart').addEventListener('click', () => quizGoTo(0));
+
+
+  window.switchPlan = function(idx, btn) {
+    document.querySelectorAll('.plan-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.plans-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('plan-' + idx).classList.add('active');
+    btn.classList.add('active');
+  };
+
+  // Phone prefix +90
+  const quizPhoneEl = document.getElementById('quizPhone');
+  const PREFIX = '+90 ';
+  quizPhoneEl.addEventListener('focus', () => {
+    if (!quizPhoneEl.value.startsWith(PREFIX)) quizPhoneEl.value = PREFIX;
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
