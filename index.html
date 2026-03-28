@@ -12,11 +12,11 @@
 
     :root {
       --white:  #FFFFFF;
-      --w80:    rgba(255,255,255,0.80);
-      --w65:    rgba(255,255,255,0.65);
-      --w50:    rgba(255,255,255,0.50);
-      --w25:    rgba(255,255,255,0.25);
-      --w10:    rgba(255,255,255,0.10);
+      --w80:    rgba(255,255,255,0.90);
+      --w65:    rgba(255,255,255,0.78);
+      --w50:    rgba(255,255,255,0.62);
+      --w25:    rgba(255,255,255,0.38);
+      --w10:    rgba(255,255,255,0.14);
       --dark:   #060608;
     }
 
@@ -78,7 +78,7 @@
     .nav-logo-name {
       font-family: 'Cinzel', serif;
       font-weight: 400;
-      font-size: .75rem;
+      font-size: .83rem;
       letter-spacing: .28em;
       color: var(--white);
       text-transform: uppercase;
@@ -87,7 +87,7 @@
     .nav-logo-sub {
       font-family: 'Raleway', sans-serif;
       font-weight: 200;
-      font-size: .55rem;
+      font-size: .61rem;
       letter-spacing: .42em;
       color: var(--w50);
       text-transform: uppercase;
@@ -101,7 +101,7 @@
     .nav-links a {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .65rem;
+      font-size: .79rem;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--w80);
@@ -113,7 +113,7 @@
     .nav-cta {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .62rem;
+      font-size: .83rem;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--white);
@@ -146,7 +146,7 @@
     .hero-eyebrow {
       font-family: 'Raleway', sans-serif;
       font-weight: 200;
-      font-size: .6rem;
+      font-size: .66rem;
       letter-spacing: .45em;
       text-transform: uppercase;
       color: var(--w65);
@@ -188,7 +188,7 @@
     .hero-btn {
       font-family: 'Raleway', sans-serif;
       font-weight: 400;
-      font-size: .68rem;
+      font-size: .75rem;
       letter-spacing: .3em;
       text-transform: uppercase;
       color: var(--white);
@@ -225,7 +225,7 @@
     .corner-left span {
       font-family: 'Raleway', sans-serif;
       font-weight: 200;
-      font-size: .55rem;
+      font-size: .61rem;
       letter-spacing: .35em;
       text-transform: uppercase;
       color: var(--w50);
@@ -243,7 +243,7 @@
     .corner-right span {
       font-family: 'Cinzel', serif;
       font-weight: 400;
-      font-size: .65rem;
+      font-size: .79rem;
       letter-spacing: .28em;
       color: var(--w80);
       display: block;
@@ -316,7 +316,7 @@
     .modal-eyebrow {
       font-family: 'Raleway', sans-serif;
       font-weight: 200;
-      font-size: .55rem;
+      font-size: .61rem;
       letter-spacing: .4em;
       text-transform: uppercase;
       color: var(--w50);
@@ -336,7 +336,7 @@
     .modal-desc {
       font-family: 'Raleway', sans-serif;
       font-weight: 200;
-      font-size: .68rem;
+      font-size: .83rem;
       letter-spacing: .1em;
       color: var(--w50);
       margin-bottom: 36px;
@@ -355,7 +355,7 @@
       color: var(--white);
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .8rem;
+      font-size: .88rem;
       letter-spacing: .08em;
       padding: 15px 18px;
       outline: none;
@@ -365,7 +365,7 @@
     .modal-input::placeholder {
       color: var(--w25);
       letter-spacing: .15em;
-      font-size: .7rem;
+      font-size: .77rem;
     }
     .modal-input:focus {
       border-color: rgba(255,255,255,0.5);
@@ -375,7 +375,7 @@
       width: 100%;
       font-family: 'Raleway', sans-serif;
       font-weight: 400;
-      font-size: .65rem;
+      font-size: .79rem;
       letter-spacing: .3em;
       text-transform: uppercase;
       color: var(--dark);
@@ -394,7 +394,7 @@
     .modal-privacy {
       font-family: 'Raleway', sans-serif;
       font-weight: 200;
-      font-size: .52rem;
+      font-size: .57rem;
       letter-spacing: .1em;
       color: var(--w25);
       margin-top: 20px;
@@ -417,7 +417,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(6,6,8,0.86);
+      background: rgba(6,6,8,0.76);
       pointer-events: none;
     }
     .quiz-wrap { position: relative; z-index: 1; }
@@ -428,19 +428,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      background: #d0dadc;
+      padding: 56px 64px;
+      border-radius: 2px;
     }
 
     /* Progress */
     .quiz-progress-bar {
       width: 100%;
       height: 1px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(28,28,30,0.12);
       margin-bottom: 56px;
       position: relative;
     }
     .quiz-progress-fill {
       height: 1px;
-      background: var(--white);
+      background: rgba(28,28,30,0.55);
       width: 0%;
       transition: width 0.6s ease;
     }
@@ -456,12 +459,12 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.18);
+      background: rgba(28,28,30,0.18);
       transform: translateY(-50%);
       transition: background 0.4s ease;
     }
     .quiz-step-dot.active {
-      background: var(--white);
+      background: rgba(28,28,30,0.6);
     }
 
     /* Intro screen */
@@ -475,26 +478,26 @@
     .quiz-eyebrow {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .65rem;
+      font-size: .79rem;
       letter-spacing: .22em;
       text-transform: uppercase;
-      color: var(--w50);
+      color: rgba(28,28,30,0.5);
     }
     .quiz-title {
       font-family: 'Cinzel', serif;
       font-weight: 400;
       font-size: clamp(1.5rem, 3vw, 2.4rem);
       letter-spacing: .06em;
-      color: var(--white);
+      color: #1c1c1e;
       line-height: 1.25;
       text-align: center;
     }
     .quiz-sub {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .85rem;
+      font-size: .94rem;
       letter-spacing: .08em;
-      color: var(--w50);
+      color: rgba(28,28,30,0.82);
       line-height: 1.8;
       max-width: 420px;
       text-align: center;
@@ -503,18 +506,18 @@
       margin-top: 12px;
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .7rem;
+      font-size: .77rem;
       letter-spacing: .22em;
       text-transform: uppercase;
-      color: var(--dark);
-      background: var(--white);
+      color: #fff;
+      background: #1c1c1e;
       border: none;
       padding: 16px 52px;
       cursor: pointer;
       transition: background .25s, transform .2s;
     }
     .quiz-btn:hover {
-      background: rgba(255,255,255,0.88);
+      background: rgba(28,28,30,0.82);
       transform: translateY(-1px);
     }
 
@@ -532,9 +535,9 @@
     .quiz-q-num {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .62rem;
+      font-size: .83rem;
       letter-spacing: .22em;
-      color: var(--w25);
+      color: rgba(28,28,30,0.42);
       text-transform: uppercase;
     }
     .quiz-q-text {
@@ -542,7 +545,7 @@
       font-weight: 400;
       font-size: clamp(1.1rem, 2.2vw, 1.7rem);
       letter-spacing: .05em;
-      color: var(--white);
+      color: #1c1c1e;
       line-height: 1.4;
     }
     .quiz-options {
@@ -557,9 +560,9 @@
     .quiz-contact-desc {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .8rem;
+      font-size: .88rem;
       letter-spacing: .08em;
-      color: var(--w50);
+      color: rgba(28,28,30,0.6);
       line-height: 1.8;
       max-width: 380px;
       text-align: center;
@@ -574,20 +577,20 @@
     }
     .quiz-phone-input {
       width: 100%;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: var(--white);
+      background: rgba(28,28,30,0.05);
+      border: 1px solid rgba(28,28,30,0.2);
+      color: #1c1c1e;
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .8rem;
+      font-size: .88rem;
       letter-spacing: .1em;
       padding: 16px 20px;
       outline: none;
       transition: border-color .25s;
       text-align: center;
     }
-    .quiz-phone-input::placeholder { color: var(--w25); }
-    .quiz-phone-input:focus { border-color: rgba(255,255,255,0.5); }
+    .quiz-phone-input::placeholder { color: rgba(28,28,30,0.3); }
+    .quiz-phone-input:focus { border-color: rgba(28,28,30,0.5); }
     .quiz-option {
       position: relative;
       display: flex;
@@ -595,73 +598,86 @@
       gap: 16px;
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .72rem;
+      font-size: .79rem;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--w65);
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 22px 24px;
+      color: rgba(28,28,30,0.88);
+      font-weight: 400;
+      background: rgba(255,255,255,0.52);
+      border: 1px solid rgba(28,28,30,0.08);
+      padding: 20px 22px;
       cursor: pointer;
       overflow: hidden;
       text-align: left;
-      transition: border-color .35s, color .35s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+      transition: background .3s, border-color .3s, color .3s, box-shadow .3s, transform .25s;
     }
-    /* sweep bg */
+    /* shimmer sweep */
     .quiz-option::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(255,255,255,0.07) 0%, transparent 70%);
-      transform: translateX(-101%);
-      transition: transform .5s cubic-bezier(.4,0,.2,1);
+      background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.35) 50%, transparent 65%);
+      transform: translateX(-120%);
+      transition: transform .55s cubic-bezier(.4,0,.2,1);
       pointer-events: none;
     }
     /* left accent bar */
     .quiz-option::after {
       content: '';
       position: absolute;
-      left: 0; top: 0; bottom: 0;
+      left: 0; top: 12%; bottom: 12%;
       width: 2px;
-      background: rgba(255,255,255,0.7);
+      background: rgba(28,28,30,0.55);
+      border-radius: 1px;
       transform: scaleY(0);
-      transform-origin: bottom;
-      transition: transform .3s ease;
+      transform-origin: center;
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1);
       pointer-events: none;
     }
     .quiz-option:hover {
-      border-color: rgba(255,255,255,0.4);
-      color: var(--white);
+      background: rgba(255,255,255,0.82);
+      border-color: rgba(28,28,30,0.18);
+      color: rgba(28,28,30,0.92);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8);
+      transform: translateY(-1px);
     }
-    .quiz-option:hover::before { transform: translateX(0); }
+    .quiz-option:hover::before { transform: translateX(120%); }
     .quiz-option:hover::after  { transform: scaleY(1); }
 
     .quiz-opt-letter {
       font-family: 'Cinzel', serif;
-      font-size: .6rem;
+      font-size: .66rem;
       letter-spacing: .1em;
-      color: rgba(255,255,255,0.25);
-      min-width: 14px;
+      color: rgba(28,28,30,0.32);
+      min-width: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: color .3s;
       flex-shrink: 0;
     }
+    .quiz-opt-letter svg { display: block; }
     .quiz-opt-text { flex: 1; }
     .quiz-opt-arrow {
-      font-size: .65rem;
-      color: rgba(255,255,255,0);
+      font-size: .79rem;
+      color: rgba(28,28,30,0);
       transition: color .3s, transform .3s;
       flex-shrink: 0;
     }
-    .quiz-option:hover .quiz-opt-letter { color: rgba(255,255,255,0.55); }
-    .quiz-option:hover .quiz-opt-arrow  { color: rgba(255,255,255,0.4); transform: translateX(3px); }
+    .quiz-option:hover .quiz-opt-letter { color: rgba(28,28,30,0.5); }
+    .quiz-option:hover .quiz-opt-arrow  { color: rgba(28,28,30,0.38); transform: translateX(3px); }
 
     .quiz-option.selected {
-      border-color: rgba(255,255,255,0.7);
-      background: rgba(255,255,255,0.07);
-      color: var(--white);
+      background: rgba(28,28,30,0.84);
+      border-color: transparent;
+      color: rgba(255,255,255,0.9);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.06);
+      transform: translateY(-1px);
     }
-    .quiz-option.selected .quiz-opt-letter { color: rgba(255,255,255,0.6); }
-    .quiz-option.selected::after { transform: scaleY(1); }
+    .quiz-option.selected .quiz-opt-letter { color: rgba(255,255,255,0.45); }
+    .quiz-option.selected .quiz-opt-arrow  { color: rgba(255,255,255,0.35); }
+    .quiz-option.selected::after { transform: scaleY(0); }
 
     .quiz-nav {
       display: flex;
@@ -671,17 +687,17 @@
     }
     .quiz-back {
       font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .62rem;
+      font-weight: 400;
+      font-size: .72rem;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--w25);
+      color: rgba(28,28,30,0.45);
       background: none;
       border: none;
       cursor: pointer;
       transition: color .2s;
     }
-    .quiz-back:hover { color: var(--w65); }
+    .quiz-back:hover { color: rgba(28,28,30,0.75); }
 
     /* Result screen */
     .quiz-result {
@@ -704,14 +720,14 @@
       display: block;
       width: 40px;
       height: 1px;
-      background: rgba(255,255,255,0.25);
+      background: rgba(28,28,30,0.2);
     }
     .quiz-result-ornament i {
       font-style: normal;
       font-family: 'Cinzel', serif;
-      font-size: .55rem;
+      font-size: .61rem;
       letter-spacing: .3em;
-      color: rgba(255,255,255,0.3);
+      color: rgba(28,28,30,0.35);
     }
 
     .quiz-result-title {
@@ -719,7 +735,7 @@
       font-weight: 400;
       font-size: clamp(2rem, 4vw, 3.2rem);
       letter-spacing: .1em;
-      color: var(--white);
+      color: rgba(28,28,30,0.85);
       line-height: 1.1;
       opacity: 0;
       animation: resultFadeUp .9s ease .25s forwards;
@@ -728,7 +744,7 @@
     .quiz-result-divider {
       width: 1px;
       height: 48px;
-      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.3), transparent);
+      background: linear-gradient(to bottom, transparent, rgba(28,28,30,0.25), transparent);
       opacity: 0;
       animation: resultFadeUp .7s ease .4s forwards;
     }
@@ -743,19 +759,19 @@
     .quiz-result-main {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .9rem;
+      font-size: .99rem;
       letter-spacing: .09em;
-      color: var(--w80);
+      color: rgba(28,28,30,0.72);
       line-height: 1.9;
       max-width: 380px;
     }
     .quiz-result-hint {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .65rem;
+      font-size: .79rem;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--w25);
+      color: rgba(28,28,30,0.38);
     }
 
     @keyframes resultFadeUp {
@@ -783,10 +799,10 @@
       display: block;
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .62rem;
+      font-size: .83rem;
       letter-spacing: .28em;
       text-transform: uppercase;
-      color: rgba(28,28,30,0.4);
+      color: rgba(28,28,30,0.75);
       margin-bottom: 16px;
     }
     .plans-h-title {
@@ -804,12 +820,12 @@
     .plans-tab {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .62rem;
+      font-size: .83rem;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: rgba(28,28,30,0.5);
+      color: rgba(28,28,30,0.85);
       background: transparent;
-      border: 1px solid rgba(28,28,30,0.2);
+      border: 1px solid rgba(28,28,30,0.25);
       margin-left: -1px;
       padding: 14px 28px;
       cursor: pointer;
@@ -855,7 +871,7 @@
     .plan-img-box img { width: 100%; height: 100%; object-fit: contain; }
     .plan-img-box span {
       font-family: 'Raleway', sans-serif;
-      font-size: .58rem;
+      font-size: .64rem;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: rgba(28,28,30,0.3);
@@ -863,10 +879,10 @@
     .plan-images.duplex .plan-img-box { aspect-ratio: 1/1; }
     .plan-floor-label {
       font-family: 'Raleway', sans-serif;
-      font-size: .58rem;
+      font-size: .64rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: rgba(28,28,30,0.35);
+      color: rgba(28,28,30,0.72);
       text-align: center;
     }
     .plan-info { display: flex; flex-direction: column; gap: 20px; }
@@ -880,9 +896,9 @@
     .plan-subtitle {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .78rem;
+      font-size: .86rem;
       letter-spacing: .06em;
-      color: rgba(28,28,30,0.55);
+      color: rgba(28,28,30,0.89);
       line-height: 1.85;
     }
     .plan-divider { width: 100%; height: 1px; background: rgba(28,28,30,0.1); }
@@ -892,21 +908,21 @@
       padding: 13px 0;
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .72rem;
+      font-size: .79rem;
       letter-spacing: .07em;
-      color: rgba(28,28,30,0.7);
+      color: rgba(28,28,30,0.95);
     }
-    .plan-specs td:last-child { text-align: right; color: rgba(28,28,30,0.7); font-weight: 600; }
-    .plan-null { color: rgba(28,28,30,0.25) !important; }
+    .plan-specs td:last-child { text-align: right; color: rgba(28,28,30,0.95); font-weight: 600; }
+    .plan-null { color: rgba(28,28,30,0.42) !important; }
     .plan-floors-info { display: flex; flex-direction: column; gap: 24px; }
     .plan-floor-heading {
       display: block;
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .58rem;
+      font-size: .64rem;
       letter-spacing: .25em;
       text-transform: uppercase;
-      color: rgba(28,28,30,0.35);
+      color: rgba(28,28,30,0.72);
       margin-bottom: 6px;
     }
     .plan-explore-btn {
@@ -914,7 +930,7 @@
       margin-top: 8px;
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .65rem;
+      font-size: .79rem;
       letter-spacing: .22em;
       text-transform: uppercase;
       color: #fff;
@@ -1071,6 +1087,7 @@
       text-transform: uppercase;
       color: #1c1c1e;
       line-height: 1.2;
+      margin-top: 12px;
     }
 
     .amenities-sub {
@@ -1078,7 +1095,7 @@
       font-weight: 300;
       font-size: 0.92rem;
       letter-spacing: 0.09em;
-      color: rgba(28,28,30,0.58);
+      color: rgba(28,28,30,0.72);
       line-height: 1.75;
     }
 
@@ -1159,9 +1176,9 @@
     .amenity-card-desc {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: 0.81rem;
+      font-size: 0.89rem;
       letter-spacing: 0.05em;
-      color: rgba(28,28,30,0.52);
+      color: rgba(28,28,30,0.82);
       line-height: 1.65;
     }
 
@@ -1258,7 +1275,7 @@
     <h1 class="hero-title-main">SmartAge</h1>
     <p class="hero-title-sub">Residence</p>
     <div class="hero-rule"></div>
-    <a href="#quiz" class="hero-btn">Find Your Residence</a>
+    <a href="#quiz" class="hero-btn">Explore</a>
   </div>
 
   <!-- Bottom corners -->
@@ -1285,7 +1302,8 @@
     <!-- Header -->
     <header class="amenities-head">
       <h2 class="amenities-title">
-        <span class="at-bold">Residential Community at the Foot<br>of the Mountains in Konyaaltı</span>
+        <span class="at-italic">SmartAge Residence</span>
+        <span class="at-bold">Private Community at the Foot<br>of the Mountains in Konyaaltı</span>
       </h2>
       <p class="amenities-sub">Designed for everyday living, with everything in place</p>
     </header>
@@ -1650,10 +1668,21 @@
 
 
   /* ── QUIZ ───────────────────────────────── */
+  const IC = {
+    house:  `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>`,
+    bag:    `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="2" y1="13" x2="22" y2="13"/></svg>`,
+    dollar: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
+    search: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
+    lock:   `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/></svg>`,
+    mountains: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,20 8,8 13,14 16,10 22,20"/></svg>`,
+    plan:   `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="1"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="12" y1="9" x2="12" y2="22"/><line x1="2" y1="15" x2="12" y2="15"/></svg>`,
+    tree:   `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 19,12 5,12"/><polygon points="12,8 21,21 3,21"/><line x1="12" y1="21" x2="12" y2="24"/></svg>`,
+  };
+
   const QUIZ_QUESTIONS = [
-    { q: 'What are you looking for?', opts: ['A home for personal living', 'A holiday apartment', 'An investment opportunity', "I'm still exploring"] },
+    { q: 'What are you looking for?', opts: ['A home for personal living', 'A holiday apartment', 'An investment opportunity', "I'm still exploring"], icons: [IC.house, IC.bag, IC.dollar, IC.search] },
     { q: 'Which layout are you most interested in?', opts: ['1+1', '2+1', '3+1 duplex', "I'd like to compare options"] },
-    { q: 'Which feature do you value most?', opts: ['Private terrace', 'Spacious balcony', 'Duplex layout', 'Balanced indoor-outdoor living', "I'd like to compare options"] },
+    { q: 'Which feature do you value most?', opts: ['Private terrace', 'Mountains view', 'Duplex layout', 'Balanced indoor-outdoor living', "I'd like to compare options"], icons: [IC.lock, IC.mountains, IC.plan, IC.tree, IC.search] },
     { q: 'When are you planning to make a decision?', opts: ['As soon as possible', 'Within 1–3 months', 'Just researching for now', "I'd like expert guidance"] },
   ];
   const TOTAL = 5; // 4 questions + 1 contact step
@@ -1683,7 +1712,7 @@
       <span class="quiz-q-num">${idx + 1} / ${TOTAL}</span>
       <h3 class="quiz-q-text">${qData.q}</h3>
       <div class="quiz-options">
-        ${qData.opts.map((o, oi) => `<button class="quiz-option" data-q="${idx}" data-i="${oi}" onclick="quizSelect(${idx},${oi},this)"><span class="quiz-opt-letter">${String.fromCharCode(65+oi)}</span><span class="quiz-opt-text">${o}</span><span class="quiz-opt-arrow">→</span></button>`).join('')}
+        ${qData.opts.map((o, oi) => `<button class="quiz-option" data-q="${idx}" data-i="${oi}" onclick="quizSelect(${idx},${oi},this)"><span class="quiz-opt-letter">${qData.icons ? qData.icons[oi] : String.fromCharCode(65+oi)}</span><span class="quiz-opt-text">${o}</span><span class="quiz-opt-arrow">→</span></button>`).join('')}
       </div>
       <div class="quiz-nav">
         ${idx > 0 ? `<button class="quiz-back" onclick="quizGoTo(${idx - 1})">← Back</button>` : ''}
