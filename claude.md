@@ -46,6 +46,29 @@ IMMEDIATELY after implementing any front-end change:
 
 This verification ensures changes meet design standards and user requirements.
 
+## Lessons Learned (from SmartAge build)
+
+### Preview Tool Limitations
+- The `mcp__Claude_Preview` tool renders at a fixed **650px viewport** — it cannot simulate true desktop (1280–1440px). Always verify desktop typography and layout in the user's real browser at `localhost:PORT`. Do not try to fix desktop issues based solely on the preview screenshot.
+
+### Viewport Height on Mobile (iOS Safari)
+- `100vh` is unreliable on iOS — it ignores the browser chrome. Use `100svh` (small viewport, chrome visible) as the base value. Avoid fighting this with JS hacks (`window.innerHeight`-based `--vh`) unless absolutely necessary — they often introduce more bugs than they solve.
+
+### Long Titles & Responsive Typography
+- For long uppercase titles (Cinzel + `letter-spacing`), always calculate the approximate rendered width before committing to a `<br>` split point. Rule of thumb: each character ≈ `fontSize × 0.55` + `letter-spacing` in width. Test at the real target viewport, not the 650px preview.
+- Use `clamp(minRem, Xvw, maxRem)` for fluid titles. `2.4vw` works well for a title that must fit 50+ characters on one line at 1440px.
+
+### clip-path & border-radius
+- `clip-path: polygon()` and `border-radius` **cannot be combined** — clip-path overrides border-radius entirely. If rounded corners are needed on a non-rectangular shape, use an SVG `<clipPath>` with `<path>` arcs.
+
+### Card Sizing in CSS Grid
+- To make grid cards **wider** while keeping their aspect ratio: increase the grid container's `max-width`, not the card's `width`. Setting `width: 115%` on a grid child causes overflow issues. The cleanest approach: widen `.wrap { max-width }` so each `1fr` column naturally gets more space.
+
+### Asset File Extensions
+- Always check the actual file extension before referencing assets. When the user replaces a `.png` with a `.jpg`, update the `src` attribute immediately to avoid silent 404s.
+
+---
+
 ### Comprehensive Design Review
 Invoke the `@design-review` subagent for thorough design validation when:
 - Completing significant UI/UX features
