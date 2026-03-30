@@ -417,7 +417,52 @@
 
 
 
-    /* ── SECTION 3 — QUIZ ───────────────────── */
+    /* ── SECTION 3 — FULLSCREEN PHOTO ──────── */
+    .section-fullphoto {
+      width: 100%;
+      height: 100svh;
+      min-height: 560px;
+      background: url('images/block2.jpeg') center center / cover no-repeat;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      align-items: center;
+      padding-bottom: 18vh;
+    }
+    /* right half: cols 7–12 */
+    .fullphoto-content {
+      grid-column: 7 / 13;
+      padding: 0 80px 0 0;
+    }
+    .fullphoto-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2.3vw, 2.6rem);
+      letter-spacing: .07em;
+      line-height: 1.6;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .fullphoto-title strong {
+      font-weight: 600;
+    }
+    .fullphoto-sub {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.83rem, 1.0vw, 0.94rem);
+      letter-spacing: .07em;
+      line-height: 1.9;
+      color: var(--w65);
+    }
+    @media (max-width: 768px) {
+      .fullphoto-content { grid-column: 4 / 13; padding: 0 20px 0 0; }
+      .fullphoto-title { font-size: clamp(1.1rem, 4.2vw, 1.5rem); }
+    }
+    @media (max-width: 480px) {
+      .fullphoto-content { grid-column: 2 / 13; }
+    }
+
+    /* ── SECTION 4 — QUIZ ───────────────────── */
     .section-quiz {
       position: relative;
       width: 100%;
@@ -1492,7 +1537,21 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SECTION 3 — QUIZ
+     SECTION 3 — FULLSCREEN PHOTO
+═══════════════════════════════════════════ -->
+<section class="section-fullphoto">
+  <div class="fullphoto-content">
+    <h2 class="fullphoto-title">
+      Surrounded by <strong>mountains</strong>.<br>
+      Steps from the <strong>sea</strong>.<br>
+      Hidden in the <strong>city</strong>.
+    </h2>
+    <p class="fullphoto-sub">At SmartAge Residence, you are five minutes from the sea, with the Taurus mountains as your backdrop and the city whenever you need it.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 4 — QUIZ
 ═══════════════════════════════════════════ -->
 <section class="section-quiz">
   <video class="section-quiz-video" autoplay muted loop playsinline preload="auto">
