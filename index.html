@@ -18,7 +18,20 @@
       --w25:    rgba(255,255,255,0.38);
       --w10:    rgba(255,255,255,0.14);
       --dark:   #060608;
+      /* Light section palette */
+      --d100: #1c1c1e;
+      --d65:  rgba(28,28,30,0.65);
+      --d50:  rgba(28,28,30,0.50);
+      --d48:  rgba(28,28,30,0.48);
+      --d35:  rgba(28,28,30,0.35);
     }
+
+    /* ── 12-COLUMN GRID SYSTEM ─────────────────── */
+    .col-grid { display: grid; grid-template-columns: repeat(12, 1fr); }
+    .col-5  { grid-column: span 5; }
+    .col-6  { grid-column: span 6; }
+    .col-7  { grid-column: span 7; }
+    .col-3  { grid-column: span 3; }
 
     html { overflow-x: hidden; background: var(--dark); }
     body { min-height: 100%; overflow-x: hidden; background: var(--dark); }
@@ -491,9 +504,9 @@
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
       font-size: .79rem;
-      letter-spacing: .22em;
+      letter-spacing: .30em;
       text-transform: uppercase;
-      color: rgba(28,28,30,0.5);
+      color: var(--d50);
     }
     .quiz-title {
       font-family: 'Cinzel', serif;
@@ -796,7 +809,7 @@
       width: 100%;
       background-color: #e8f0f2;
       background-image: linear-gradient(155deg, #eef5f7 0%, #e8f0f2 35%, #dde7ea 70%, #d6e1e5 100%);
-      padding: 100px 0 120px;
+      padding: 110px 0 120px;
     }
     .plans-wrap {
       max-width: 1200px;
@@ -811,18 +824,19 @@
       display: block;
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .83rem;
-      letter-spacing: .28em;
+      font-size: .79rem;
+      letter-spacing: .30em;
       text-transform: uppercase;
-      color: rgba(28,28,30,0.75);
+      color: var(--d50);
       margin-bottom: 16px;
     }
     .plans-h-title {
       font-family: 'Cinzel', serif;
       font-weight: 400;
       font-size: clamp(1.8rem, 3vw, 2.8rem);
-      letter-spacing: .07em;
-      color: #1c1c1e;
+      letter-spacing: .06em;
+      line-height: 1.2;
+      color: var(--d100);
     }
     .plans-tabs {
       display: flex;
@@ -857,6 +871,7 @@
       background: rgba(28,28,30,0.05);
     }
     .plan-panel { display: none; }
+    /* Plan panel: 6+6 cols = 12-col system expressed as 1fr 1fr */
     .plan-panel.active {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -894,7 +909,7 @@
       font-size: .64rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: rgba(28,28,30,0.72);
+      color: var(--d48);
       text-align: center;
     }
     .plan-info { display: flex; flex-direction: column; gap: 20px; }
@@ -903,15 +918,15 @@
       font-weight: 400;
       font-size: clamp(1.3rem, 1.8vw, 1.9rem);
       letter-spacing: .07em;
-      color: #1c1c1e;
+      color: var(--d100);
     }
     .plan-subtitle {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .86rem;
-      letter-spacing: .06em;
-      color: rgba(28,28,30,0.89);
-      line-height: 1.85;
+      font-size: .92rem;
+      letter-spacing: .05em;
+      color: var(--d65);
+      line-height: 1.8;
     }
     .plan-divider { width: 100%; height: 1px; background: rgba(28,28,30,0.1); }
     .plan-specs { width: 100%; border-collapse: collapse; }
@@ -922,9 +937,9 @@
       font-weight: 300;
       font-size: .79rem;
       letter-spacing: .07em;
-      color: rgba(28,28,30,0.95);
+      color: var(--d100);
     }
-    .plan-specs td:last-child { text-align: right; color: rgba(28,28,30,0.95); font-weight: 600; }
+    .plan-specs td:last-child { text-align: right; color: var(--d100); font-weight: 600; }
     .plan-null { color: rgba(28,28,30,0.42) !important; }
     .plan-floors-info { display: flex; flex-direction: column; gap: 24px; }
     .plan-floor-heading {
@@ -934,7 +949,7 @@
       font-size: .64rem;
       letter-spacing: .25em;
       text-transform: uppercase;
-      color: rgba(28,28,30,0.72);
+      color: var(--d48);
       margin-bottom: 6px;
     }
     .plan-explore-btn {
@@ -980,6 +995,114 @@
       pointer-events: none;
       z-index: 2;
       transition: opacity .4s ease;
+    }
+
+    /* ── SECTION 5 — LOCATION ───────────────── */
+    .section-location {
+      width: 100%;
+      background-color: #e8f0f2;
+      background-image: linear-gradient(155deg, #eef5f7 0%, #e8f0f2 35%, #dde7ea 70%, #d6e1e5 100%);
+      padding: 110px 0 120px;
+    }
+    .location-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 60px;
+      /* 5+7 = 12-col system expressed as 5fr 7fr */
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 120px;
+      align-items: start;
+    }
+    .location-eyebrow {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .79rem;
+      letter-spacing: .30em;
+      text-transform: uppercase;
+      color: var(--d50);
+      margin-bottom: 16px;
+    }
+    .location-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: .06em;
+      color: var(--d100);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .location-desc {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .92rem;
+      letter-spacing: .05em;
+      line-height: 1.8;
+      color: var(--d65);
+      margin-bottom: 44px;
+    }
+    .location-pois {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .location-poi {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(28,28,30,0.08);
+    }
+    .location-poi:first-child { border-top: 1px solid rgba(28,28,30,0.08); }
+    .location-poi-icon {
+      width: 38px;
+      height: 38px;
+      background: rgba(28,28,30,0.055);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: rgba(28,28,30,0.45);
+    }
+    .location-poi-info {
+      flex: 1;
+    }
+    .location-poi-name {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      font-size: .88rem;
+      letter-spacing: .04em;
+      color: var(--d100);
+    }
+    .location-poi-sub {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .78rem;
+      color: var(--d48);
+      margin-top: 2px;
+    }
+    .location-poi-dist {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: .83rem;
+      letter-spacing: .04em;
+      color: var(--d100);
+    }
+    .location-map {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+      margin-top: 185px;
+    }
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
     }
 
     /* ── SECTION 6 — MOUNTAINS ───────────────── */
@@ -1056,7 +1179,7 @@
         linear-gradient(to bottom,
           rgba(0,0,0,0.04)  0%,
           rgba(0,0,0,0.01) 40%,
-          rgba(0,0,0,0.07) 100%
+          rgba(0,0,0,0.01) 100%
         );
       pointer-events: none;
     }
@@ -1065,9 +1188,9 @@
     .amenities-wrap {
       position: relative;
       z-index: 2;
-      max-width: 1320px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 110px 80px 120px;
+      padding: 110px 60px 120px;
     }
 
     .amenities-head {
@@ -1083,21 +1206,21 @@
     .at-italic {
       display: block;
       font-family: 'Raleway', sans-serif;
-      font-weight: 400;
-      font-size: 0.82rem;
-      letter-spacing: 0.38em;
+      font-weight: 300;
+      font-size: .79rem;
+      letter-spacing: .30em;
       text-transform: uppercase;
-      color: rgba(28,28,30,0.62);
+      color: var(--d50);
     }
 
     .at-bold {
       display: block;
       font-family: 'Cinzel', serif;
       font-weight: 400;
-      font-size: clamp(1.73rem, 2.53vw, 2.99rem);
-      letter-spacing: 0.08em;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: .06em;
       text-transform: uppercase;
-      color: #1c1c1e;
+      color: var(--d100);
       line-height: 1.2;
       margin-top: 12px;
     }
@@ -1105,19 +1228,20 @@
     .amenities-sub {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: 0.92rem;
-      letter-spacing: 0.09em;
-      color: rgba(28,28,30,0.72);
-      line-height: 1.75;
+      font-size: .92rem;
+      letter-spacing: .05em;
+      color: var(--d65);
+      line-height: 1.8;
     }
 
-    /* Cards grid */
+    /* Cards grid — 12-col: each card spans 3 columns (4×3=12) */
     .amenities-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(12, 1fr);
       gap: 28px;
       overflow: visible;
     }
+    .amenity-card { grid-column: span 3; }
 
     .amenity-card {
       overflow: visible;
@@ -1177,27 +1301,33 @@
 
     .amenity-card-title {
       font-family: 'Cinzel', serif;
-      font-weight: 500;
+      font-weight: 400;
       font-size: 1.21rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: #1c1c1e;
+      color: var(--d100);
       margin-bottom: 10px;
     }
 
     .amenity-card-desc {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: 0.89rem;
-      letter-spacing: 0.05em;
-      color: rgba(28,28,30,0.82);
+      font-size: .89rem;
+      letter-spacing: .05em;
+      color: var(--d65);
       line-height: 1.65;
     }
 
     /* ── MOBILE ───────────────────────────────── */
     @media (max-width: 768px) {
-      .section-mountains { background-position: center 30%; }
+      .at-bold { font-size: 1.6rem; }
+      .section-mountains { background-position: center 38%; }
       .section-video video { object-position: right center; }
+      .location-wrap { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+      .location-map { min-height: 280px; margin-top: 0; }
+      .location-map { min-height: 280px; }
+      .location-map iframe { min-height: 280px; }
+      .section-location { padding: 72px 0 80px; }
       .plans-wrap { padding: 0 24px; }
       .plan-panel.active { grid-template-columns: 1fr; gap: 40px; }
       .plans-tabs { flex-wrap: wrap; gap: 8px; }
@@ -1216,14 +1346,15 @@
       .section-graphite { overflow: visible; min-height: unset; }
       .section-graphite::before, .section-graphite::after { height: 100%; }
       .graphite-vignette, .graphite-overlay { height: 100%; }
-      .amenities-wrap { padding: 72px 28px 80px; }
-      .amenities-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .amenities-wrap { padding: 72px 24px 80px; }
+      .amenities-grid { gap: 18px; }
+      .amenity-card { grid-column: span 6; }
       .amenity-img { width: 100% !important; margin-bottom: 20px; clip-path: none !important; border-radius: 18px; }
       .amenity-card-title { font-size: 1rem; }
       .amenity-card-desc { font-size: 0.72rem; }
     }
     @media (max-width: 480px) {
-      .amenities-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .amenities-grid { gap: 12px; }
       .amenities-wrap { padding: 56px 16px 64px; }
       .amenity-img { width: 100% !important; margin-bottom: 16px; clip-path: none !important; border-radius: 16px; }
       .amenity-card-title { font-size: 0.9rem; }
@@ -1505,6 +1636,101 @@
         </div>
         <button class="plan-explore-btn">Explore</button>
       </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 5 — LOCATION
+═══════════════════════════════════════════ -->
+<section class="section-location">
+  <div class="location-wrap">
+
+    <!-- Left: text + POIs -->
+    <div class="location-left">
+      <span class="location-eyebrow">Location</span>
+      <h2 class="location-title">Everything<br>within reach</h2>
+      <p class="location-desc">Located in the Hurma district of Konya Altı, one of Antalya's most sought-after residential areas. Enjoy the tranquility of a mountain-view setting while remaining connected to the city's essential infrastructure.</p>
+
+      <div class="location-pois">
+
+        <div class="location-poi">
+          <div class="location-poi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="1" y1="22" x2="23" y2="22"/>
+              <path d="M2 22v-9h5v9"/>
+              <path d="M17 22v-9h5v9"/>
+              <line x1="3.5" y1="15" x2="3.5" y2="17"/><line x1="5.5" y1="15" x2="5.5" y2="17"/>
+              <line x1="3.5" y1="18.5" x2="3.5" y2="20.5"/><line x1="5.5" y1="18.5" x2="5.5" y2="20.5"/>
+              <line x1="18.5" y1="15" x2="18.5" y2="17"/><line x1="20.5" y1="15" x2="20.5" y2="17"/>
+              <line x1="18.5" y1="18.5" x2="18.5" y2="20.5"/><line x1="20.5" y1="18.5" x2="20.5" y2="20.5"/>
+              <path d="M7 22V5h10v17"/>
+              <line x1="10" y1="9" x2="10" y2="11"/><line x1="14" y1="9" x2="14" y2="11"/>
+              <line x1="10" y1="13.5" x2="10" y2="15.5"/><line x1="14" y1="13.5" x2="14" y2="15.5"/>
+              <path d="M10.5 22v-4h3v4"/>
+              <line x1="12" y1="2" x2="12" y2="5"/>
+              <rect x="10" y="0.5" width="4" height="3" rx="0.4"/>
+              <line x1="12" y1="1" x2="12" y2="3.5"/><line x1="10.5" y1="2" x2="13.5" y2="2"/>
+            </svg>
+          </div>
+          <div class="location-poi-info">
+            <div class="location-poi-name">Hospital</div>
+            <div class="location-poi-sub">Major medical center</div>
+          </div>
+          <div class="location-poi-dist">~750 m</div>
+        </div>
+
+        <div class="location-poi">
+          <div class="location-poi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+          </div>
+          <div class="location-poi-info">
+            <div class="location-poi-name">Antalya Airport</div>
+            <div class="location-poi-sub">International connections</div>
+          </div>
+          <div class="location-poi-dist">~25 km</div>
+        </div>
+
+        <div class="location-poi">
+          <div class="location-poi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
+          </div>
+          <div class="location-poi-info">
+            <div class="location-poi-name">City Center</div>
+            <div class="location-poi-sub">Kaleiçi old town</div>
+          </div>
+          <div class="location-poi-dist">~12 km</div>
+        </div>
+
+        <div class="location-poi">
+          <div class="location-poi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+          </div>
+          <div class="location-poi-info">
+            <div class="location-poi-name">Konyaaltı Beach</div>
+            <div class="location-poi-sub">Award-winning coastline</div>
+          </div>
+          <div class="location-poi-dist">~8 km</div>
+        </div>
+
+        <div class="location-poi">
+          <div class="location-poi-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          </div>
+          <div class="location-poi-info">
+            <div class="location-poi-name">Shopping Centers</div>
+            <div class="location-poi-sub">Malls &amp; markets</div>
+          </div>
+          <div class="location-poi-dist">~5 km</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right: Google Maps -->
+    <div class="location-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3192.9860560351203!2d30.587815!3d36.84281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzbCsDUwJzM0LjEiTiAzMMKwMzUnMTYuMSJF!5e0!3m2!1sru!2sru!4v1774829110430!5m2!1sru!2sru" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
   </div>
