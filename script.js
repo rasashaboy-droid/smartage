@@ -167,3 +167,18 @@ function handlePresForm(e) {
     </p>
   `;
 }
+
+/* ── PHONE MASK (block 4) ────────────────── */
+(function() {
+  var inp = document.getElementById('presPhone');
+  if (!inp) return;
+  inp.addEventListener('input', function() {
+    var digits = this.value.replace(/\D/g, '');
+    var out = '';
+    if (digits.length > 0) out += '(' + digits.substring(0, 3);
+    if (digits.length >= 4) out += ') ' + digits.substring(3, 6);
+    if (digits.length >= 7) out += '-' + digits.substring(6, 8);
+    if (digits.length >= 9) out += '-' + digits.substring(8, 10);
+    this.value = out;
+  });
+})();

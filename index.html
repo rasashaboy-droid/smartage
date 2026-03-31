@@ -53,7 +53,6 @@
     <div class="nav-links">
       <a href="#amenities">Amenities</a>
       <a href="#gallery">Gallery</a>
-      <a href="#location">Location</a>
       <a href="#contact">Contact</a>
     </div>
     <a href="#" class="nav-cta" id="openModal">Request Private Viewing</a>
@@ -113,8 +112,8 @@
         <div class="amenity-img">
           <img src="images/card2.jpg" alt="Pool 20m">
         </div>
-        <h3 class="amenity-card-title">Pool 20m</h3>
-        <p class="amenity-card-desc">Designed for both swimming and relaxation</p>
+        <h3 class="amenity-card-title">Large Pool</h3>
+        <p class="amenity-card-desc">A 20-meter pool for both swimming and relaxation by the water</p>
       </div>
 
       <div class="amenity-card">
@@ -122,7 +121,7 @@
           <img src="images/card3.png" alt="Covered Parking">
         </div>
         <h3 class="amenity-card-title">Covered Parking</h3>
-        <p class="amenity-card-desc">Shaded, secure and always available</p>
+        <p class="amenity-card-desc">Your car stays protected, cool, and always within reach</p>
       </div>
 
       <div class="amenity-card">
@@ -130,7 +129,7 @@
           <img src="images/card4.png" alt="Fitness Area">
         </div>
         <h3 class="amenity-card-title">Fitness Area</h3>
-        <p class="amenity-card-desc">Fully equipped gym for everyday use</p>
+        <p class="amenity-card-desc">A fully equipped gym, ready whenever it fits your day</p>
       </div>
 
     </div>
@@ -144,9 +143,9 @@
 <section class="section-fullphoto">
   <div class="fullphoto-content">
     <h2 class="fullphoto-title">
-      <span class="fp-line">Surrounded by <strong>mountains</strong>.</span>
-      <span class="fp-line">Steps from the <strong>sea</strong>.</span>
-      <span class="fp-line">Hidden in the <strong>city</strong>.</span>
+      <span class="fp-line fp-nowrap">Surrounded by <strong>mountains</strong></span>
+      <span class="fp-line">Steps from the <strong>sea</strong></span>
+      <span class="fp-line">Hidden in the <strong>city</strong></span>
     </h2>
     <p class="fullphoto-sub fp-line">At SmartAge Residence, you are five minutes from the sea, with the Taurus mountains as your backdrop and the city whenever you need it.</p>
   </div>
@@ -181,8 +180,8 @@
           <p class="pres-form-hint">Fill out the short form below<br>and we'll send you the full<br>presentation and details</p>
           <div class="pres-form-row">
             <div class="pres-phone-wrap">
-              <span class="pres-flag">🇹🇷</span>
-              <input class="pres-phone" type="tel" placeholder="+90 (000) 000-00-00" required>
+              <span class="pres-flag"><img src="https://flagcdn.com/w40/tr.png" alt="TR" style="width:20px;height:14px;vertical-align:middle;margin-right:6px;border-radius:2px">+90</span>
+              <input class="pres-phone" id="presPhone" type="tel" placeholder="(000) 000-00-00" required>
             </div>
             <button class="pres-btn" type="submit">Get Presentation</button>
           </div>
@@ -195,207 +194,34 @@
 
 
 <!-- ═══════════════════════════════════════════
-     SECTION 5 — FLOOR PLANS
+     SECTION 5 — RESIDENCES
 ═══════════════════════════════════════════ -->
-<section class="section-plans" id="amenities">
-  <div class="plans-wrap">
-
-    <div class="plans-header">
-      <span class="plans-eyebrow">Floor Plans</span>
-      <h2 class="plans-h-title">Choose Your Layout</h2>
+<section class="section-residences" id="amenities">
+  <div class="res-wrap">
+    <div class="res-header">
+      <h2 class="res-title">
+        <span class="res-title-line">SmartAge Residence — a new approach to urban living,</span>
+        <span class="res-title-line">shaped by space and everyday comfort</span>
+      </h2>
+      <p class="res-sub">Created for comfortable living, with carefully considered layouts, premium finishes,<br>and fully equipped kitchens and bathrooms.</p>
     </div>
-
-    <div class="plans-tabs">
-      <button class="plans-tab active" onclick="switchPlan(0,this)">1+1 Apartment</button>
-      <button class="plans-tab" onclick="switchPlan(1,this)">2+1 Apartment</button>
-      <button class="plans-tab" onclick="switchPlan(2,this)">3+1 Duplex</button>
-    </div>
-
-    <!-- 1+1 -->
-    <div class="plan-panel active" id="plan-0">
-      <div class="plan-images">
-        <div class="plan-img-wrap">
-          <div class="plan-img-box"><img src="images/11.png" alt="1+1 Floor Plan"></div>
-        </div>
+    <div class="res-grid">
+      <div class="res-card">
+        <div class="res-photo"><img src="images/ap1.jpg" alt="Compact Apartments"></div>
+        <p class="res-caption">Compact Apartments</p>
+        <button class="res-btn">View Prices</button>
       </div>
-      <div class="plan-info">
-        <h3 class="plan-title">1+1 Apartment</h3>
-        <p class="plan-subtitle">An intelligently designed compact residence, ideal for individuals or couples seeking refined city living with optimal space utilization.</p>
-        <div class="plan-divider"></div>
-        <table class="plan-specs">
-          <tr><td>Living Room</td><td>23.75 m²</td></tr>
-          <tr><td>Bedroom</td><td>13.65 m²</td></tr>
-          <tr><td>Open Kitchen</td><td class="plan-null">—</td></tr>
-          <tr><td>Bathroom</td><td>4.40 m²</td></tr>
-          <tr><td>Entrance Hall</td><td class="plan-null">—</td></tr>
-          <tr><td>Balcony</td><td>6.10 m²</td></tr>
-        </table>
-        <button class="plan-explore-btn">Explore</button>
+      <div class="res-card">
+        <div class="res-photo"><img src="images/ap2.jpg" alt="Family Apartments"></div>
+        <p class="res-caption">Family Apartments</p>
+        <button class="res-btn">View Prices</button>
+      </div>
+      <div class="res-card">
+        <div class="res-photo"><img src="images/ap3.jpg" alt="Duplex Residences"></div>
+        <p class="res-caption">Duplex Residences</p>
+        <button class="res-btn">View Prices</button>
       </div>
     </div>
-
-    <!-- 2+1 -->
-    <div class="plan-panel" id="plan-1">
-      <div class="plan-images">
-        <div class="plan-img-wrap">
-          <div class="plan-img-box"><img src="images/21.png" alt="2+1 Floor Plan"></div>
-        </div>
-      </div>
-      <div class="plan-info">
-        <h3 class="plan-title">2+1 Apartment</h3>
-        <p class="plan-subtitle">A generously proportioned family residence with two bedrooms, open-plan living, and a private balcony overlooking the mountains.</p>
-        <div class="plan-divider"></div>
-        <table class="plan-specs">
-          <tr><td>Living Room</td><td>25.75 m²</td></tr>
-          <tr><td>Bedroom</td><td>13.65 m²</td></tr>
-          <tr><td>Children's Room</td><td>9.05 m²</td></tr>
-          <tr><td>Open Kitchen</td><td class="plan-null">—</td></tr>
-          <tr><td>Bathroom</td><td>4.40 m²</td></tr>
-          <tr><td>Entrance Hall</td><td>6.15 m²</td></tr>
-          <tr><td>Balcony</td><td>6.70 m²</td></tr>
-        </table>
-        <button class="plan-explore-btn">Explore</button>
-      </div>
-    </div>
-
-    <!-- 3+1 Duplex -->
-    <div class="plan-panel" id="plan-2">
-      <div class="plan-images duplex">
-        <div class="plan-img-wrap">
-          <div class="plan-img-box"><img src="images/31.png" alt="3+1 Lower Floor"></div>
-          <span class="plan-floor-label">Lower Floor</span>
-        </div>
-        <div class="plan-img-wrap">
-          <div class="plan-img-box"><img src="images/32.png" alt="3+1 Upper Floor"></div>
-          <span class="plan-floor-label">Upper Floor</span>
-        </div>
-      </div>
-      <div class="plan-info">
-        <h3 class="plan-title">3+1 Duplex</h3>
-        <p class="plan-subtitle">A spacious two-level residence offering the privacy and flow of a private home within the comfort of a managed community. Features an expansive living area, three bedrooms, and a private terrace.</p>
-        <div class="plan-divider"></div>
-        <div class="plan-floors-info">
-          <div>
-            <span class="plan-floor-heading">Lower Floor</span>
-            <table class="plan-specs">
-              <tr><td>Living Room</td><td>40.00 m²</td></tr>
-              <tr><td>Children's Room</td><td>9.05 m²</td></tr>
-              <tr><td>Open Kitchen</td><td class="plan-null">—</td></tr>
-              <tr><td>Bathroom</td><td>4.40 m²</td></tr>
-              <tr><td>Entrance Hall</td><td>6.15 m²</td></tr>
-              <tr><td>Balcony</td><td>6.70 m²</td></tr>
-            </table>
-          </div>
-          <div>
-            <span class="plan-floor-heading">Upper Floor</span>
-            <table class="plan-specs">
-              <tr><td>Master Bedroom</td><td>20.50 m²</td></tr>
-              <tr><td>Children's Room</td><td>13.50 m²</td></tr>
-              <tr><td>Bathroom</td><td>7.40 m²</td></tr>
-              <tr><td>Hallway</td><td>9.15 m²</td></tr>
-              <tr><td>Terrace</td><td>13.70 m²</td></tr>
-            </table>
-          </div>
-        </div>
-        <button class="plan-explore-btn">Explore</button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     SECTION 5 — LOCATION
-═══════════════════════════════════════════ -->
-<section class="section-location">
-  <div class="location-wrap">
-
-    <!-- Left: text + POIs -->
-    <div class="location-left">
-      <span class="location-eyebrow">Location</span>
-      <h2 class="location-title">Everything<br>within reach</h2>
-      <p class="location-desc">Located in the Hurma district of Konya Altı, one of Antalya's most sought-after residential areas. Enjoy the tranquility of a mountain-view setting while remaining connected to the city's essential infrastructure.</p>
-
-      <div class="location-pois">
-
-        <div class="location-poi">
-          <div class="location-poi-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="1" y1="22" x2="23" y2="22"/>
-              <path d="M2 22v-9h5v9"/>
-              <path d="M17 22v-9h5v9"/>
-              <line x1="3.5" y1="15" x2="3.5" y2="17"/><line x1="5.5" y1="15" x2="5.5" y2="17"/>
-              <line x1="3.5" y1="18.5" x2="3.5" y2="20.5"/><line x1="5.5" y1="18.5" x2="5.5" y2="20.5"/>
-              <line x1="18.5" y1="15" x2="18.5" y2="17"/><line x1="20.5" y1="15" x2="20.5" y2="17"/>
-              <line x1="18.5" y1="18.5" x2="18.5" y2="20.5"/><line x1="20.5" y1="18.5" x2="20.5" y2="20.5"/>
-              <path d="M7 22V5h10v17"/>
-              <line x1="10" y1="9" x2="10" y2="11"/><line x1="14" y1="9" x2="14" y2="11"/>
-              <line x1="10" y1="13.5" x2="10" y2="15.5"/><line x1="14" y1="13.5" x2="14" y2="15.5"/>
-              <path d="M10.5 22v-4h3v4"/>
-              <line x1="12" y1="2" x2="12" y2="5"/>
-              <rect x="10" y="0.5" width="4" height="3" rx="0.4"/>
-              <line x1="12" y1="1" x2="12" y2="3.5"/><line x1="10.5" y1="2" x2="13.5" y2="2"/>
-            </svg>
-          </div>
-          <div class="location-poi-info">
-            <div class="location-poi-name">Hospital</div>
-            <div class="location-poi-sub">Major medical center</div>
-          </div>
-          <div class="location-poi-dist">~750 m</div>
-        </div>
-
-        <div class="location-poi">
-          <div class="location-poi-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-          </div>
-          <div class="location-poi-info">
-            <div class="location-poi-name">Antalya Airport</div>
-            <div class="location-poi-sub">International connections</div>
-          </div>
-          <div class="location-poi-dist">~25 km</div>
-        </div>
-
-        <div class="location-poi">
-          <div class="location-poi-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
-          </div>
-          <div class="location-poi-info">
-            <div class="location-poi-name">City Center</div>
-            <div class="location-poi-sub">Kaleiçi old town</div>
-          </div>
-          <div class="location-poi-dist">~12 km</div>
-        </div>
-
-        <div class="location-poi">
-          <div class="location-poi-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
-          </div>
-          <div class="location-poi-info">
-            <div class="location-poi-name">Konyaaltı Beach</div>
-            <div class="location-poi-sub">Award-winning coastline</div>
-          </div>
-          <div class="location-poi-dist">~8 km</div>
-        </div>
-
-        <div class="location-poi">
-          <div class="location-poi-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-          </div>
-          <div class="location-poi-info">
-            <div class="location-poi-name">Shopping Centers</div>
-            <div class="location-poi-sub">Malls &amp; markets</div>
-          </div>
-          <div class="location-poi-dist">~5 km</div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Right: Google Maps -->
-    <div class="location-map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3192.9860560351203!2d30.587815!3d36.84281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzbCsDUwJzM0LjEiTiAzMMKwMzUnMTYuMSJF!5e0!3m2!1sru!2sru!4v1774829110430!5m2!1sru!2sru" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
   </div>
 </section>
 
