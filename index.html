@@ -33,25 +33,6 @@
     .col-7  { grid-column: span 7; }
     .col-3  { grid-column: span 3; }
 
-    /* ── SHARED SECTION TYPOGRAPHY ──────────────── */
-    .section-eyebrow {
-      display: block;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .79rem;
-      letter-spacing: .30em;
-      text-transform: uppercase;
-      color: var(--d50);
-    }
-    .section-title {
-      font-family: 'Cinzel', serif;
-      font-weight: 400;
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      letter-spacing: .06em;
-      line-height: 1.2;
-      color: var(--d100);
-      text-align: center;
-    }
 
     html { overflow-x: hidden; background: var(--dark); }
     body { min-height: 100%; overflow-x: hidden; background: var(--dark); }
@@ -482,378 +463,10 @@
       .fullphoto-content { grid-column: 2 / 13; }
     }
 
-    /* ── SECTION 4 — QUIZ ───────────────────── */
-    .section-quiz {
-      position: relative;
-      width: 100%;
-      min-height: 100svh;
-      background-color: #e8f0f2;
-      background-image: linear-gradient(155deg, #eef5f7 0%, #e8f0f2 35%, #dde7ea 70%, #d6e1e5 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 110px 24px 120px;
-      gap: 56px;
-    }
-    .quiz-section-header {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-    .quiz-wrap {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 680px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.9);
-      box-shadow: 0 8px 48px rgba(28,28,30,0.08);
-      padding: 56px 64px;
-      border-radius: 4px;
-    }
-
-    /* Progress */
-    .quiz-progress-bar {
-      width: 100%;
-      height: 1px;
-      background: rgba(28,28,30,0.12);
-      margin-bottom: 56px;
-      position: relative;
-    }
-    .quiz-progress-fill {
-      height: 1px;
-      background: rgba(28,28,30,0.55);
-      width: 0%;
-      transition: width 0.6s ease;
-    }
-    .quiz-progress-steps {
-      position: absolute;
-      top: 50%;
-      left: 0; right: 0;
-      transform: translateY(-50%);
-      display: flex;
-      justify-content: space-between;
-    }
-    .quiz-step-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(28,28,30,0.18);
-      transform: translateY(-50%);
-      transition: background 0.4s ease;
-    }
-    .quiz-step-dot.active {
-      background: rgba(28,28,30,0.6);
-    }
-
-    /* Intro screen */
-    .quiz-intro {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 28px;
-    }
-    .quiz-sub {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .94rem;
-      letter-spacing: .08em;
-      color: rgba(28,28,30,0.82);
-      line-height: 1.8;
-      max-width: 420px;
-      text-align: center;
-    }
-    .quiz-btn {
-      margin-top: 12px;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .77rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: #fff;
-      background: #1c1c1e;
-      border: none;
-      padding: 16px 52px;
-      cursor: pointer;
-      transition: background .25s, transform .2s;
-    }
-    .quiz-btn:hover {
-      background: rgba(28,28,30,0.82);
-      transform: translateY(-1px);
-    }
-
-    /* Question screen */
-    .quiz-question {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 32px;
-      width: 100%;
-      text-align: center;
-    }
-    .quiz-question.active { display: flex; }
-
-    .quiz-q-num {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .83rem;
-      letter-spacing: .22em;
-      color: rgba(28,28,30,0.42);
-      text-transform: uppercase;
-    }
-    .quiz-q-text {
-      font-family: 'Cinzel', serif;
-      font-weight: 400;
-      font-size: clamp(1.1rem, 2.2vw, 1.7rem);
-      letter-spacing: .05em;
-      color: #1c1c1e;
-      line-height: 1.4;
-    }
-    .quiz-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      width: 100%;
-    }
-    .quiz-option:last-child:nth-child(odd) { grid-column: 1 / -1; }
-
-    /* Step 5 — contact form */
-    .quiz-contact-desc {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .88rem;
-      letter-spacing: .08em;
-      color: rgba(28,28,30,0.6);
-      line-height: 1.8;
-      max-width: 380px;
-      text-align: center;
-    }
-    .quiz-phone-wrap {
-      width: 100%;
-      max-width: 420px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
-    }
-    .quiz-phone-input {
-      width: 100%;
-      background: rgba(28,28,30,0.05);
-      border: 1px solid rgba(28,28,30,0.2);
-      color: #1c1c1e;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .88rem;
-      letter-spacing: .1em;
-      padding: 16px 20px;
-      outline: none;
-      transition: border-color .25s;
-      text-align: center;
-    }
-    .quiz-phone-input::placeholder { color: rgba(28,28,30,0.3); }
-    .quiz-phone-input:focus { border-color: rgba(28,28,30,0.5); }
-    .quiz-option {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .79rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(28,28,30,0.88);
-      font-weight: 400;
-      background: rgba(255,255,255,0.88);
-      border: 1px solid rgba(28,28,30,0.10);
-      padding: 20px 22px;
-      cursor: pointer;
-      overflow: hidden;
-      text-align: left;
-      box-shadow: 0 1px 6px rgba(28,28,30,0.06);
-      transition: background .3s, border-color .3s, color .3s, box-shadow .3s, transform .25s;
-    }
-    /* shimmer sweep */
-    .quiz-option::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.35) 50%, transparent 65%);
-      transform: translateX(-120%);
-      transition: transform .55s cubic-bezier(.4,0,.2,1);
-      pointer-events: none;
-    }
-    /* left accent bar */
-    .quiz-option::after {
-      content: '';
-      position: absolute;
-      left: 0; top: 12%; bottom: 12%;
-      width: 2px;
-      background: rgba(28,28,30,0.55);
-      border-radius: 1px;
-      transform: scaleY(0);
-      transform-origin: center;
-      transition: transform .3s cubic-bezier(.34,1.56,.64,1);
-      pointer-events: none;
-    }
-    .quiz-option:hover {
-      background: #ffffff;
-      border-color: rgba(28,28,30,0.22);
-      color: rgba(28,28,30,0.92);
-      box-shadow: 0 4px 18px rgba(28,28,30,0.10);
-      transform: translateY(-1px);
-    }
-    .quiz-option:hover::before { transform: translateX(120%); }
-    .quiz-option:hover::after  { transform: scaleY(1); }
-
-    .quiz-opt-letter {
-      font-family: 'Cinzel', serif;
-      font-size: .66rem;
-      letter-spacing: .1em;
-      color: rgba(28,28,30,0.32);
-      min-width: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: color .3s;
-      flex-shrink: 0;
-    }
-    .quiz-opt-letter svg { display: block; }
-    .quiz-opt-text { flex: 1; }
-    .quiz-opt-arrow {
-      font-size: .79rem;
-      color: rgba(28,28,30,0);
-      transition: color .3s, transform .3s;
-      flex-shrink: 0;
-    }
-    .quiz-option:hover .quiz-opt-letter { color: rgba(28,28,30,0.5); }
-    .quiz-option:hover .quiz-opt-arrow  { color: rgba(28,28,30,0.38); transform: translateX(3px); }
-
-    .quiz-option.selected {
-      background: rgba(28,28,30,0.84);
-      border-color: transparent;
-      color: rgba(255,255,255,0.9);
-      box-shadow: 0 6px 24px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.06);
-      transform: translateY(-1px);
-    }
-    .quiz-option.selected .quiz-opt-letter { color: rgba(255,255,255,0.45); }
-    .quiz-option.selected .quiz-opt-arrow  { color: rgba(255,255,255,0.35); }
-    .quiz-option.selected::after { transform: scaleY(0); }
-
-    .quiz-nav {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      margin-top: 8px;
-    }
-    .quiz-back {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
-      font-size: .72rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(28,28,30,0.45);
-      background: none;
-      border: none;
-      cursor: pointer;
-      transition: color .2s;
-    }
-    .quiz-back:hover { color: rgba(28,28,30,0.75); }
-
-    /* Result screen */
-    .quiz-result {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 28px;
-      text-align: center;
-    }
-    .quiz-result.active { display: flex; }
-
-    .quiz-result-ornament {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      opacity: 0;
-      animation: resultFadeUp .8s ease .1s forwards;
-    }
-    .quiz-result-ornament span {
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: rgba(28,28,30,0.2);
-    }
-    .quiz-result-ornament i {
-      font-style: normal;
-      font-family: 'Cinzel', serif;
-      font-size: .61rem;
-      letter-spacing: .3em;
-      color: rgba(28,28,30,0.35);
-    }
-
-    .quiz-result-title {
-      font-family: 'Cinzel', serif;
-      font-weight: 400;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      letter-spacing: .1em;
-      color: rgba(28,28,30,0.85);
-      line-height: 1.1;
-      opacity: 0;
-      animation: resultFadeUp .9s ease .25s forwards;
-    }
-
-    .quiz-result-divider {
-      width: 1px;
-      height: 48px;
-      background: linear-gradient(to bottom, transparent, rgba(28,28,30,0.25), transparent);
-      opacity: 0;
-      animation: resultFadeUp .7s ease .4s forwards;
-    }
-
-    .quiz-result-body {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      opacity: 0;
-      animation: resultFadeUp .9s ease .5s forwards;
-    }
-    .quiz-result-main {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .99rem;
-      letter-spacing: .09em;
-      color: rgba(28,28,30,0.72);
-      line-height: 1.9;
-      max-width: 380px;
-    }
-    .quiz-result-hint {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: .79rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(28,28,30,0.38);
-    }
-
-    @keyframes resultFadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
     /* ── SECTION 4 — FLOOR PLANS ────────────── */
     .section-plans {
       width: 100%;
       background-color: #e8f0f2;
-      background-image: linear-gradient(155deg, #eef5f7 0%, #e8f0f2 35%, #dde7ea 70%, #d6e1e5 100%);
       padding: 110px 0 120px;
     }
     .plans-wrap {
@@ -1046,7 +659,6 @@
     .section-location {
       width: 100%;
       background-color: #e8f0f2;
-      background-image: linear-gradient(155deg, #eef5f7 0%, #e8f0f2 35%, #dde7ea 70%, #d6e1e5 100%);
       padding: 110px 0 120px;
     }
     .location-wrap {
@@ -1150,12 +762,12 @@
       border: 0;
     }
 
-    /* ── SECTION 6 — MOUNTAINS ───────────────── */
+    /* ── SECTION 7 — MOUNTAINS ───────────────── */
     .section-mountains {
       position: relative;
       width: 100%;
       min-height: 100svh;
-      background: url('images/mountains.jpg') center center / cover no-repeat;
+      background: url('images/mountains 2.jpg') center center / cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1167,13 +779,6 @@
       width: 100%;
       min-height: 100svh;
       background-color: #e8f0f2;
-      background-image:
-        linear-gradient(155deg,
-          #eef5f7 0%,
-          #e8f0f2 35%,
-          #dde7ea 70%,
-          #d6e1e5 100%
-        );
       overflow: hidden;
     }
 
@@ -1200,33 +805,166 @@
       mix-blend-mode: soft-light;
     }
 
-    /* Глубина: виньетка + тёплый янтарный отблеск (как огни здания на slide5) */
-    .section-graphite .graphite-vignette {
+    .section-graphite .graphite-vignette,
+    .section-graphite .graphite-overlay {
+      display: none;
+    }
+
+    /* ── SECTION 4 — QUIZ START ──────────────── */
+    .section-block4 {
+      position: relative;
+      width: 100%;
+      min-height: 100svh;
+      background-color: #1c1c1e;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 0;
+    }
+    .section-block4::before {
+      content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 72% 18%,
-          rgba(200, 180, 140, 0.12) 0%,
-          transparent 60%),
-        radial-gradient(ellipse 55% 40% at 20% 85%,
-          rgba(100, 130, 160, 0.10) 0%,
-          transparent 60%),
-        radial-gradient(ellipse at center, transparent 40%, rgba(150,165,175,0.25) 100%);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 220px 220px;
+      opacity: 0.10;
+      pointer-events: none;
+    }
+    .section-block4::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 100px 100px;
+      opacity: 0.07;
+      pointer-events: none;
+      mix-blend-mode: soft-light;
+    }
+
+    .quiz-section-title {
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 60px;
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    /* ── QUIZ WRAP (matches .plans-wrap) ────── */
+    .quiz-wrap {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    /* ── QUIZ WIDGET ─────────────────────────── */
+    .quiz-widget {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      background: url('images/quiz.jpeg') center center / cover no-repeat;
+      box-shadow: 0 24px 80px rgba(6,6,8,0.18);
+      overflow: hidden;
+    }
+    .quiz-widget::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 52%,
+        rgba(255,255,255,0.55) 62%,
+        rgba(255,255,255,0.82) 100%
+      );
       pointer-events: none;
     }
 
-    /* Оверлей — почти прозрачный, фон светлый для контента */
-    .section-graphite .graphite-overlay {
-      position: absolute;
-      inset: 0;
+    /* Left: spacer so photo is visible */
+    .quiz-photo {
+      flex: 1;
+      min-height: 576px;
+    }
+
+    /* Right: text over gradient */
+    .quiz-start-panel {
+      position: relative;
       z-index: 1;
-      background:
-        linear-gradient(to bottom,
-          rgba(0,0,0,0.04)  0%,
-          rgba(0,0,0,0.01) 40%,
-          rgba(0,0,0,0.01) 100%
-        );
-      pointer-events: none;
+      width: 46%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 48px;
+      background: transparent;
+    }
+
+    .quiz-eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .68rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: rgba(28,28,30,0.5);
+      margin-bottom: 22px;
+    }
+
+    .quiz-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 1.6vw, 1.65rem);
+      line-height: 1.32;
+      letter-spacing: .02em;
+      color: var(--d100);
+      margin-bottom: 20px;
+    }
+
+    .quiz-subtitle {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: .92rem;
+      line-height: 1.7;
+      color: rgba(28,28,30,0.6);
+      margin-bottom: 40px;
+    }
+
+    .quiz-cta {
+      display: inline-block;
+      align-self: flex-start;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: .72rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--d100);
+      background: rgba(28,28,30,0.08);
+      border: 1px solid rgba(28,28,30,0.38);
+      padding: 16px 36px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+    .quiz-cta:hover {
+      background: rgba(28,28,30,0.16);
+      border-color: rgba(28,28,30,0.72);
+      transform: translateY(-1px);
+    }
+
+    /* ── SECTION 4 MOBILE ────────────────────── */
+    @media (max-width: 768px) {
+      .quiz-wrap { padding: 0 24px; }
+      .quiz-widget { flex-direction: column; }
+      .quiz-photo { min-height: 220px; }
+      .quiz-start-panel { width: 100%; padding: 40px 28px; }
     }
 
     /* ── AMENITIES CONTENT ───────────────────── */
@@ -1377,11 +1115,6 @@
       .plan-panel.active { grid-template-columns: 1fr; gap: 40px; }
       .plans-tabs { flex-wrap: wrap; gap: 8px; }
       .plans-tab { margin-left: 0; flex: 1; min-width: 120px; text-align: center; }
-      .quiz-options {
-        grid-template-columns: 1fr;
-      }
-      .quiz-option:last-child:nth-child(odd) { grid-column: auto; }
-      .quiz-option { min-height: 64px; }
       nav { padding: 26px 24px; }
       .nav-links { display: none; }
       .corner-left, .corner-right { display: none; }
@@ -1463,7 +1196,7 @@
     <h1 class="hero-title-main">SmartAge</h1>
     <p class="hero-title-sub">Residence</p>
     <div class="hero-rule"></div>
-    <a href="#quiz" class="hero-btn">Explore</a>
+    <a href="#" class="hero-btn">Explore</a>
   </div>
 
   <!-- Bottom corners -->
@@ -1551,43 +1284,25 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SECTION 4 — QUIZ
+     SECTION 4
 ═══════════════════════════════════════════ -->
-<section class="section-quiz">
-
-  <!-- Section Header -->
-  <div class="quiz-section-header">
-    <span class="section-eyebrow">SmartAge Residence</span>
-    <h2 class="section-title">Explore the right<br>apartment for you</h2>
-  </div>
-
+<section class="section-block4">
+  <h2 class="quiz-section-title">Explore the Right Apartment for You</h2>
   <div class="quiz-wrap">
-
-    <!-- Progress bar -->
-    <div class="quiz-progress-bar">
-      <div class="quiz-progress-fill" id="quizFill"></div>
-      <div class="quiz-progress-steps" id="quizDots"></div>
+  <div class="quiz-widget">
+    <div class="quiz-photo"></div>
+    <div class="quiz-start-panel">
+      <p class="quiz-eyebrow">Find your perfect apartment</p>
+      <h2 class="quiz-title">Discover Which Apartment Fits You Best — in Under 60 Seconds</h2>
+      <p class="quiz-subtitle">Answer 3 short questions — we'll show you matching layouts and current prices.</p>
+      <a href="#" class="quiz-cta">Start the Quiz</a>
     </div>
-
-    <!-- Questions (populated by JS) -->
-    <div id="quizQuestions" style="width:100%"></div>
-
-    <!-- Result -->
-    <div class="quiz-result" id="quizResult">
-      <div class="quiz-result-ornament"><span></span><i>SmartAge Residence</i><span></span></div>
-      <h2 class="quiz-result-title">Thank You</h2>
-      <div class="quiz-result-divider"></div>
-      <div class="quiz-result-body">
-        <p class="quiz-result-main">Our team will carefully review your preferences<br>and get in touch with the most suitable options.</p>
-        <p class="quiz-result-hint">You can also continue exploring the layouts below</p>
-      </div>
-    </div>
-
+  </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SECTION 4 — FLOOR PLANS
+     SECTION 5 — FLOOR PLANS
 ═══════════════════════════════════════════ -->
 <section class="section-plans" id="amenities">
   <div class="plans-wrap">
@@ -1792,7 +1507,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SECTION 6 — MOUNTAINS
+     SECTION 7 — MOUNTAINS
 ═══════════════════════════════════════════ -->
 <section class="section-mountains"></section>
 
@@ -1956,158 +1671,12 @@
   });
 
 
-  /* ── QUIZ ───────────────────────────────── */
-  const IC = {
-    house:  `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>`,
-    bag:    `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="2" y1="13" x2="22" y2="13"/></svg>`,
-    dollar: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
-    search: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
-    lock:     `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/></svg>`,
-    stopwatch:`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><polyline points="12,9 12,13 15,15"/><line x1="9" y1="2" x2="15" y2="2"/><line x1="12" y1="2" x2="12" y2="5"/></svg>`,
-    calendar: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>`,
-    person:   `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg>`,
-    mountains: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,20 8,8 13,14 16,10 22,20"/></svg>`,
-    plan:   `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="1"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="12" y1="9" x2="12" y2="22"/><line x1="2" y1="15" x2="12" y2="15"/></svg>`,
-    tree:   `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 19,12 5,12"/><polygon points="12,8 21,21 3,21"/><line x1="12" y1="21" x2="12" y2="24"/></svg>`,
-  };
-
-  const QUIZ_QUESTIONS = [
-    { q: 'What are you looking for?', opts: ['A home for personal living', 'A holiday apartment', 'An investment opportunity', "I'm still exploring"], icons: [IC.house, IC.bag, IC.dollar, IC.search] },
-    { q: 'Which layout are you most interested in?', opts: ['1+1', '2+1', '3+1 duplex', "I'd like to compare options"] },
-    { q: 'Which feature do you value most?', opts: ['Private terrace', 'Mountains view', 'Duplex layout', 'Balanced indoor-outdoor living', "I'd like to compare options"], icons: [IC.lock, IC.mountains, IC.plan, IC.tree, IC.search] },
-    { q: 'When are you planning to make a decision?', opts: ['As soon as possible', 'Within 1–3 months', 'Just researching for now', "I'd like expert guidance"], icons: [IC.stopwatch, IC.calendar, IC.search, IC.person] },
-  ];
-  const TOTAL = 5; // 4 questions + 1 contact step
-  let quizStep = 0;
-  const answers = {};
-
-  const quizQWrap     = document.getElementById('quizQuestions');
-  const quizResult    = document.getElementById('quizResult');
-  const quizFill      = document.getElementById('quizFill');
-  const quizDotsWrap  = document.getElementById('quizDots');
-
-  // Build dots
-  for (let i = 0; i < TOTAL; i++) {
-    const d = document.createElement('div');
-    d.className = 'quiz-step-dot';
-    d.id = `dot-${i}`;
-    quizDotsWrap.appendChild(d);
-  }
-
-  // Build question screens (Q1–Q4)
-  QUIZ_QUESTIONS.forEach((qData, idx) => {
-    const div = document.createElement('div');
-    div.className = 'quiz-question';
-    div.id = `q-${idx}`;
-    div.innerHTML = `
-      <span class="quiz-q-num">${idx + 1} / ${TOTAL}</span>
-      <h3 class="quiz-q-text">${qData.q}</h3>
-      <div class="quiz-options">
-        ${qData.opts.map((o, oi) => `<button class="quiz-option" data-q="${idx}" data-i="${oi}" onclick="quizSelect(${idx},${oi},this)"><span class="quiz-opt-letter">${qData.icons ? qData.icons[oi] : String.fromCharCode(65+oi)}</span><span class="quiz-opt-text">${o}</span><span class="quiz-opt-arrow">→</span></button>`).join('')}
-      </div>
-      <div class="quiz-nav">
-        ${idx > 0 ? `<button class="quiz-back" onclick="quizGoTo(${idx - 1})">← Back</button>` : ''}
-      </div>`;
-    quizQWrap.appendChild(div);
-  });
-
-  // Build contact step (Q5)
-  (() => {
-    const div = document.createElement('div');
-    div.className = 'quiz-question';
-    div.id = 'q-4';
-    div.innerHTML = `
-      <span class="quiz-q-num">5 / 5</span>
-      <h3 class="quiz-q-text">Where should we send<br>your matching options?</h3>
-      <p class="quiz-contact-desc">We'll contact you to share the most suitable layouts based on your preferences.</p>
-      <div class="quiz-phone-wrap">
-        <input class="quiz-phone-input" type="tel" id="quizPhone" placeholder="+90 ___ ___ __ __" autocomplete="tel" />
-        <button class="quiz-btn" onclick="quizSubmitContact()">Send my results</button>
-      </div>
-      <div class="quiz-nav">
-        <button class="quiz-back" onclick="quizGoTo(3)">← Back</button>
-      </div>`;
-    quizQWrap.appendChild(div);
-  })();
-
-  function quizUpdateProgress(step) {
-    const pct = step < 0 ? 0 : (step / (TOTAL - 1)) * 100;
-    quizFill.style.width = pct + '%';
-    document.querySelectorAll('.quiz-step-dot').forEach((d, i) => {
-      d.classList.toggle('active', i <= step);
-    });
-  }
-
-  function quizGoTo(step) {
-    quizStep = step;
-    quizResult.classList.remove('active');
-    document.querySelectorAll('.quiz-question').forEach(el => el.classList.remove('active'));
-    if (step >= 0 && step < TOTAL) {
-      document.getElementById(`q-${step}`).classList.add('active');
-    }
-    quizUpdateProgress(step);
-  }
-
-  window.quizSelect = function(qIdx, optIdx, btn) {
-    answers[qIdx] = optIdx;
-    btn.closest('.quiz-options').querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    setTimeout(() => { quizGoTo(qIdx + 1); }, 320);
-  };
-
-  window.quizSubmitContact = function() {
-    const phone = document.getElementById('quizPhone').value.trim();
-    if (!phone) {
-      document.getElementById('quizPhone').focus();
-      return;
-    }
-    answers.phone = phone;
-    quizShowResult();
-  };
-
-  window.quizGoTo = quizGoTo;
-
-  function quizShowResult() {
-    quizStep = TOTAL;
-    document.querySelectorAll('.quiz-question').forEach(el => el.classList.remove('active'));
-    // restart animations
-    quizResult.querySelectorAll('.quiz-result-ornament,.quiz-result-title,.quiz-result-divider,.quiz-result-body').forEach(el => {
-      el.style.animation = 'none';
-      el.offsetHeight; // reflow
-      el.style.animation = '';
-    });
-    quizResult.classList.add('active');
-    quizFill.style.width = '100%';
-    document.querySelectorAll('.quiz-step-dot').forEach(d => d.classList.add('active'));
-  }
-
-  window.quizReset = function() {
-    Object.keys(answers).forEach(k => delete answers[k]);
-    document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
-    const ph = document.getElementById('quizPhone');
-    if (ph) ph.value = '';
-    quizResult.classList.remove('active');
-    document.querySelectorAll('.quiz-question').forEach(el => el.classList.remove('active'));
-    quizGoTo(0);
-  };
-
-  // Auto-start: show first question immediately
-  quizGoTo(0);
-
-
   window.switchPlan = function(idx, btn) {
     document.querySelectorAll('.plan-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.plans-tab').forEach(t => t.classList.remove('active'));
     document.getElementById('plan-' + idx).classList.add('active');
     btn.classList.add('active');
   };
-
-  // Phone prefix +90
-  const quizPhoneEl = document.getElementById('quizPhone');
-  const PREFIX = '+90 ';
-  quizPhoneEl.addEventListener('focus', () => {
-    if (!quizPhoneEl.value.startsWith(PREFIX)) quizPhoneEl.value = PREFIX;
-  });
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -2124,6 +1693,8 @@
       </p>
     `;
   }
+
+
 </script>
 
 </body>
