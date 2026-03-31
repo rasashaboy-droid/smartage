@@ -64,7 +64,7 @@
     <h1 class="hero-title-main">SmartAge</h1>
     <p class="hero-title-sub">Residence</p>
     <div class="hero-rule"></div>
-    <a href="#" class="hero-btn">Explore</a>
+    <a href="#section-graphite" class="hero-btn" onclick="document.querySelector('.section-graphite').scrollIntoView({behavior:'smooth'});return false;">Explore</a>
   </div>
 
   <!-- Bottom corners -->
@@ -180,8 +180,9 @@
           <p class="pres-form-hint">Fill out the short form below<br>and we'll send you the full<br>presentation and details</p>
           <div class="pres-form-row">
             <div class="pres-phone-wrap">
-              <span class="pres-flag"><img src="https://flagcdn.com/w40/tr.png" alt="TR" style="width:20px;height:14px;vertical-align:middle;margin-right:6px;border-radius:2px">+90</span>
-              <input class="pres-phone" id="presPhone" type="tel" placeholder="(000) 000-00-00" required>
+              <span class="pres-flag"><img src="https://flagcdn.com/w40/tr.png" alt="TR" class="pres-flag-img"></span>
+              <span class="pres-code">+90</span>
+              <input class="pres-phone" id="presPhone" type="tel" placeholder="(000) 000-0000" required>
             </div>
             <button class="pres-btn" type="submit">Get Presentation</button>
           </div>
@@ -200,7 +201,8 @@
   <div class="res-wrap">
     <div class="res-header">
       <h2 class="res-title">
-        <span class="res-title-line">SmartAge Residence — a new approach to urban living,</span>
+        <span class="res-title-line"><strong>SmartAge Residence</strong></span>
+        <span class="res-title-line">— a new approach to urban living,</span>
         <span class="res-title-line">shaped by space and everyday comfort</span>
       </h2>
       <p class="res-sub">Created for comfortable living, with carefully considered layouts, premium finishes,<br>and fully equipped kitchens and bathrooms.</p>
@@ -209,17 +211,17 @@
       <div class="res-card">
         <div class="res-photo"><img src="images/ap1.jpg" alt="Compact Apartments"></div>
         <p class="res-caption">Compact Apartments</p>
-        <button class="res-btn">View Prices</button>
+        <button class="res-btn" onclick="document.querySelector('.section-mountains').scrollIntoView({behavior:'smooth'})">View Prices</button>
       </div>
       <div class="res-card">
         <div class="res-photo"><img src="images/ap2.jpg" alt="Family Apartments"></div>
         <p class="res-caption">Family Apartments</p>
-        <button class="res-btn">View Prices</button>
+        <button class="res-btn" onclick="document.querySelector('.section-mountains').scrollIntoView({behavior:'smooth'})">View Prices</button>
       </div>
       <div class="res-card">
         <div class="res-photo"><img src="images/ap3.jpg" alt="Duplex Residences"></div>
         <p class="res-caption">Duplex Residences</p>
-        <button class="res-btn">View Prices</button>
+        <button class="res-btn" onclick="document.querySelector('.section-mountains').scrollIntoView({behavior:'smooth'})">View Prices</button>
       </div>
     </div>
   </div>

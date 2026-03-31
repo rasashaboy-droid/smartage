@@ -158,14 +158,42 @@
 
 function handlePresForm(e) {
   e.preventDefault();
-  const form = e.target;
-  const card = form.closest(".pres-card-left");
-  card.innerHTML = `
-    <p style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.1em;color:#fff;margin-bottom:12px;">Thank you</p>
-    <p style="font-family:'Raleway',sans-serif;font-weight:200;font-size:.75rem;letter-spacing:.08em;color:rgba(255,255,255,.5);line-height:1.8;">
-      We will send the presentation shortly.
-    </p>
-  `;
+  const phone = document.getElementById('presPhone');
+  const digits = phone.value.replace(/\D/g, '');
+  if (digits.length < 7) {
+    phone.setCustomValidity('Please, fill out the form');
+    phone.reportValidity();
+    return;
+  }
+  phone.setCustomValidity('');
+
+  const wrap = e.target.closest('.pres-form-wrap');
+  const mockup = wrap.querySelector('.pres-mockup');
+
+  // fade out current content
+  wrap.style.transition = 'opacity .4s ease';
+  wrap.style.opacity = '0';
+
+  setTimeout(function() {
+    var currentHeight = wrap.offsetHeight;
+    wrap.style.minHeight = currentHeight + 'px';
+    wrap.style.display = 'flex';
+    wrap.style.alignItems = 'center';
+    wrap.style.justifyContent = 'center';
+    wrap.innerHTML = `
+      <div style="width:100%;background:rgba(20,20,22,0.80);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:73px 62px 57px;box-sizing:border-box;text-align:center;">
+        <div>
+          <p style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:20px;">THANK YOU!</p>
+          <p style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(255,255,255,0.75);line-height:1.9;max-width:420px;margin:0 auto;">You will receive a detailed project presentation and details within 10 minutes</p>
+        </div>
+      </div>
+    `;
+    wrap.style.opacity = '0';
+    requestAnimationFrame(function() {
+      wrap.style.transition = 'opacity .5s ease';
+      wrap.style.opacity = '1';
+    });
+  }, 400);
 }
 
 /* ── PHONE MASK (block 4) ────────────────── */
@@ -173,6 +201,7 @@ function handlePresForm(e) {
   var inp = document.getElementById('presPhone');
   if (!inp) return;
   inp.addEventListener('input', function() {
+    this.setCustomValidity('');
     var digits = this.value.replace(/\D/g, '');
     var out = '';
     if (digits.length > 0) out += '(' + digits.substring(0, 3);
