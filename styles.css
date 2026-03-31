@@ -31,6 +31,7 @@
     .hero {
       position: relative;
       width: 100%;
+      height: 100vh;
       height: 100svh;
       min-height: 640px;
       overflow: hidden;
@@ -411,6 +412,7 @@
     /* ── SECTION 3 — FULLSCREEN PHOTO ──────── */
     .section-fullphoto {
       width: 100%;
+      height: 100vh;
       height: 100svh;
       min-height: 560px;
       background: url('images/block2.jpeg') center center / cover no-repeat;
@@ -818,6 +820,7 @@
     .section-pres {
       position: relative;
       width: 100%;
+      min-height: 120vh;
       min-height: 120svh;
       background: #e8f0f2 url('images/block4.jpg') center bottom / 100% auto no-repeat;
       display: flex;
