@@ -413,19 +413,13 @@
       width: 100%;
       height: 100svh;
       min-height: 560px;
-      position: relative;
-      overflow: hidden;
+      background: url('images/block2.jpeg') center center / cover no-repeat fixed;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       align-items: center;
       padding-bottom: 18vh;
     }
-    .fullphoto-bg {
-      position: absolute;
-      inset: -20% 0;
-      background: url('images/block2.jpeg') center center / cover no-repeat;
-      will-change: transform;
-    }
+    .fullphoto-bg { display: none; }
     /* right half: cols 7–12 */
     .fullphoto-content {
       grid-column: 7 / 13;
