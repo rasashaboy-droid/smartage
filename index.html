@@ -814,64 +814,16 @@
     .section-block4 {
       position: relative;
       width: 100%;
-      min-height: 100svh;
-      background-color: #1c1c1e;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 0;
-    }
-    .section-block4::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-      background-size: 220px 220px;
-      opacity: 0.10;
-      pointer-events: none;
-    }
-    .section-block4::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
-      background-size: 100px 100px;
-      opacity: 0.07;
-      pointer-events: none;
-      mix-blend-mode: soft-light;
-    }
-
-    .quiz-section-title {
-      width: 100%;
-      max-width: 1200px;
-      padding: 0 60px;
-      font-family: 'Cinzel', serif;
-      font-weight: 400;
-      font-size: clamp(1.4rem, 2.2vw, 2.2rem);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--white);
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    /* ── QUIZ WRAP (matches .plans-wrap) ────── */
-    .quiz-wrap {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 60px;
     }
 
     /* ── QUIZ WIDGET ─────────────────────────── */
     .quiz-widget {
       position: relative;
-      z-index: 2;
       width: 100%;
+      min-height: 100svh;
       display: flex;
       background: url('images/quiz.jpeg') center center / cover no-repeat;
-      box-shadow: 0 24px 80px rgba(6,6,8,0.18);
       overflow: hidden;
     }
     .quiz-widget::before {
@@ -891,7 +843,6 @@
     /* Left: spacer so photo is visible */
     .quiz-photo {
       flex: 1;
-      min-height: 576px;
     }
 
     /* Right: text over gradient */
@@ -1287,8 +1238,6 @@
      SECTION 4
 ═══════════════════════════════════════════ -->
 <section class="section-block4">
-  <h2 class="quiz-section-title">Explore the Right Apartment for You</h2>
-  <div class="quiz-wrap">
   <div class="quiz-widget">
     <div class="quiz-photo"></div>
     <div class="quiz-start-panel">
@@ -1297,7 +1246,6 @@
       <p class="quiz-subtitle">Answer 3 short questions — we'll show you matching layouts and current prices.</p>
       <a href="#" class="quiz-cta">Start the Quiz</a>
     </div>
-  </div>
   </div>
 </section>
 
