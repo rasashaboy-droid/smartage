@@ -211,3 +211,23 @@ function handlePresForm(e) {
     this.value = out;
   });
 })();
+
+/* ── PARALLAX — block 3 ─────────────────── */
+(function() {
+  var bg = document.querySelector('.fullphoto-bg');
+  var section = document.querySelector('.section-fullphoto');
+  if (!bg || !section) return;
+  var ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        var rect = section.getBoundingClientRect();
+        bg.style.transform = 'translateY(' + (-rect.top) + 'px)';
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
