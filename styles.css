@@ -31,7 +31,6 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh;
       height: 100svh;
       min-height: 640px;
       overflow: hidden;
@@ -412,7 +411,6 @@
     /* ── SECTION 3 — FULLSCREEN PHOTO ──────── */
     .section-fullphoto {
       width: 100%;
-      height: 100vh;
       height: 100svh;
       min-height: 560px;
       background: url('images/block2.jpeg') center center / cover no-repeat;
@@ -820,9 +818,7 @@
     .section-pres {
       position: relative;
       width: 100%;
-      min-height: 120vh;
-      min-height: 120svh;
-      background: #e8f0f2 url('images/block4.jpg') center bottom / 100% auto no-repeat;
+      background: #e8f0f2;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -967,13 +963,26 @@
     }
     .pres-btn:hover { opacity: .85; }
 
-    /* Form bar pinned to bottom */
-    .pres-form-bar {
+    /* Photo + form zone */
+    .pres-bottom-zone {
+      position: relative;
       width: 100%;
+    }
+    .pres-photo-img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    /* Form bar overlaid on bottom of photo */
+    .pres-form-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: center;
       padding: 0 24px 0;
-      margin-top: auto;
     }
     .pres-form-wrap {
       position: relative;
