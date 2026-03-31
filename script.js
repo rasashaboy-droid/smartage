@@ -155,3 +155,15 @@
   }
 
 
+
+function handlePresForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const card = form.closest(".pres-card-left");
+  card.innerHTML = `
+    <p style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.1em;color:#fff;margin-bottom:12px;">Thank you</p>
+    <p style="font-family:'Raleway',sans-serif;font-weight:200;font-size:.75rem;letter-spacing:.08em;color:rgba(255,255,255,.5);line-height:1.8;">
+      We will send the presentation shortly.
+    </p>
+  `;
+}

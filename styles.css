@@ -437,6 +437,19 @@
     .fullphoto-title strong {
       font-weight: 600;
     }
+    @keyframes fpFadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fp-line {
+      display: block;
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    .section-fullphoto.fp-visible .fp-line:nth-child(1) { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) .1s forwards; }
+    .section-fullphoto.fp-visible .fp-line:nth-child(2) { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) .35s forwards; }
+    .section-fullphoto.fp-visible .fp-line:nth-child(3) { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) .6s forwards; }
+    .section-fullphoto.fp-visible .fullphoto-sub.fp-line  { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) .9s forwards; }
     .fullphoto-sub {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
@@ -800,32 +813,259 @@
       display: none;
     }
 
-    /* ── SECTION 4 — EMPTY ───────────────────── */
-    .section-empty4 {
+    /* ── SECTION 4 — FULLPHOTO BLOCK4 ───────── */
+    /* ── SECTION 4 — PRESENTATION ────────────── */
+    .section-pres {
       position: relative;
       width: 100%;
       min-height: 100svh;
-      background-color: #e8f0f2;
-      overflow: hidden;
+      background: url('images/block4.jpeg') center center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .section-empty4::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-      background-size: 220px 220px;
-      opacity: 0.14;
-      pointer-events: none;
+    .pres-overlay { display: none; }
+    .pres-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 90px 60px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .section-empty4::after {
-      content: '';
+
+    /* Header */
+    .pres-header { text-align: center; }
+    .pres-title {
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+    .pres-line {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--d100);
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .pres-line strong { font-weight: 700; }
+    .pres-sub {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .92rem;
+      letter-spacing: .05em;
+      color: var(--d65);
+      line-height: 1.8;
+      max-width: 620px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    /* Form bar animation */
+    .pres-form {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    /* Animate in when visible */
+    @keyframes presFadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes presFormUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .section-pres.pres-visible .pres-line:nth-child(1) { animation: presFadeUp .7s cubic-bezier(.22,.61,.36,1) .1s forwards; }
+    .section-pres.pres-visible .pres-line:nth-child(2) { animation: presFadeUp .7s cubic-bezier(.22,.61,.36,1) .3s forwards; }
+    .section-pres.pres-visible .pres-sub                { animation: presFadeUp .7s cubic-bezier(.22,.61,.36,1) .55s forwards; }
+    .section-pres.pres-visible .pres-form               { animation: presFormUp .8s cubic-bezier(.22,.61,.36,1) .85s forwards; }
+    .section-pres.pres-visible .pres-mockup             { animation: presFadeUp .7s cubic-bezier(.22,.61,.36,1) 1.3s forwards; }
+
+    /* Bottom zone: mockup + card */
+    .pres-bottom {
+      position: relative;
+      width: 100%;
+      z-index: 1;
+    }
+
+    /* Mockup — no longer used standalone */
+
+    /* Lead card — compact single row */
+    .pres-card {
+      width: 100%;
+      background: #1c1c1e;
+      display: flex;
+      align-items: center;
+      padding: 22px 48px;
+      gap: 32px;
+    }
+    .pres-card-hint {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .78rem;
+      letter-spacing: .04em;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+      white-space: nowrap;
+      flex-shrink: 0;
+      max-width: 200px;
+      white-space: normal;
+    }
+    .pres-form {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+    .pres-phone-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.30);
+      padding-bottom: 6px;
+      flex: 1;
+    }
+    .pres-flag { font-size: 1rem; line-height: 1; }
+    .pres-phone {
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .82rem;
+      letter-spacing: .06em;
+      color: var(--white);
+      width: 100%;
+    }
+    .pres-phone::placeholder { color: rgba(255,255,255,0.30); }
+    .pres-btn {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #1c1c1e;
+      background: var(--white);
+      border: none;
+      padding: 12px 28px;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: opacity .2s;
+    }
+    .pres-btn:hover { opacity: .85; }
+
+    /* Form bar pinned to bottom */
+    .pres-form-bar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0 24px 0;
+    }
+    .pres-form-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 594px;
+    }
+    .pres-mockup {
       position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
-      background-size: 100px 100px;
-      opacity: 0.09;
+      right: 24px;
+      bottom: 50%;
+      width: 252px;
       pointer-events: none;
-      mix-blend-mode: soft-light;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .pres-form {
+      position: relative;
+      width: 100%;
+      background: rgba(20, 20, 22, 0.80);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 56px 48px 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 30px;
+    }
+    .pres-form-hint {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .78rem;
+      letter-spacing: .04em;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      text-align: left;
+    }
+    .pres-form-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .pres-phone-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.30);
+      padding-bottom: 8px;
+      flex: 1;
+    }
+    .pres-flag { font-size: 1.1rem; line-height: 1; }
+    .pres-phone {
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .88rem;
+      letter-spacing: .06em;
+      color: var(--white);
+      width: 100%;
+    }
+    .pres-phone::placeholder { color: rgba(255,255,255,0.30); }
+    .pres-btn {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #1c1c1e;
+      background: linear-gradient(135deg, #ffffff 0%, #e8e8e8 100%);
+      border: none;
+      padding: 16px 38px;
+      border-radius: 2px;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25), 0 1px 4px rgba(255,255,255,0.10) inset;
+      transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s ease;
+    }
+    .pres-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35), 0 1px 4px rgba(255,255,255,0.10) inset;
+    }
+    .pres-btn:active { transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .pres-form-bar { padding: 0 32px; }
+      .pres-mockup { width: 180px; right: 16px; }
+    }
+    @media (max-width: 600px) {
+      .pres-inner { padding: 80px 24px 0; }
+      .pres-form-bar { padding: 0 20px; }
+      .pres-mockup { width: 135px; right: 12px; bottom: 55%; }
+      .pres-form { flex-direction: column; align-items: stretch; gap: 20px; }
+      .pres-btn { text-align: center; }
     }
 
     /* ── SECTION 5 — QUIZ START ──────────────── */

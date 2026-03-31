@@ -144,33 +144,52 @@
 <section class="section-fullphoto">
   <div class="fullphoto-content">
     <h2 class="fullphoto-title">
-      Surrounded by <strong>mountains</strong>.<br>
-      Steps from the <strong>sea</strong>.<br>
-      Hidden in the <strong>city</strong>.
+      <span class="fp-line">Surrounded by <strong>mountains</strong>.</span>
+      <span class="fp-line">Steps from the <strong>sea</strong>.</span>
+      <span class="fp-line">Hidden in the <strong>city</strong>.</span>
     </h2>
-    <p class="fullphoto-sub">At SmartAge Residence, you are five minutes from the sea, with the Taurus mountains as your backdrop and the city whenever you need it.</p>
+    <p class="fullphoto-sub fp-line">At SmartAge Residence, you are five minutes from the sea, with the Taurus mountains as your backdrop and the city whenever you need it.</p>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SECTION 4 — EMPTY
+     SECTION 4 — PRESENTATION
 ═══════════════════════════════════════════ -->
-<section class="section-empty4"></section>
+<section class="section-pres">
+  <div class="pres-overlay"></div>
 
-<!-- ═══════════════════════════════════════════
-     SECTION 5 — QUIZ
-═══════════════════════════════════════════ -->
-<section class="section-block4">
-  <div class="quiz-widget">
-    <div class="quiz-photo"></div>
-    <div class="quiz-start-panel">
-      <p class="quiz-eyebrow">Find your perfect apartment</p>
-      <h2 class="quiz-title">Discover Which Apartment Fits You Best — in Under 60 Seconds</h2>
-      <p class="quiz-subtitle">Answer 3 short questions — we'll show you matching layouts and current prices.</p>
-      <a href="#" class="quiz-cta">Start the Quiz</a>
+  <div class="pres-inner">
+
+    <!-- Header -->
+    <div class="pres-header">
+      <h2 class="pres-title">
+        <span class="pres-line"><strong>Get</strong> the Full</span>
+        <span class="pres-line">Project <strong>Presentation</strong></span>
+      </h2>
+      <p class="pres-sub">Includes current prices, layout options, and a projected price growth timeline — along with photos and key details of the residence</p>
+    </div>
+
+  </div>
+
+  <!-- Bottom form -->
+  <div class="pres-form-bar">
+    <div class="pres-form-wrap">
+      <img class="pres-mockup" src="images/mockup.png" alt="SmartAge Presentation">
+      <form class="pres-form" onsubmit="handlePresForm(event)">
+        <p class="pres-form-hint">Fill out the short form below<br>and we'll send you the full<br>presentation and details</p>
+        <div class="pres-form-row">
+          <div class="pres-phone-wrap">
+            <span class="pres-flag">🇹🇷</span>
+            <input class="pres-phone" type="tel" placeholder="+90 (000) 000-00-00" required>
+          </div>
+          <button class="pres-btn" type="submit">Get Presentation</button>
+        </div>
+      </form>
     </div>
   </div>
+
 </section>
+
 
 <!-- ═══════════════════════════════════════════
      SECTION 5 — FLOOR PLANS
@@ -409,6 +428,22 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  (function(){
+    // Scroll-triggered reveal for sections
+    var sections = [
+      { el: document.querySelector('.section-fullphoto'), cls: 'fp-visible', t: 0.25 },
+      { el: document.querySelector('.section-pres'), cls: 'pres-visible', t: 0.2 }
+    ];
+    sections.forEach(function(s){
+      if (!s.el) return;
+      var io = new IntersectionObserver(function(entries){
+        if (entries[0].isIntersecting) { s.el.classList.add(s.cls); io.disconnect(); }
+      }, { threshold: s.t });
+      io.observe(s.el);
+    });
+  })();
+</script>
 
 </body>
 </html>
