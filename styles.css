@@ -769,6 +769,143 @@
       border: 0;
     }
 
+    /* ── SECTION 6 — DEVELOPER ──────────────── */
+    .section-developer {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      background: url('images/texture.jpg') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .dev-wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 60px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+    .dev-left {
+      grid-column: 1 / 6;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .dev-logo {
+      width: auto;
+      height: auto;
+      max-width: 220px;
+      mix-blend-mode: lighten;
+      margin-bottom: 28px;
+      flex-shrink: 0;
+    }
+    .dev-eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .72rem;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--w50);
+      margin-bottom: 12px;
+    }
+    .dev-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .dev-text {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .88rem;
+      letter-spacing: .04em;
+      color: var(--w65);
+      line-height: 1.8;
+      margin-bottom: 10px;
+      max-width: 400px;
+    }
+    .dev-text:last-child { margin-bottom: 0; }
+    .dev-right {
+      grid-column: 7 / 13;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .dev-projects-label {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .72rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--w50);
+    }
+    .dev-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .dev-img-wrap {
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+    .dev-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .dev-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding-bottom: 18px;
+    }
+    .dev-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .dev-stat-num {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2.2vw, 2.2rem);
+      letter-spacing: .04em;
+      color: var(--white);
+      line-height: 1;
+    }
+    .dev-stat-label {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--w50);
+      line-height: 1.5;
+    }
+    @media (max-width: 900px) {
+      .section-developer { height: auto; min-height: 100svh; align-items: flex-start; }
+      .dev-left { grid-column: 1 / 13; }
+      .dev-right { grid-column: 1 / 13; }
+      .dev-wrap { padding: 80px 32px 90px; }
+    }
+    @media (max-width: 600px) {
+      .dev-wrap { padding: 64px 24px 72px; }
+      .dev-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    }
+
     /* ── SECTION 7 — MOUNTAINS ───────────────── */
     .section-mountains {
       position: relative;
@@ -1394,7 +1531,7 @@
     .amenities-sub {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: .92rem;
+      font-size: 1.1rem;
       letter-spacing: .05em;
       color: var(--d65);
       line-height: 1.8;
