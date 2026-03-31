@@ -64,7 +64,7 @@
     <h1 class="hero-title-main">SmartAge</h1>
     <p class="hero-title-sub">Residence</p>
     <div class="hero-rule"></div>
-    <a href="#" class="hero-btn">Explore</a>
+    <a href="#section-graphite" class="hero-btn" onclick="document.querySelector('.section-graphite').scrollIntoView({behavior:'smooth'});return false;">Explore</a>
   </div>
 
   <!-- Bottom corners -->
@@ -102,7 +102,7 @@
 
       <div class="amenity-card">
         <div class="amenity-img">
-          <img src="images/card1.png" alt="Private Space">
+          <img src="images/card1.jpg" alt="Private Space">
         </div>
         <h3 class="amenity-card-title">Private Space</h3>
         <p class="amenity-card-desc">Landscaped spaces to relax and spend time outdoors</p>
@@ -141,11 +141,12 @@
      SECTION 3 — FULLSCREEN PHOTO
 ═══════════════════════════════════════════ -->
 <section class="section-fullphoto">
+  <div class="fullphoto-bg"></div>
   <div class="fullphoto-content">
     <h2 class="fullphoto-title">
-      <span class="fp-line">Surrounded by <strong>mountains</strong>.</span>
-      <span class="fp-line">Steps from the <strong>sea</strong>.</span>
-      <span class="fp-line">Hidden in the <strong>city</strong>.</span>
+      <span class="fp-line fp-nowrap">Surrounded by <strong>mountains</strong></span>
+      <span class="fp-line">Steps from the <strong>sea</strong></span>
+      <span class="fp-line">Hidden in the <strong>city</strong></span>
     </h2>
     <p class="fullphoto-sub fp-line">At SmartAge Residence, you are five minutes from the sea, with the Taurus mountains as your backdrop and the city whenever you need it.</p>
   </div>
@@ -180,8 +181,9 @@
           <p class="pres-form-hint">Fill out the short form below<br>and we'll send you the full<br>presentation and details</p>
           <div class="pres-form-row">
             <div class="pres-phone-wrap">
-              <span class="pres-flag">+90</span>
-              <input class="pres-phone" id="presPhone" type="tel" placeholder="(000) 000-00-00" required>
+              <span class="pres-flag"><img src="https://flagcdn.com/w40/tr.png" alt="TR" class="pres-flag-img"></span>
+              <span class="pres-code">+90</span>
+              <input class="pres-phone" id="presPhone" type="tel" placeholder="(000) 000-0000" required>
             </div>
             <button class="pres-btn" type="submit">Get Presentation</button>
           </div>
@@ -200,7 +202,8 @@
   <div class="res-wrap">
     <div class="res-header">
       <h2 class="res-title">
-        <span class="res-title-line">SmartAge Residence — a new approach to urban living,</span>
+        <span class="res-title-line">SmartAge Residence</span>
+        <span class="res-title-line">— a new approach to urban living,</span>
         <span class="res-title-line">shaped by space and everyday comfort</span>
       </h2>
       <p class="res-sub">Created for comfortable living, with carefully considered layouts, premium finishes,<br>and fully equipped kitchens and bathrooms.</p>
@@ -209,19 +212,62 @@
       <div class="res-card">
         <div class="res-photo"><img src="images/ap1.jpg" alt="Compact Apartments"></div>
         <p class="res-caption">Compact Apartments</p>
-        <button class="res-btn">View Prices</button>
+        <button class="res-btn" onclick="document.querySelector('.section-mountains').scrollIntoView({behavior:'smooth'})">View Prices</button>
       </div>
       <div class="res-card">
         <div class="res-photo"><img src="images/ap2.jpg" alt="Family Apartments"></div>
         <p class="res-caption">Family Apartments</p>
-        <button class="res-btn">View Prices</button>
+        <button class="res-btn" onclick="document.querySelector('.section-mountains').scrollIntoView({behavior:'smooth'})">View Prices</button>
       </div>
       <div class="res-card">
         <div class="res-photo"><img src="images/ap3.jpg" alt="Duplex Residences"></div>
         <p class="res-caption">Duplex Residences</p>
-        <button class="res-btn">View Prices</button>
+        <button class="res-btn" onclick="document.querySelector('.section-mountains').scrollIntoView({behavior:'smooth'})">View Prices</button>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 6 — DEVELOPER
+═══════════════════════════════════════════ -->
+<section class="section-developer">
+  <div class="dev-wrap">
+
+    <!-- Left -->
+    <div class="dev-left">
+      <img class="dev-logo" src="images/logo.png" alt="Kirman İnşaat">
+      <span class="dev-eyebrow">The Developer</span>
+      <h2 class="dev-title">Kirman İnşaat</h2>
+      <p class="dev-text">Kirman Insaat has been operating since the early 2000s, delivering residential and large-scale projects across Antalya.</p>
+      <p class="dev-text">With more than 20 completed projects, the company follows a consistent approach to design, construction quality, and modern technologies.</p>
+    </div>
+
+    <!-- Right -->
+    <div class="dev-right">
+      <div class="dev-stats">
+        <div class="dev-stat">
+          <span class="dev-stat-num">20+</span>
+          <span class="dev-stat-label">Years of Experience</span>
+        </div>
+        <div class="dev-stat">
+          <span class="dev-stat-num">20+</span>
+          <span class="dev-stat-label">Completed Projects</span>
+        </div>
+        <div class="dev-stat">
+          <span class="dev-stat-num">100+</span>
+          <span class="dev-stat-label">Team Members</span>
+        </div>
+      </div>
+      <p class="dev-projects-label">Selected Projects</p>
+      <div class="dev-grid">
+        <div class="dev-img-wrap"><img src="images/dev1.jpg" alt="Project 1"></div>
+        <div class="dev-img-wrap"><img src="images/dev2.jpg" alt="Project 2"></div>
+        <div class="dev-img-wrap"><img src="images/dev3.jpg" alt="Project 3"></div>
+        <div class="dev-img-wrap"><img src="images/dev4.jpg" alt="Project 4"></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
