@@ -779,6 +779,16 @@
       align-items: center;
       overflow: hidden;
     }
+    .section-developer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      background: rgba(6, 6, 8, 0.55);
+      pointer-events: none;
+    }
     .dev-wrap {
       position: relative;
       z-index: 1;
