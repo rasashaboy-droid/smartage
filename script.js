@@ -265,7 +265,7 @@ function handleMtnForm(e) {
     card.innerHTML = `
       <div style="text-align:center;">
         <p style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:.08em;text-transform:uppercase;color:#1c1c1e;margin-bottom:20px;">THANK YOU!</p>
-        <p style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(28,28,30,0.65);line-height:1.9;max-width:420px;margin:0 auto;">We'll send you the full presentation and contact you shortly to go over the details</p>
+        <p style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(28,28,30,0.65);line-height:1.9;max-width:420px;margin:0 auto;">We'll contact you shortly to answer your questions and guide you through the project, layouts, and pricing.</p>
       </div>
     `;
     card.style.opacity = '0';
