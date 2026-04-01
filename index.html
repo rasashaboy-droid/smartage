@@ -182,8 +182,7 @@
           <div class="pres-form-row">
             <div class="pres-phone-wrap">
               <span class="pres-flag"><img src="https://flagcdn.com/w40/tr.png" alt="TR" class="pres-flag-img"></span>
-              <span class="pres-code">+90</span>
-              <input class="pres-phone" id="presPhone" type="tel" placeholder="(000) 000-0000" required>
+              <input class="pres-phone" id="presPhone" type="tel" value="+90 " required><span class="phone-hint" id="hintPres">(000) 000-0000</span>
             </div>
             <button class="pres-btn" type="submit">Get Presentation</button>
           </div>
@@ -202,9 +201,8 @@
   <div class="res-wrap">
     <div class="res-header">
       <h2 class="res-title">
-        <span class="res-title-line">SmartAge Residence</span>
-        <span class="res-title-line">— a new approach to urban living,</span>
-        <span class="res-title-line">shaped by space and everyday comfort</span>
+        <span class="res-title-line">A NEW APPROACH TO URBAN LIVING,</span>
+        <span class="res-title-line">SHAPED BY SPACE AND EVERYDAY COMFORT</span>
       </h2>
       <p class="res-sub">Created for comfortable living, with carefully considered layouts, premium finishes,<br>and fully equipped kitchens and bathrooms.</p>
     </div>
@@ -261,10 +259,30 @@
       </div>
       <p class="dev-projects-label">Selected Projects</p>
       <div class="dev-grid">
-        <div class="dev-img-wrap"><img src="images/dev1.jpg" alt="Project 1"></div>
-        <div class="dev-img-wrap"><img src="images/dev2.jpg" alt="Project 2"></div>
-        <div class="dev-img-wrap"><img src="images/dev3.jpg" alt="Project 3"></div>
-        <div class="dev-img-wrap"><img src="images/dev4.jpg" alt="Project 4"></div>
+        <a href="https://www.urartum.com.tr/alva-donna-hotels.html" class="dev-img-link" target="_blank">
+          <div class="dev-img-wrap">
+            <img src="images/dev1.jpg" alt="Project 1">
+            <div class="dev-card-overlay"><span class="dev-card-label">Alva Donna Hotels</span></div>
+          </div>
+        </a>
+        <a href="https://www.urartum.com.tr/mia-bianco-hotel-akyarlar.html" class="dev-img-link" target="_blank">
+          <div class="dev-img-wrap">
+            <img src="images/dev2.jpg" alt="Project 2">
+            <div class="dev-card-overlay"><span class="dev-card-label">Mia Bianco Hotel</span></div>
+          </div>
+        </a>
+        <a href="https://www.urartum.com.tr/rixos-premium-tekirova.html" class="dev-img-link" target="_blank">
+          <div class="dev-img-wrap">
+            <img src="images/dev3.jpg" alt="Project 3">
+            <div class="dev-card-overlay"><span class="dev-card-label">Rixos Premium</span></div>
+          </div>
+        </a>
+        <a href="https://www.urartum.com.tr/projelerimiz" class="dev-img-link" target="_blank">
+          <div class="dev-img-wrap">
+            <img src="images/dev4.jpg" alt="Project 4">
+            <div class="dev-card-overlay"><span class="dev-card-label">And more...</span></div>
+          </div>
+        </a>
       </div>
     </div>
 
@@ -274,7 +292,19 @@
 <!-- ═══════════════════════════════════════════
      SECTION 7 — MOUNTAINS
 ═══════════════════════════════════════════ -->
-<section class="section-mountains"></section>
+<section class="section-mountains">
+  <div class="mtn-card">
+    <h2 class="mtn-title">Call us or visit our office —<br>we're always happy to help!</h2>
+    <p class="mtn-sub">Submit your request using the button below, and we'll call you back to tell you more about SmartAge Residences</p>
+    <form class="mtn-form" onsubmit="handleMtnForm(event)">
+      <div class="pres-phone-wrap">
+        <span class="pres-flag"><img src="https://flagcdn.com/w40/tr.png" alt="TR" class="pres-flag-img"></span>
+        <input class="pres-phone" id="mtnPhone" type="tel" placeholder="(000) 000-0000" value="+90 " required>
+      </div>
+      <button class="mtn-btn" type="submit">REQUEST A CALL</button>
+    </form>
+  </div>
+</section>
 
 <!-- ═══════════════════════════════════════════
      MODAL — REQUEST PRIVATE VIEWING
@@ -305,10 +335,10 @@
 <script src="script.js"></script>
 <script>
   (function(){
-    // Scroll-triggered reveal for sections
     var sections = [
       { el: document.querySelector('.section-fullphoto'), cls: 'fp-visible', t: 0.25 },
-      { el: document.querySelector('.section-pres'), cls: 'pres-visible', t: 0.2 }
+      { el: document.querySelector('.section-pres'), cls: 'pres-visible', t: 0.2 },
+      { el: document.querySelector('.mtn-card'), cls: 'mtn-visible', t: 0.3 }
     ];
     sections.forEach(function(s){
       if (!s.el) return;
