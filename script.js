@@ -185,7 +185,7 @@ function handlePresForm(e) {
       <div style="width:100%;background:rgba(20,20,22,0.80);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:73px 62px 57px;box-sizing:border-box;text-align:center;">
         <div>
           <p style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:20px;">THANK YOU!</p>
-          <p style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(255,255,255,0.75);line-height:1.9;max-width:420px;margin:0 auto;">You will receive a detailed project presentation and details within 10 minutes</p>
+          <p style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(255,255,255,0.75);line-height:1.9;max-width:420px;margin:0 auto;">We'll send you the full presentation and contact you shortly to go over the details</p>
         </div>
       </div>
     `;
@@ -225,8 +225,8 @@ function handleMtnForm(e) {
     card.style.justifyContent = 'center';
     card.innerHTML = `
       <div style="text-align:center;">
-        <p style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:20px;">THANK YOU!</p>
-        <p style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(255,255,255,0.75);line-height:1.9;max-width:420px;margin:0 auto;">You will receive a detailed project presentation and details within 10 minutes</p>
+        <p style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:.08em;text-transform:uppercase;color:#1c1c1e;margin-bottom:20px;">THANK YOU!</p>
+        <p style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(28,28,30,0.65);line-height:1.9;max-width:420px;margin:0 auto;">We'll send you the full presentation and contact you shortly to go over the details</p>
       </div>
     `;
     card.style.opacity = '0';
