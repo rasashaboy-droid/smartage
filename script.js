@@ -93,11 +93,12 @@
   const openBtn  = document.getElementById('openModal');
   const closeBtn = document.getElementById('closeModal');
 
-  openBtn.addEventListener('click', e => {
+  function openModal(e) {
     e.preventDefault();
     backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
-  });
+  }
+  openBtn.addEventListener('click', openModal);
 
   function closeModal() {
     backdrop.classList.remove('open');
@@ -196,19 +197,42 @@ function handlePresForm(e) {
   }, 400);
 }
 
-/* ── PHONE MASK (block 4) ────────────────── */
-(function() {
-  var inp = document.getElementById('presPhone');
-  if (!inp) return;
-  inp.addEventListener('input', function() {
-    this.setCustomValidity('');
-    var digits = this.value.replace(/\D/g, '');
-    var out = '';
-    if (digits.length > 0) out += '(' + digits.substring(0, 3);
-    if (digits.length >= 4) out += ') ' + digits.substring(3, 6);
-    if (digits.length >= 7) out += '-' + digits.substring(6, 8);
-    if (digits.length >= 9) out += '-' + digits.substring(8, 10);
-    this.value = out;
-  });
-})();
+/* ── PHONE INPUT (block 4 & 7) — clear validity on input ── */
+['presPhone','mtnPhone'].forEach(function(id) {
+  var inp = document.getElementById(id);
+  if (inp) inp.addEventListener('input', function() { this.setCustomValidity(''); });
+});
 
+
+function handleMtnForm(e) {
+  e.preventDefault();
+  const phone = document.getElementById('mtnPhone');
+  const digits = phone.value.replace(/\D/g, '');
+  if (digits.length < 7) {
+    phone.setCustomValidity('Please, fill out the form');
+    phone.reportValidity();
+    return;
+  }
+  phone.setCustomValidity('');
+  const card = e.target.closest('.mtn-card');
+  card.style.transition = 'opacity .4s ease';
+  card.style.opacity = '0';
+  setTimeout(function() {
+    var currentHeight = card.offsetHeight;
+    card.style.minHeight = currentHeight + 'px';
+    card.style.display = 'flex';
+    card.style.alignItems = 'center';
+    card.style.justifyContent = 'center';
+    card.innerHTML = `
+      <div style="text-align:center;">
+        <p style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:20px;">THANK YOU!</p>
+        <p style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(255,255,255,0.75);line-height:1.9;max-width:420px;margin:0 auto;">You will receive a detailed project presentation and details within 10 minutes</p>
+      </div>
+    `;
+    card.style.opacity = '0';
+    requestAnimationFrame(function() {
+      card.style.transition = 'opacity .5s ease';
+      card.style.opacity = '1';
+    });
+  }, 400);
+}

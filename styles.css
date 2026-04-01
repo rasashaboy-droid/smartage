@@ -773,7 +773,7 @@
     .section-developer {
       position: relative;
       width: 100%;
-      height: 100svh;
+      min-height: 115svh;
       background: url('images/texture.jpg') center center / cover no-repeat;
       display: flex;
       align-items: center;
@@ -795,7 +795,7 @@
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 60px;
+      padding: 110px 60px 120px;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 28px;
@@ -810,9 +810,10 @@
     .dev-logo {
       width: auto;
       height: auto;
-      max-width: 220px;
+      max-width: 368px;
       mix-blend-mode: lighten;
       margin-bottom: 28px;
+      margin-top: -70px;
       flex-shrink: 0;
     }
     .dev-eyebrow {
@@ -823,6 +824,7 @@
       text-transform: uppercase;
       color: var(--w50);
       margin-bottom: 12px;
+      margin-top: -60px;
     }
     .dev-title {
       font-family: 'Cinzel', serif;
@@ -866,15 +868,49 @@
       gap: 12px;
     }
     .dev-img-wrap {
+      aspect-ratio: 4 / 3;
+      position: relative;
+    }
+    .dev-card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 25%;
+      background: rgba(0,0,0,0.52);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .dev-card-label {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.92);
+      text-transform: uppercase;
+    }
+    .dev-img-link {
+      display: block;
       border-radius: 8px;
       overflow: hidden;
-      aspect-ratio: 4 / 3;
     }
     .dev-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.5s cubic-bezier(.25,.46,.45,.94);
+    }
+    .dev-img-link:hover .dev-img-wrap img {
+      transform: scale(1.06);
+    }
+    .dev-img-link:hover .dev-card-overlay {
+      background: rgba(0,0,0,0.65);
     }
     .dev-stats {
       display: grid;
@@ -925,7 +961,77 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding-bottom: 30vh;
     }
+    .mtn-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(20, 20, 22, 0.80);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 52px 60px;
+      max-width: 660px;
+      width: 90%;
+      text-align: center;
+    }
+    .mtn-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.1rem, 2vw, 1.55rem);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .mtn-card.mtn-visible .mtn-title {
+      animation: mtnFormUp .7s cubic-bezier(.22,.61,.36,1) .1s forwards;
+    }
+    .mtn-sub {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .92rem;
+      letter-spacing: .04em;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.8;
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .mtn-card.mtn-visible .mtn-sub {
+      animation: mtnFormUp .7s cubic-bezier(.22,.61,.36,1) .25s forwards;
+    }
+    .mtn-form {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    .mtn-card.mtn-visible .mtn-form {
+      animation: mtnFormUp .7s cubic-bezier(.22,.61,.36,1) .4s forwards;
+    }
+    @keyframes mtnFormUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .mtn-btn {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--white);
+      border: none;
+      padding: 14px 28px;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background .25s;
+    }
+    .mtn-btn:hover { background: rgba(255,255,255,0.85); }
 
     /* ── SECTION 2 — GRAPHITE ────────────────── */
     .section-graphite {
@@ -1541,9 +1647,9 @@
     .amenities-sub {
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
-      font-size: 1.1rem;
+      font-size: 1.012rem;
       letter-spacing: .05em;
-      color: var(--d65);
+      color: var(--d100);
       line-height: 1.8;
     }
 
