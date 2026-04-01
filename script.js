@@ -198,11 +198,50 @@ function handlePresForm(e) {
 }
 
 /* ── PHONE INPUT (block 4 & 7) — clear validity on input ── */
-['presPhone','mtnPhone'].forEach(function(id) {
+['presPhone','mtnPhone','pricingPhone'].forEach(function(id) {
   var inp = document.getElementById(id);
   if (inp) inp.addEventListener('input', function() { this.setCustomValidity(''); });
 });
 
+
+/* ── PRICING MODAL ─────────────────────── */
+var pricingBackdrop = document.getElementById('pricingBackdrop');
+
+function openPricingModal() {
+  pricingBackdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePricingModal() {
+  pricingBackdrop.classList.remove('open');
+  document.body.style.overflow = '';
+}
+pricingBackdrop.addEventListener('click', function(e) {
+  if (e.target === pricingBackdrop) closePricingModal();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && pricingBackdrop.classList.contains('open')) closePricingModal();
+});
+
+function handlePricingForm(e) {
+  e.preventDefault();
+  var phone = document.getElementById('pricingPhone');
+  var digits = phone.value.replace(/\D/g, '');
+  if (digits.length < 7) {
+    phone.setCustomValidity('Please, fill out the form');
+    phone.reportValidity();
+    return;
+  }
+  phone.setCustomValidity('');
+  console.log('Pricing phone submitted:', digits);
+  var form = document.getElementById('pricingForm');
+  form.innerHTML = '<p style="font-family:\'Cinzel\',serif;font-size:clamp(1.2rem,2vw,1.6rem);letter-spacing:.08em;text-transform:uppercase;color:#1c1c1e;margin-bottom:16px;">Thank you!</p><p style="font-family:\'Raleway\',sans-serif;font-weight:300;font-size:.92rem;letter-spacing:.04em;color:rgba(28,28,30,0.65);line-height:1.8;">We\'ll contact you shortly and send you<br>the full pricing and details.</p>';
+  form.style.display = 'block';
+  form.style.textAlign = 'center';
+}
+
+window.openPricingModal = openPricingModal;
+window.closePricingModal = closePricingModal;
+window.handlePricingForm = handlePricingForm;
 
 function handleMtnForm(e) {
   e.preventDefault();

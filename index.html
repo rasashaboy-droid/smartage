@@ -150,7 +150,7 @@
   <div class="fullphoto-bg"></div>
   <div class="fullphoto-content">
     <h2 class="fullphoto-title">
-      <span class="fp-line fp-nowrap">Surrounded by <strong>mountains</strong></span>
+      <span class="fp-line fp-nowrap fp-desktop">Surrounded by <strong>mountains</strong></span><span class="fp-line fp-nowrap fp-mobile">Framed by <strong>mountains</strong></span>
       <span class="fp-line">Steps from the <strong>sea</strong></span>
       <span class="fp-line">Hidden in the <strong>city</strong></span>
     </h2>
@@ -211,23 +211,23 @@
         <span class="res-title-line">A NEW APPROACH TO URBAN LIVING,</span>
         <span class="res-title-line">SHAPED BY SPACE AND EVERYDAY COMFORT</span>
       </h2>
-      <p class="res-sub">Created for comfortable living, with carefully considered layouts, premium finishes,<br>and fully equipped kitchens and bathrooms.</p>
+      <p class="res-sub">Created for comfortable living, with carefully considered layouts, premium finishes,<br class="desktop-only"> and fully equipped kitchens and bathrooms.</p>
     </div>
     <div class="res-grid">
       <div class="res-card">
         <div class="res-photo"><img src="images/ap1.jpg" alt="Compact Apartments"></div>
         <p class="res-caption">Compact Apartments</p>
-        <button class="res-btn" onclick="document.querySelector('.section-mountains').scrollIntoView({behavior:'smooth'})">View Prices</button>
+        <button class="res-btn" onclick="openPricingModal()">View Prices</button>
       </div>
       <div class="res-card">
         <div class="res-photo"><img src="images/ap2.jpg" alt="Family Apartments"></div>
         <p class="res-caption">Family Apartments</p>
-        <button class="res-btn" onclick="document.querySelector('.section-mountains').scrollIntoView({behavior:'smooth'})">View Prices</button>
+        <button class="res-btn" onclick="openPricingModal()">View Prices</button>
       </div>
       <div class="res-card">
         <div class="res-photo"><img src="images/ap3.jpg" alt="Duplex Residences"></div>
         <p class="res-caption">Duplex Residences</p>
-        <button class="res-btn" onclick="document.querySelector('.section-mountains').scrollIntoView({behavior:'smooth'})">View Prices</button>
+        <button class="res-btn" onclick="openPricingModal()">View Prices</button>
       </div>
     </div>
   </div>
@@ -260,7 +260,7 @@
           <span class="dev-stat-label">Completed Projects</span>
         </div>
       </div>
-      <p class="dev-projects-label">Selected Projects</p>
+      <p class="dev-projects-label">Projects</p>
       <div class="dev-grid">
         <a href="https://www.urartum.com.tr/alva-donna-hotels.html" class="dev-img-link" target="_blank">
           <div class="dev-img-wrap">
@@ -308,6 +308,24 @@
     </form>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════
+     MODAL — PRICING
+═══════════════════════════════════════════ -->
+<div class="modal-backdrop" id="pricingBackdrop">
+  <div class="mtn-card mtn-visible" style="animation:none;opacity:1;transform:none;">
+    <button class="modal-close" onclick="closePricingModal()" style="color:rgba(28,28,30,0.4);">&#x2715;</button>
+    <h2 class="mtn-title" style="animation:none;opacity:1;transform:none;">Get Full Pricing and Layout Options</h2>
+    <p class="mtn-sub" style="animation:none;opacity:1;transform:none;">Fill out the short form and we'll contact you shortly with full details</p>
+    <form id="pricingForm" class="mtn-form" onsubmit="handlePricingForm(event)" style="opacity:1;transform:none;">
+      <div class="pres-phone-wrap">
+        <span class="pres-flag"><img src="https://flagcdn.com/w40/tr.png" alt="TR" class="pres-flag-img"></span>
+        <input class="pres-phone" id="pricingPhone" type="tel" placeholder="+90 (000) 000-0000" required>
+      </div>
+      <button class="mtn-btn" type="submit">View Prices</button>
+    </form>
+  </div>
+</div>
 
 <!-- ═══════════════════════════════════════════
      MODAL — REQUEST PRIVATE VIEWING

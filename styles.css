@@ -456,6 +456,17 @@
       color: var(--w25);
       margin-top: 20px;
     }
+    /* Pricing modal — close button positioning */
+    #pricingBackdrop .mtn-card { position: relative; }
+    #pricingBackdrop .modal-close {
+      position: absolute;
+      top: 18px; right: 22px;
+      background: none; border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: color .2s;
+    }
+    #pricingBackdrop .modal-close:hover { color: #1c1c1e; }
 
 
 
@@ -501,9 +512,15 @@
       transform: translateY(28px);
     }
     .fp-nowrap { white-space: nowrap; }
+    .fp-mobile { display: none; }
+    @media (max-width: 768px) {
+      .fp-desktop { display: none; }
+      .fp-mobile { display: block; }
+    }
     .section-fullphoto.fp-visible .fp-line:nth-child(1) { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) .1s forwards; }
     .section-fullphoto.fp-visible .fp-line:nth-child(2) { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) .35s forwards; }
-    .section-fullphoto.fp-visible .fp-line:nth-child(3) { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) .6s forwards; }
+    .section-fullphoto.fp-visible .fp-line:nth-child(3) { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) .35s forwards; }
+    .section-fullphoto.fp-visible .fp-line:nth-child(4) { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) .6s forwards; }
     .section-fullphoto.fp-visible .fullphoto-sub.fp-line  { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) .9s forwards; }
     .fullphoto-sub {
       font-family: 'Raleway', sans-serif;
@@ -532,7 +549,7 @@
     .section-fullphoto.fp-visible .fullphoto-btn.fp-line { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) 1.15s forwards; }
     @media (max-width: 768px) {
       .fullphoto-content { grid-column: 4 / 13; padding: 0 20px 0 0; }
-      .fullphoto-title { font-size: clamp(1.1rem, 4.2vw, 1.5rem); }
+      .fullphoto-title { font-size: 1.52rem; }
     }
     @media (max-width: 480px) {
       .fullphoto-content { grid-column: 2 / 13; }
@@ -882,6 +899,7 @@
       mix-blend-mode: lighten;
       margin-bottom: 28px;
       margin-top: -70px;
+      margin-left: -20px;
       flex-shrink: 0;
     }
     .dev-eyebrow {
@@ -929,6 +947,7 @@
       letter-spacing: .28em;
       text-transform: uppercase;
       color: var(--w50);
+      text-align: center;
     }
     .dev-grid {
       display: grid;
@@ -981,9 +1000,9 @@
       background: rgba(0,0,0,0.65);
     }
     .dev-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      display: flex;
+      gap: 48px;
+      justify-content: center;
       border-bottom: 1px solid rgba(255,255,255,0.12);
       padding-bottom: 18px;
     }
@@ -1017,7 +1036,8 @@
     }
     @media (max-width: 600px) {
       .dev-wrap { padding: 64px 24px 72px; }
-      .dev-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .dev-stats { gap: 32px; }
+      .dev-projects-label { text-align: left; }
     }
 
     /* ── SECTION 7 — MOUNTAINS ───────────────── */
@@ -1824,8 +1844,28 @@
 
     /* ── MOBILE ───────────────────────────────── */
     @media (max-width: 768px) {
+      /* ── Uniform section sizing on mobile ── */
+      .hero {
+        height: 120svh;
+      }
+      .hero-video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+      }
+      .section-graphite,
+      .section-fullphoto,
+      .section-pres,
+      .section-residences,
+      .section-developer,
+      .section-mountains {
+        height: auto;
+        min-height: 120svh;
+      }
+
       .at-bold { font-size: 1.6rem; }
-      .section-mountains { background-position: center 38%; }
+      .section-mountains { background-size: cover; background-position: center 38%; }
       .section-video video { object-position: right center; }
       .location-wrap { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
       .location-map { min-height: 280px; margin-top: 0; }
@@ -1836,12 +1876,81 @@
       .plan-panel.active { grid-template-columns: 1fr; gap: 40px; }
       .plans-tabs { flex-wrap: wrap; gap: 8px; }
       .plans-tab { margin-left: 0; flex: 1; min-width: 120px; text-align: center; }
-      nav { padding: 26px 24px; }
+
+      /* Nav mobile */
+      nav { padding: 26px 24px; grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
       .nav-phone-block { display: none; }
+      .nav-right { justify-self: end; }
       .corner-left, .corner-right { display: none; }
       .hero-rule { height: 32px; margin: 24px auto; }
       .modal { padding: 44px 28px; }
+
+      /* Block 3 — fullphoto background position */
+      .section-fullphoto {
+        background-position: 75% center;
+        background-attachment: scroll;
+      }
+
+      /* Block 4 — Presentation mobile layout */
+      .section-pres {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .pres-photo-img { display: none; }
+      .section-pres::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('images/block4m.jpg') center center / cover no-repeat;
+        z-index: 0;
+      }
+      .pres-inner {
+        position: relative;
+        z-index: 1;
+        padding: 60px 24px 0;
+      }
+      .pres-bottom-zone {
+        position: relative;
+        z-index: 1;
+        margin-top: auto;
+        padding-bottom: 0;
+      }
+      .pres-form-bar {
+        position: relative;
+        padding: 0 20px;
+      }
+      .pres-form-wrap {
+        max-width: 100%;
+      }
+      .pres-mockup {
+        width: 138px;
+        right: -8px;
+        bottom: auto;
+        top: -20px;
+      }
+      .pres-form {
+        padding: 32px 24px 28px;
+      }
+      .pres-form-hint {
+        font-size: .85rem;
+      }
+      .pres-form-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .pres-phone-wrap {
+        width: 100%;
+      }
+      .pres-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Block 5 — title wrap on mobile */
+      .res-title-line { white-space: normal; }
+      .desktop-only { display: none; }
 
       .section-graphite { overflow: visible; min-height: unset; }
       .section-graphite::before, .section-graphite::after { height: 100%; }
