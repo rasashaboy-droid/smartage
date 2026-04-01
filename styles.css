@@ -462,6 +462,23 @@
       line-height: 1.9;
       color: rgba(255,255,255,0.82);
     }
+    .fullphoto-btn {
+      display: inline-block;
+      margin-top: 32px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #1c1c1e;
+      background: #ffffff;
+      padding: 14px 28px;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .fullphoto-btn:hover { background: #f0f0f0; transform: translateY(-2px); }
+    .section-fullphoto.fp-visible .fullphoto-btn.fp-line { animation: fpFadeUp .75s cubic-bezier(.22,.61,.36,1) 1.15s forwards; }
     @media (max-width: 768px) {
       .fullphoto-content { grid-column: 4 / 13; padding: 0 20px 0 0; }
       .fullphoto-title { font-size: clamp(1.1rem, 4.2vw, 1.5rem); }
@@ -1225,7 +1242,7 @@
       letter-spacing: .16em;
       text-transform: uppercase;
       color: #1c1c1e;
-      background: linear-gradient(105deg, #fff 0%, #fff 35%, #ccffff 50%, #fff 65%, #fff 100%);
+      background: linear-gradient(105deg, #fff 0%, #fff 35%, #00e5ff 50%, #fff 65%, #fff 100%);
       background-size: 200% auto;
       border: none;
       padding: 14px 30px;
@@ -1340,7 +1357,7 @@
       letter-spacing: .15em;
       text-transform: uppercase;
       color: #1c1c1e;
-      background: linear-gradient(105deg, #fff 0%, #fff 35%, #ccffff 50%, #fff 65%, #fff 100%);
+      background: linear-gradient(105deg, #fff 0%, #fff 35%, #00e5ff 50%, #fff 65%, #fff 100%);
       background-size: 200% auto;
       border: none;
       padding: 21px 49px;
