@@ -1,13 +1,6 @@
 # CLAUDE.md
 This file provides essential guidance for development in this repository. 
 
-## Token Optimization Triggers
-- **"бемс бемс" (Low-Token Mode)**: Если в конце вашего запроса стоят эти слова, я должен немедленно переключиться в режим "прямой правки":
-  - **Никаких размышлений**: Полностью пропусти блоки `<thought>` или любое внутреннее планирование.
-  - **Никаких разговоров**: Не пиши "Готово", "Я обновил файл" или "Вот изменения".
-  - **Только результат**: Выводи только измененный код или выполняй команду через терминал без лишних комментариев.
-  - **Разовое действие**: Этот режим действует только на конкретное сообщение с триггером.
-
 ## Project Goal
 Create high-converting, professional landing pages for various businesses. The focus is on visual excellence, speed, and functional forms (pop-ups, lead generation).
 
