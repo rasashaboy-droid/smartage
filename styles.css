@@ -135,6 +135,20 @@
       border-color: var(--w80);
       background: var(--w10);
     }
+    .nav-phone-mobile {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      color: var(--white);
+      text-decoration: none;
+      border: 1px solid var(--w25);
+      padding: 9px 18px;
+      white-space: nowrap;
+    }
 
     .nav-right {
       display: flex;
@@ -1895,9 +1909,14 @@
       nav { padding: 26px 24px; grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
       .nav-phone-block { display: none; }
+      .nav-cta { display: none; }
+      .nav-phone-mobile { display: flex; }
       .nav-right { justify-self: end; }
       .corner-left, .corner-right { display: none; }
       .hero-rule { height: 32px; margin: 24px auto; }
+
+      /* Fix 2 — hero sizing */
+      .hero { height: 100svh; }
       .modal { padding: 44px 28px; }
 
       /* Block 3 — fullphoto background position */
@@ -1905,6 +1924,10 @@
         background-position: 75% center;
         background-attachment: scroll;
       }
+      .fullphoto-content { grid-column: 1 / 13; padding: 0 24px; }
+      .fullphoto-title { font-size: clamp(1.15rem, 5.5vw, 1.52rem); }
+      .fp-nowrap { white-space: normal; }
+      .fullphoto-sub { font-size: clamp(0.78rem, 2.8vw, 0.92rem); }
 
       /* Block 4 — Presentation mobile layout */
       .section-pres {
@@ -1939,8 +1962,8 @@
         max-width: 100%;
       }
       .pres-mockup {
-        width: 138px;
-        right: 12px;
+        width: 117px;
+        right: 4px;
         bottom: auto;
         top: 20px;
       }
@@ -1965,6 +1988,9 @@
       /* Block 5 — title wrap on mobile */
       .res-title-line { white-space: normal; }
       .desktop-only { display: none; }
+
+      /* Block 6 — developer card labels fit one line */
+      .dev-card-label { font-size: clamp(0.55rem, 2.2vw, 0.78rem); }
 
       .section-graphite { overflow: visible; min-height: unset; }
       .section-graphite::before, .section-graphite::after { height: 100%; }
