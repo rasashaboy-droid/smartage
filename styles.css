@@ -67,9 +67,9 @@
       position: relative;
       z-index: 10;
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      grid-template-columns: 1fr auto 1fr auto;
       align-items: center;
-      padding: 38px 60px;
+      padding: 38px 60px 38px 60px;
       animation: fadeDown .9s ease both;
     }
 
@@ -148,6 +148,76 @@
       border: 1px solid var(--w25);
       padding: 9px 18px;
       white-space: nowrap;
+    }
+
+    /* ── LANG DROPDOWN ───────────────────────── */
+    .lang-dropdown {
+      position: relative;
+      justify-self: end;
+    }
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: transparent;
+      border: none;
+      padding: 7px 12px;
+      cursor: pointer;
+    }
+    .lang-btn-flag {
+      width: 18px;
+      height: 13px;
+      border-radius: 2px;
+      display: block;
+      object-fit: cover;
+    }
+    .lang-btn-label {
+      display: none;
+    }
+    .lang-arrow {
+      font-size: .5rem;
+      color: var(--w50);
+      transition: transform .2s;
+      line-height: 1;
+    }
+    .lang-dropdown.open .lang-arrow { transform: rotate(180deg); }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      background: rgba(10,10,14,0.95);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      min-width: 100%;
+      display: none;
+      flex-direction: column;
+      z-index: 100;
+    }
+    .lang-dropdown.open .lang-menu { display: flex; }
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .lang-option:hover { background: rgba(255,255,255,0.07); }
+    .lang-option-flag {
+      width: 18px;
+      height: 13px;
+      border-radius: 2px;
+      display: block;
+      object-fit: cover;
+    }
+    .lang-option-label {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--w80);
     }
 
     .nav-right {
@@ -1906,12 +1976,13 @@
       .plans-tab { margin-left: 0; flex: 1; min-width: 120px; text-align: center; }
 
       /* Nav mobile */
-      nav { padding: 26px 24px; grid-template-columns: 1fr 1fr; }
+      nav { padding: 26px 24px; grid-template-columns: 1fr 1fr auto; }
       .nav-links { display: none; }
       .nav-phone-block { display: none; }
       .nav-cta { display: none; }
       .nav-phone-mobile { display: flex; }
       .nav-right { justify-self: end; }
+      .lang-dropdown { justify-self: end; }
       .corner-left, .corner-right { display: none; }
       .hero-rule { height: 32px; margin: 24px auto; }
 

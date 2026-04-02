@@ -5,12 +5,18 @@
      are fetched in the background while the current
      one plays, then crossfaded at the end.
   ───────────────────────────────────────────── */
+  // Auto-detect base path for subdirectory pages (ru/, tr/)
+  const _base = (function() {
+    var p = window.location.pathname;
+    if (p.match(/\/(ru|tr)\//)) return '../';
+    return '';
+  })();
   const PLAYLIST = [
-    'videos/video1.mp4',
-    'videos/video2.mp4',
-    'videos/video3.mp4',
-    'videos/video4.mp4',
-    'videos/video5.mp4',
+    _base + 'videos/video1.mp4',
+    _base + 'videos/video2.mp4',
+    _base + 'videos/video3.mp4',
+    _base + 'videos/video4.mp4',
+    _base + 'videos/video5.mp4',
   ];
 
   const FADE_DURATION = 700;    // ms — must match CSS transition
@@ -89,6 +95,19 @@
 
 
   /* ── MODAL ───────────────────────────────── */
+  /* ── LANG DROPDOWN ──────────────────────── */
+  window.toggleLangMenu = function(btn) {
+    var dropdown = btn.closest('.lang-dropdown');
+    dropdown.classList.toggle('open');
+  };
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.lang-dropdown')) {
+      document.querySelectorAll('.lang-dropdown.open').forEach(function(d) {
+        d.classList.remove('open');
+      });
+    }
+  });
+
   const backdrop = document.getElementById('modalBackdrop');
   const openBtn  = document.getElementById('openModal');
   const closeBtn = document.getElementById('closeModal');
