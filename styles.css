@@ -1342,6 +1342,7 @@
     }
     .mtn-form .pres-phone { color: #1c1c1e; }
     .mtn-form .pres-phone::placeholder { color: rgba(0,0,0,0.35); }
+    .mtn-form .pres-flag { color: #1c1c1e; }
 
     /* ── SECTION 2 — GRAPHITE ────────────────── */
     .section-graphite {
@@ -1502,8 +1503,8 @@
       padding: 12px 16px;
       flex: 1;
     }
-    .pres-flag { display: flex; align-items: center; flex-shrink: 0; }
-    .pres-flag-img { width: 22px; height: 16px; border-radius: 3px; display: block; }
+    .pres-flag { display: flex; align-items: center; flex-shrink: 0; color: var(--w50); }
+    .pres-flag-icon { width: 20px; height: 20px; display: block; }
     .pres-code {
       font-family: 'Raleway', sans-serif;
       font-weight: 500;
