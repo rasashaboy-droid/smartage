@@ -1601,7 +1601,7 @@
       text-align: center;
     }
     .res-btn {
-      width: 50%;
+      width: 100%;
       align-self: center;
       font-family: 'Raleway', sans-serif;
       font-weight: 700;
@@ -1917,10 +1917,12 @@
 
       /* Fix 2 — hero sizing */
       .hero { height: 100svh; }
+      .hero-eyebrow { max-width: 260px; margin-left: auto; margin-right: auto; }
       .modal { padding: 44px 28px; }
 
-      /* Block 3 — fullphoto background position */
+      /* Block 3 — fullphoto */
       .section-fullphoto {
+        min-height: 100svh;
         background-position: 75% center;
         background-attachment: scroll;
       }
