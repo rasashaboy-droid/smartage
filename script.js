@@ -95,19 +95,6 @@
 
 
   /* ── MODAL ───────────────────────────────── */
-  /* ── LANG DROPDOWN ──────────────────────── */
-  window.toggleLangMenu = function(btn) {
-    var dropdown = btn.closest('.lang-dropdown');
-    dropdown.classList.toggle('open');
-  };
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.lang-dropdown')) {
-      document.querySelectorAll('.lang-dropdown.open').forEach(function(d) {
-        d.classList.remove('open');
-      });
-    }
-  });
-
   const backdrop = document.getElementById('modalBackdrop');
   const openBtn  = document.getElementById('openModal');
   const closeBtn = document.getElementById('closeModal');
@@ -158,20 +145,30 @@
     btn.classList.add('active');
   };
 
+  function sendToWeb3Forms(phone, formName) {
+    return fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '55b0a94d-3991-46fb-a246-cf33f900a5ce',
+        phone: phone,
+        form_name: formName,
+        from_name: 'SmartAge Website'
+      })
+    });
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     const phone = document.getElementById('phoneInput').value.trim();
     if (!phone) return;
-    // TODO: replace with real API / CRM call
-    console.log('Phone submitted:', phone);
-    // Success state
+    sendToWeb3Forms(phone, 'Private Viewing');
+    var lang = currentLang || 'en';
+    var titleFont = lang === 'ru' ? "'Forum','Cinzel',serif" : "'Cinzel',serif";
+    var textFont = lang === 'ru' ? "'Forum','Raleway',sans-serif" : "'Raleway',sans-serif";
     const form = document.getElementById('viewingForm');
-    form.innerHTML = `
-      <p style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.1em;color:#fff;margin-bottom:12px;">Thank you</p>
-      <p style="font-family:'Raleway',sans-serif;font-weight:200;font-size:.7rem;letter-spacing:.1em;color:rgba(255,255,255,.5);line-height:1.8;">
-        We will call you back within 24 hours.
-      </p>
-    `;
+    form.innerHTML = '<p style="font-family:' + titleFont + ';font-size:1rem;letter-spacing:.1em;color:#fff;margin-bottom:12px;">' + T[lang].modal_thanks_title + '</p>' +
+      '<p style="font-family:' + textFont + ';font-weight:200;font-size:.7rem;letter-spacing:.1em;color:rgba(255,255,255,.5);line-height:1.8;">' + T[lang].modal_thanks_text + '</p>';
   }
 
 
@@ -186,6 +183,7 @@ function handlePresForm(e) {
     return;
   }
   phone.setCustomValidity('');
+  sendToWeb3Forms(phone.value, 'Get Presentation');
 
   const wrap = e.target.closest('.pres-form-wrap');
   const mockup = wrap.querySelector('.pres-mockup');
@@ -200,14 +198,13 @@ function handlePresForm(e) {
     wrap.style.display = 'flex';
     wrap.style.alignItems = 'center';
     wrap.style.justifyContent = 'center';
-    wrap.innerHTML = `
-      <div style="width:100%;background:rgba(20,20,22,0.80);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:73px 62px 57px;box-sizing:border-box;text-align:center;">
-        <div>
-          <p style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:20px;">THANK YOU!</p>
-          <p style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(255,255,255,0.75);line-height:1.9;max-width:420px;margin:0 auto;">We'll send you the full presentation and contact you shortly to go over the details</p>
-        </div>
-      </div>
-    `;
+    var lang = currentLang || 'en';
+    var titleFont = lang === 'ru' ? "'Forum','Cinzel',serif" : "'Cinzel',serif";
+    var textFont = lang === 'ru' ? "'Forum','Raleway',sans-serif" : "'Raleway',sans-serif";
+    wrap.innerHTML = '<div style="width:100%;background:rgba(20,20,22,0.80);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:73px 62px 57px;box-sizing:border-box;text-align:center;"><div>' +
+      '<p style="font-family:' + titleFont + ';font-weight:600;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:20px;">' + T[lang].pres_thanks_title + '</p>' +
+      '<p style="font-family:' + textFont + ';font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(255,255,255,0.75);line-height:1.9;max-width:420px;margin:0 auto;">' + T[lang].pres_thanks_text + '</p>' +
+      '</div></div>';
     wrap.style.opacity = '0';
     requestAnimationFrame(function() {
       wrap.style.transition = 'opacity .5s ease';
@@ -251,9 +248,12 @@ function handlePricingForm(e) {
     return;
   }
   phone.setCustomValidity('');
-  console.log('Pricing phone submitted:', digits);
+  sendToWeb3Forms(phone.value, 'Pricing Request');
+  var lang = currentLang || 'en';
+  var titleFont = lang === 'ru' ? "'Forum','Cinzel',serif" : "'Cinzel',serif";
+  var textFont = lang === 'ru' ? "'Forum','Raleway',sans-serif" : "'Raleway',sans-serif";
   var form = document.getElementById('pricingForm');
-  form.innerHTML = '<p style="font-family:\'Cinzel\',serif;font-size:clamp(1.2rem,2vw,1.6rem);letter-spacing:.08em;text-transform:uppercase;color:#1c1c1e;margin-bottom:16px;">Thank you!</p><p style="font-family:\'Raleway\',sans-serif;font-weight:300;font-size:.92rem;letter-spacing:.04em;color:rgba(28,28,30,0.65);line-height:1.8;">We\'ll contact you shortly and send you<br>the full pricing and details.</p>';
+  form.innerHTML = '<p style="font-family:' + titleFont + ';font-size:clamp(1.2rem,2vw,1.6rem);letter-spacing:.08em;text-transform:uppercase;color:#1c1c1e;margin-bottom:16px;">' + T[lang].pricing_thanks_title + '</p><p style="font-family:' + textFont + ';font-weight:300;font-size:.92rem;letter-spacing:.04em;color:rgba(28,28,30,0.65);line-height:1.8;">' + T[lang].pricing_thanks_text + '</p>';
   form.style.display = 'block';
   form.style.textAlign = 'center';
 }
@@ -272,6 +272,7 @@ function handleMtnForm(e) {
     return;
   }
   phone.setCustomValidity('');
+  sendToWeb3Forms(phone.value, 'Consultation Request');
   const card = e.target.closest('.mtn-card');
   card.style.transition = 'opacity .4s ease';
   card.style.opacity = '0';
@@ -281,12 +282,13 @@ function handleMtnForm(e) {
     card.style.display = 'flex';
     card.style.alignItems = 'center';
     card.style.justifyContent = 'center';
-    card.innerHTML = `
-      <div style="text-align:center;">
-        <p style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:.08em;text-transform:uppercase;color:#1c1c1e;margin-bottom:20px;">THANK YOU!</p>
-        <p style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(28,28,30,0.65);line-height:1.9;max-width:420px;margin:0 auto;">We'll contact you shortly to answer your questions and guide you through the project, layouts, and pricing.</p>
-      </div>
-    `;
+    var lang = currentLang || 'en';
+    var titleFont = lang === 'ru' ? "'Forum','Cinzel',serif" : "'Cinzel',serif";
+    var textFont = lang === 'ru' ? "'Forum','Raleway',sans-serif" : "'Raleway',sans-serif";
+    card.innerHTML = '<div style="text-align:center;">' +
+      '<p style="font-family:' + titleFont + ';font-weight:600;font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:.08em;text-transform:uppercase;color:#1c1c1e;margin-bottom:20px;">' + T[lang].mtn_thanks_title + '</p>' +
+      '<p style="font-family:' + textFont + ';font-weight:300;font-size:clamp(.85rem,1.1vw,1rem);letter-spacing:.06em;color:rgba(28,28,30,0.65);line-height:1.9;max-width:420px;margin:0 auto;">' + T[lang].mtn_thanks_text + '</p>' +
+      '</div>';
     card.style.opacity = '0';
     requestAnimationFrame(function() {
       card.style.transition = 'opacity .5s ease';

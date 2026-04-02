@@ -220,6 +220,112 @@
       color: var(--w80);
     }
 
+    /* ── LANG SWITCHER ────────────────────── */
+    .lang-switcher {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .lang-globe-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .lang-globe-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--w50);
+      transition: color .2s;
+    }
+    .lang-globe-btn:hover .lang-globe-icon { color: var(--white); }
+    .lang-globe-label {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--w50);
+      transition: color .2s;
+    }
+    .lang-globe-btn:hover .lang-globe-label { color: var(--white); }
+    .lang-options {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height .35s ease, opacity .25s ease;
+      margin-top: 6px;
+    }
+    .lang-switcher.open .lang-options {
+      max-height: 120px;
+      opacity: 1;
+    }
+    .lang-option {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .6rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--w50);
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 4px 8px;
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+    .lang-option:hover { color: var(--white); border-color: var(--w25); }
+    .lang-option.active { color: var(--white); border-color: var(--w50); }
+
+    /* ── Russian font override ────────────── */
+    html[lang="ru"] .hero-eyebrow,
+    html[lang="ru"] .hero-btn,
+    html[lang="ru"] .nav-links a,
+    html[lang="ru"] .nav-cta,
+    html[lang="ru"] .amenities-sub,
+    html[lang="ru"] .amenity-card-desc,
+    html[lang="ru"] .fullphoto-sub,
+    html[lang="ru"] .fullphoto-btn,
+    html[lang="ru"] .pres-sub,
+    html[lang="ru"] .pres-form-hint,
+    html[lang="ru"] .pres-btn,
+    html[lang="ru"] .res-sub,
+    html[lang="ru"] .res-btn,
+    html[lang="ru"] .dev-eyebrow,
+    html[lang="ru"] .dev-text,
+    html[lang="ru"] .dev-stat-label,
+    html[lang="ru"] .dev-projects-label,
+    html[lang="ru"] .dev-card-label,
+    html[lang="ru"] .mtn-sub,
+    html[lang="ru"] .mtn-btn,
+    html[lang="ru"] .modal-desc,
+    html[lang="ru"] .modal-submit,
+    html[lang="ru"] .modal-privacy,
+    html[lang="ru"] .lang-globe-label,
+    html[lang="ru"] .at-italic {
+      font-family: 'Forum', 'Raleway', sans-serif;
+    }
+    html[lang="ru"] .at-bold,
+    html[lang="ru"] .amenity-card-title,
+    html[lang="ru"] .fullphoto-title,
+    html[lang="ru"] .pres-title,
+    html[lang="ru"] .res-title,
+    html[lang="ru"] .res-caption,
+    html[lang="ru"] .mtn-title,
+    html[lang="ru"] .modal-title,
+    html[lang="ru"] .dev-title {
+      font-family: 'Forum', 'Cinzel', serif;
+    }
+
     .nav-right {
       display: flex;
       align-items: center;
@@ -1983,6 +2089,9 @@
       .nav-phone-mobile { display: flex; }
       .nav-right { justify-self: end; }
       .lang-dropdown { justify-self: end; }
+      .lang-switcher { position: absolute; top: 26px; right: 24px; z-index: 11; }
+      .nav-logo-name { font-size: .72rem; letter-spacing: .22em; }
+      .nav-logo-sub { font-size: .52rem; }
       .corner-left, .corner-right { display: none; }
       .hero-rule { height: 32px; margin: 24px auto; }
 

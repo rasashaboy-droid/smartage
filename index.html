@@ -6,7 +6,7 @@
   <title>SmartAge Residence — Antalya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Raleway:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Raleway:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Forum&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -51,9 +51,9 @@
       <span class="nav-logo-sub">Residence</span>
     </a>
     <div class="nav-links">
-      <a href="#amenities">Amenities</a>
-      <a href="#presentation">Presentation</a>
-      <a href="#contact">Contact</a>
+      <a href="#amenities" data-i18n="nav_amenities">Amenities</a>
+      <a href="#presentation" data-i18n="nav_presentation">Presentation</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
     </div>
     <div class="nav-right">
       <div class="nav-phone-block">
@@ -61,34 +61,29 @@
         <span class="nav-online"><span class="nav-online-dot"></span>Now online</span>
       </div>
       <a href="tel:+905515083212" class="nav-phone-mobile">+90 551 508 32 12</a>
-      <a href="#" class="nav-cta" id="openModal">REQUEST A CALL</a>
-    </div>
-    <div class="lang-dropdown">
-      <button class="lang-btn" onclick="toggleLangMenu(this)">
-        <img src="https://flagcdn.com/w40/gb.png" class="lang-btn-flag" alt="EN">
-        <span class="lang-btn-label">ENG</span>
-        <span class="lang-arrow">▾</span>
-      </button>
-      <div class="lang-menu">
-        <a href="/ru/" class="lang-option">
-          <img src="https://flagcdn.com/w40/ru.png" class="lang-option-flag" alt="RU">
-          <span class="lang-option-label">RU</span>
-        </a>
-        <a href="/tr/" class="lang-option">
-          <img src="https://flagcdn.com/w40/tr.png" class="lang-option-flag" alt="TR">
-          <span class="lang-option-label">TU</span>
-        </a>
+      <a href="#" class="nav-cta" id="openModal" data-i18n="nav_cta">REQUEST A CALL</a>
+      <!-- Language switcher -->
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-globe-btn" id="langToggle">
+          <svg class="lang-globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M4.5 6.5h15M4.5 17.5h15"/></svg>
+        </button>
+        <span class="lang-globe-label" id="langLabel" style="display:none">EN</span>
+        <div class="lang-options" id="langOptions">
+          <button class="lang-option" data-lang="en">EN</button>
+          <button class="lang-option" data-lang="ru">RU</button>
+          <button class="lang-option" data-lang="tr">TR</button>
+        </div>
       </div>
     </div>
   </nav>
 
   <!-- Centered hero text -->
   <div class="hero-center">
-    <p class="hero-eyebrow">Residential Community in Konyaaltı</p>
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Residential Community in Konyaaltı</p>
     <h1 class="hero-title-main">SmartAge</h1>
     <p class="hero-title-sub">Residence</p>
     <div class="hero-rule"></div>
-    <a href="#section-graphite" class="hero-btn" onclick="document.querySelector('.section-graphite').scrollIntoView({behavior:'smooth'});return false;">Explore</a>
+    <a href="#section-graphite" class="hero-btn" data-i18n="hero_btn" onclick="document.querySelector('.section-graphite').scrollIntoView({behavior:'smooth'});return false;">Explore</a>
   </div>
 
   <!-- Bottom corners -->
@@ -116,9 +111,9 @@
     <header class="amenities-head">
       <h2 class="amenities-title">
         <span class="at-italic">SmartAge Residence</span>
-        <span class="at-bold">Private Community at the Foot<br>of the Mountains in Konyaaltı</span>
+        <span class="at-bold" data-i18n-html="amenities_title">Private Community at the Foot<br>of the Mountains in Konyaaltı</span>
       </h2>
-      <p class="amenities-sub">Everything you need for comfortable everyday living — all within the residence</p>
+      <p class="amenities-sub" data-i18n="amenities_sub">Everything you need for comfortable everyday living — all within the residence</p>
     </header>
 
     <!-- Cards -->
@@ -128,32 +123,32 @@
         <div class="amenity-img">
           <img src="images/card1.jpg" alt="Private Space">
         </div>
-        <h3 class="amenity-card-title">Private Space</h3>
-        <p class="amenity-card-desc">Landscaped spaces to relax and spend time outdoors</p>
+        <h3 class="amenity-card-title" data-i18n="card1_title">Private Space</h3>
+        <p class="amenity-card-desc" data-i18n="card1_desc">Landscaped spaces to relax and spend time outdoors</p>
       </div>
 
       <div class="amenity-card">
         <div class="amenity-img">
           <img src="images/card2.jpg" alt="Pool 20m">
         </div>
-        <h3 class="amenity-card-title">Large Pool</h3>
-        <p class="amenity-card-desc">A 20-meter pool for both swimming and relaxation by the water</p>
+        <h3 class="amenity-card-title" data-i18n="card2_title">Large Pool</h3>
+        <p class="amenity-card-desc" data-i18n="card2_desc">A 20-meter pool for both swimming and relaxation by the water</p>
       </div>
 
       <div class="amenity-card">
         <div class="amenity-img">
           <img src="images/card3.png" alt="Covered Parking">
         </div>
-        <h3 class="amenity-card-title">Covered Parking</h3>
-        <p class="amenity-card-desc">Your car stays protected, cool, and always within reach</p>
+        <h3 class="amenity-card-title" data-i18n="card3_title">Covered Parking</h3>
+        <p class="amenity-card-desc" data-i18n="card3_desc">Your car stays protected, cool, and always within reach</p>
       </div>
 
       <div class="amenity-card">
         <div class="amenity-img">
           <img src="images/card4.png" alt="Fitness Area">
         </div>
-        <h3 class="amenity-card-title">Fitness Area</h3>
-        <p class="amenity-card-desc">A fully equipped gym, ready whenever it fits your day</p>
+        <h3 class="amenity-card-title" data-i18n="card4_title">Fitness Area</h3>
+        <p class="amenity-card-desc" data-i18n="card4_desc">A fully equipped gym, ready whenever it fits your day</p>
       </div>
 
     </div>
@@ -168,12 +163,12 @@
   <div class="fullphoto-bg"></div>
   <div class="fullphoto-content">
     <h2 class="fullphoto-title">
-      <span class="fp-line fp-nowrap fp-desktop">Surrounded by <strong>mountains</strong></span><span class="fp-line fp-nowrap fp-mobile">Framed by <strong>mountains</strong></span>
-      <span class="fp-line">Steps from the <strong>sea</strong></span>
-      <span class="fp-line">Hidden in the <strong>city</strong></span>
+      <span class="fp-line fp-nowrap fp-desktop" data-i18n-html="fp_line1_desktop">Surrounded by <strong>mountains</strong></span><span class="fp-line fp-nowrap fp-mobile" data-i18n-html="fp_line1_mobile">Framed by <strong>mountains</strong></span>
+      <span class="fp-line" data-i18n-html="fp_line2">Steps from the <strong>sea</strong></span>
+      <span class="fp-line" data-i18n-html="fp_line3">Hidden in the <strong>city</strong></span>
     </h2>
-    <p class="fullphoto-sub fp-line">At SmartAge Residence, you are five minutes from the sea, with the Taurus mountains as your backdrop and the city whenever you need it.</p>
-    <a href="#" class="fullphoto-btn fp-line" onclick="document.querySelector('.section-pres').scrollIntoView({behavior:'smooth'});return false;">Get Project Presentation</a>
+    <p class="fullphoto-sub fp-line" data-i18n="fp_sub">At SmartAge Residence, you are five minutes from the sea, with the Taurus mountains as your backdrop and the city whenever you need it.</p>
+    <a href="#" class="fullphoto-btn fp-line" data-i18n="fp_btn" onclick="document.querySelector('.section-pres').scrollIntoView({behavior:'smooth'});return false;">Get Project Presentation</a>
   </div>
 </section>
 
@@ -187,11 +182,9 @@
 
     <!-- Header -->
     <div class="pres-header">
-      <h2 class="pres-title">
-        <span class="pres-line"><strong>Get</strong> the Full</span>
-        <span class="pres-line">Project <strong>Presentation</strong></span>
-      </h2>
-      <p class="pres-sub">Includes current prices, layout options, and a projected price growth timeline — along with photos and key details of the residence</p>
+      <h2 class="pres-title" data-i18n-html="pres_title"><span class="pres-line"><strong>Get</strong> the Full</span>
+        <span class="pres-line">Project <strong>Presentation</strong></span></h2>
+      <p class="pres-sub" data-i18n="pres_sub">Includes current prices, layout options, and a projected price growth timeline — along with photos and key details of the residence</p>
     </div>
 
   </div>
@@ -202,14 +195,14 @@
     <div class="pres-form-bar">
       <div class="pres-form-wrap">
         <img class="pres-mockup" src="images/mockup.png" alt="SmartAge Presentation">
-        <form class="pres-form" onsubmit="handlePresForm(event)">
-          <p class="pres-form-hint">Fill out the short form below<br>and we'll send you the full<br>presentation and details</p>
+        <form class="pres-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="handlePresForm(event)">
+          <p class="pres-form-hint" data-i18n-html="pres_form_hint">Fill out the short form below<br>and we'll send you the full<br>presentation and details</p>
           <div class="pres-form-row">
             <div class="pres-phone-wrap">
               <span class="pres-flag"><img src="https://flagcdn.com/w40/tr.png" alt="TR" class="pres-flag-img"></span>
               <input class="pres-phone" id="presPhone" type="tel" placeholder="+90 (000) 000-0000" required>
             </div>
-            <button class="pres-btn" type="submit">Get Presentation</button>
+            <button class="pres-btn" type="submit" data-i18n="pres_btn">Get Presentation</button>
           </div>
         </form>
       </div>
@@ -226,26 +219,26 @@
   <div class="res-wrap">
     <div class="res-header">
       <h2 class="res-title">
-        <span class="res-title-line">A NEW APPROACH TO URBAN LIVING,</span>
-        <span class="res-title-line">SHAPED BY SPACE AND EVERYDAY COMFORT</span>
+        <span class="res-title-line" data-i18n="res_title_1">A NEW APPROACH TO URBAN LIVING,</span>
+        <span class="res-title-line" data-i18n="res_title_2">SHAPED BY SPACE AND EVERYDAY COMFORT</span>
       </h2>
-      <p class="res-sub">Created for comfortable living, with carefully considered layouts, premium finishes,<br class="desktop-only"> and fully equipped kitchens and bathrooms.</p>
+      <p class="res-sub" data-i18n-html="res_sub">Created for comfortable living, with carefully considered layouts, premium finishes,<br class="desktop-only"> and fully equipped kitchens and bathrooms.</p>
     </div>
     <div class="res-grid">
       <div class="res-card">
         <div class="res-photo"><img src="images/ap1.jpg" alt="Compact Apartments"></div>
-        <p class="res-caption">Compact Apartments</p>
-        <button class="res-btn" onclick="openPricingModal()">View Prices</button>
+        <p class="res-caption" data-i18n="res_cap1">Compact Apartments</p>
+        <button class="res-btn" onclick="openPricingModal()" data-i18n="res_btn">View Prices</button>
       </div>
       <div class="res-card">
         <div class="res-photo"><img src="images/ap2.jpg" alt="Family Apartments"></div>
-        <p class="res-caption">Family Apartments</p>
-        <button class="res-btn" onclick="openPricingModal()">View Prices</button>
+        <p class="res-caption" data-i18n="res_cap2">Family Apartments</p>
+        <button class="res-btn" onclick="openPricingModal()" data-i18n="res_btn">View Prices</button>
       </div>
       <div class="res-card">
         <div class="res-photo"><img src="images/ap3.jpg" alt="Duplex Residences"></div>
-        <p class="res-caption">Duplex Residences</p>
-        <button class="res-btn" onclick="openPricingModal()">View Prices</button>
+        <p class="res-caption" data-i18n="res_cap3">Duplex Residences</p>
+        <button class="res-btn" onclick="openPricingModal()" data-i18n="res_btn">View Prices</button>
       </div>
     </div>
   </div>
@@ -260,10 +253,10 @@
     <!-- Left -->
     <div class="dev-left">
       <img class="dev-logo" src="images/logo.png" alt="Kirman İnşaat">
-      <span class="dev-eyebrow">The Developer</span>
+      <span class="dev-eyebrow" data-i18n="dev_eyebrow">The Developer</span>
       <h2 class="dev-title">Kirman İnşaat</h2>
-      <p class="dev-text">Kirman Insaat has been operating since the early 2000s, delivering residential and large-scale projects across Antalya.</p>
-      <p class="dev-text">With more than 20 completed projects, the company follows a consistent approach to design, construction quality, and modern technologies.</p>
+      <p class="dev-text" data-i18n="dev_text1">Kirman Insaat has been operating since the early 2000s, delivering residential and large-scale projects across Antalya.</p>
+      <p class="dev-text" data-i18n="dev_text2">With more than 20 completed projects, the company follows a consistent approach to design, construction quality, and modern technologies.</p>
     </div>
 
     <!-- Right -->
@@ -271,14 +264,14 @@
       <div class="dev-stats">
         <div class="dev-stat">
           <span class="dev-stat-num">20+</span>
-          <span class="dev-stat-label">Years of Experience</span>
+          <span class="dev-stat-label" data-i18n="dev_stat1">Years of Experience</span>
         </div>
         <div class="dev-stat">
           <span class="dev-stat-num">20+</span>
-          <span class="dev-stat-label">Completed Projects</span>
+          <span class="dev-stat-label" data-i18n="dev_stat2">Completed Projects</span>
         </div>
       </div>
-      <p class="dev-projects-label">Projects</p>
+      <p class="dev-projects-label" data-i18n="dev_projects">Projects</p>
       <div class="dev-grid">
         <a href="https://www.urartum.com.tr/alva-donna-hotels.html" class="dev-img-link" target="_blank">
           <div class="dev-img-wrap">
@@ -301,7 +294,7 @@
         <a href="https://www.urartum.com.tr/projelerimiz" class="dev-img-link" target="_blank">
           <div class="dev-img-wrap">
             <img src="images/dev4.jpg" alt="Project 4">
-            <div class="dev-card-overlay"><span class="dev-card-label">And more...</span></div>
+            <div class="dev-card-overlay"><span class="dev-card-label" data-i18n="dev_more">And more...</span></div>
           </div>
         </a>
       </div>
@@ -315,14 +308,14 @@
 ═══════════════════════════════════════════ -->
 <section class="section-mountains" id="contact">
   <div class="mtn-card">
-    <h2 class="mtn-title">Get a Consultation with a Real Estate Expert</h2>
-    <p class="mtn-sub">Leave your details using the form below and we'll contact you to answer your questions and walk you through the residence, layouts, and current pricing.</p>
-    <form class="mtn-form" onsubmit="handleMtnForm(event)">
+    <h2 class="mtn-title" data-i18n="mtn_title">Get a Consultation with a Real Estate Expert</h2>
+    <p class="mtn-sub" data-i18n="mtn_sub">Leave your details using the form below and we'll contact you to answer your questions and walk you through the residence, layouts, and current pricing.</p>
+    <form class="mtn-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleMtnForm(event)">
       <div class="pres-phone-wrap">
         <span class="pres-flag"><img src="https://flagcdn.com/w40/tr.png" alt="TR" class="pres-flag-img"></span>
         <input class="pres-phone" id="mtnPhone" type="tel" placeholder="+90 (000) 000-0000" required>
       </div>
-      <button class="mtn-btn" type="submit">Get Consultation</button>
+      <button class="mtn-btn" type="submit" data-i18n="mtn_btn">Get Consultation</button>
     </form>
   </div>
 </section>
@@ -333,14 +326,14 @@
 <div class="modal-backdrop" id="pricingBackdrop">
   <div class="mtn-card mtn-visible" style="animation:none;opacity:1;transform:none;">
     <button class="modal-close" onclick="closePricingModal()" style="color:rgba(28,28,30,0.4);">&#x2715;</button>
-    <h2 class="mtn-title" style="animation:none;opacity:1;transform:none;">Get Full Pricing and Layout Options</h2>
-    <p class="mtn-sub" style="animation:none;opacity:1;transform:none;">Fill out the short form and we'll contact you shortly with full details</p>
-    <form id="pricingForm" class="mtn-form" onsubmit="handlePricingForm(event)" style="opacity:1;transform:none;">
+    <h2 class="mtn-title" style="animation:none;opacity:1;transform:none;" data-i18n="pricing_title">Get Full Pricing and Layout Options</h2>
+    <p class="mtn-sub" style="animation:none;opacity:1;transform:none;" data-i18n="pricing_sub">Fill out the short form and we'll contact you shortly with full details</p>
+    <form id="pricingForm" class="mtn-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="handlePricingForm(event)" style="opacity:1;transform:none;">
       <div class="pres-phone-wrap">
         <span class="pres-flag"><img src="https://flagcdn.com/w40/tr.png" alt="TR" class="pres-flag-img"></span>
         <input class="pres-phone" id="pricingPhone" type="tel" placeholder="+90 (000) 000-0000" required>
       </div>
-      <button class="mtn-btn" type="submit">View Prices</button>
+      <button class="mtn-btn" type="submit" data-i18n="pricing_btn">View Prices</button>
     </form>
   </div>
 </div>
@@ -352,9 +345,9 @@
   <div class="modal">
     <button class="modal-close" id="closeModal">&#x2715;</button>
     <p class="modal-eyebrow">SmartAge Residence</p>
-    <h2 class="modal-title">Private Viewing</h2>
-    <p class="modal-desc">Leave your number — our manager<br>will contact you within 24 hours.</p>
-    <form id="viewingForm" onsubmit="handleSubmit(event)">
+    <h2 class="modal-title" data-i18n="modal_title">Private Viewing</h2>
+    <p class="modal-desc" data-i18n-html="modal_desc">Leave your number — our manager<br>will contact you within 24 hours.</p>
+    <form id="viewingForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)">
       <div class="modal-input-wrap">
         <input
           class="modal-input"
@@ -365,12 +358,13 @@
           required
         />
       </div>
-      <button type="submit" class="modal-submit">Send Request</button>
+      <button type="submit" class="modal-submit" data-i18n="modal_btn">Send Request</button>
     </form>
-    <p class="modal-privacy">By submitting you agree to our privacy policy.</p>
+    <p class="modal-privacy" data-i18n="modal_privacy">By submitting you agree to our privacy policy.</p>
   </div>
 </div>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 <script>
   (function(){
