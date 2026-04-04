@@ -158,8 +158,24 @@
     });
   }
 
+  function validateConsent(form) {
+    var cb = form.querySelector('.consent-checkbox');
+    var label = form.querySelector('.consent-label');
+    if (!cb || cb.checked) return true;
+    if (label) label.classList.add('invalid');
+    return false;
+  }
+  // Remove invalid class on check
+  document.addEventListener('change', function(e) {
+    if (e.target.classList.contains('consent-checkbox') && e.target.checked) {
+      var label = e.target.closest('.consent-label');
+      if (label) label.classList.remove('invalid');
+    }
+  });
+
   function handleSubmit(e) {
     e.preventDefault();
+    if (!validateConsent(e.target)) return;
     const phone = document.getElementById('phoneInput').value.trim();
     if (!phone) return;
     sendToWeb3Forms(phone, 'Private Viewing');
@@ -175,6 +191,7 @@
 
 function handlePresForm(e) {
   e.preventDefault();
+  if (!validateConsent(e.target)) return;
   const phone = document.getElementById('presPhone');
   const digits = phone.value.replace(/\D/g, '');
   if (digits.length < 7) {
@@ -240,6 +257,7 @@ document.addEventListener('keydown', function(e) {
 
 function handlePricingForm(e) {
   e.preventDefault();
+  if (!validateConsent(e.target)) return;
   var phone = document.getElementById('pricingPhone');
   var digits = phone.value.replace(/\D/g, '');
   if (digits.length < 7) {
@@ -264,6 +282,7 @@ window.handlePricingForm = handlePricingForm;
 
 function handleMtnForm(e) {
   e.preventDefault();
+  if (!validateConsent(e.target)) return;
   const phone = document.getElementById('mtnPhone');
   const digits = phone.value.replace(/\D/g, '');
   if (digits.length < 7) {

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — SmartAge Residence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Raleway:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Forum&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { background: #f8f7f5; }
+    body { min-height: 100vh; font-family: 'Raleway', sans-serif; color: #1c1c1e; }
+
+    .privacy-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 48px;
+      background: #fff;
+      border-bottom: 1px solid rgba(28,28,30,0.08);
+    }
+    .privacy-nav-logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .privacy-nav-name {
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+      font-size: .82rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #1c1c1e;
+    }
+    .privacy-nav-sub {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      font-size: .52rem;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: rgba(28,28,30,0.5);
+    }
+    .privacy-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .privacy-back {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .78rem;
+      letter-spacing: .06em;
+      color: rgba(28,28,30,0.55);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .privacy-back:hover { color: #1c1c1e; }
+
+    /* Language switcher */
+    .plang-switcher {
+      position: relative;
+    }
+    .plang-toggle {
+      background: none;
+      border: 1px solid rgba(28,28,30,0.15);
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: #1c1c1e;
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+    .plang-toggle:hover { border-color: rgba(28,28,30,0.4); }
+    .plang-options {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 4px;
+      background: #fff;
+      border: 1px solid rgba(28,28,30,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .plang-switcher.open .plang-options { display: block; }
+    .plang-option {
+      display: block;
+      width: 100%;
+      padding: 8px 18px;
+      background: none;
+      border: none;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      color: rgba(28,28,30,0.6);
+      cursor: pointer;
+      text-align: left;
+      transition: background .15s, color .15s;
+    }
+    .plang-option:hover { background: rgba(28,28,30,0.04); color: #1c1c1e; }
+    .plang-option.active { color: #1c1c1e; font-weight: 500; }
+
+    /* Content */
+    .privacy-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 32px 96px;
+    }
+    .privacy-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #1c1c1e;
+      margin-bottom: 48px;
+      line-height: 1.5;
+    }
+    .privacy-section-title {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      font-size: .88rem;
+      letter-spacing: .04em;
+      color: #1c1c1e;
+      margin-top: 32px;
+      margin-bottom: 10px;
+    }
+    .privacy-text {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .85rem;
+      letter-spacing: .02em;
+      color: rgba(28,28,30,0.7);
+      line-height: 1.85;
+      margin-bottom: 6px;
+    }
+    .privacy-text a {
+      color: #1c1c1e;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .privacy-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 6px;
+    }
+    .privacy-list li {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: .85rem;
+      letter-spacing: .02em;
+      color: rgba(28,28,30,0.7);
+      line-height: 1.85;
+      padding-left: 16px;
+      position: relative;
+    }
+    .privacy-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: rgba(28,28,30,0.35);
+    }
+    .privacy-block { display: none; }
+    .privacy-block.active { display: block; }
+
+    @media (max-width: 768px) {
+      .privacy-nav { padding: 20px 20px; }
+      .privacy-content { padding: 40px 20px 72px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="privacy-nav">
+  <a href="index.html" class="privacy-nav-logo">
+    <span class="privacy-nav-name">SmartAge</span>
+    <span class="privacy-nav-sub">Residence</span>
+  </a>
+  <div class="privacy-nav-right">
+    <a href="index.html" class="privacy-back" id="backLink">Back to site</a>
+    <div class="plang-switcher" id="plangSwitcher">
+      <button class="plang-toggle" id="plangToggle">EN</button>
+      <div class="plang-options" id="plangOptions">
+        <button class="plang-option" data-lang="en">EN</button>
+        <button class="plang-option" data-lang="ru">RU</button>
+        <button class="plang-option" data-lang="tr">TR</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="privacy-content">
+
+  <!-- TURKISH -->
+  <div class="privacy-block" id="block-tr">
+    <h1 class="privacy-title">Kişisel Verilerin Korunması Hakkında Aydınlatma Metni</h1>
+
+    <h2 class="privacy-section-title">Veri Sorumlusu</h2>
+    <p class="privacy-text">Ad Soyad: Tagir Nasyrov</p>
+    <p class="privacy-text">E-posta: <a href="mailto:smartage116@gmail.com">smartage116@gmail.com</a></p>
+
+    <h2 class="privacy-section-title">Toplanan Kişisel Veriler</h2>
+    <p class="privacy-text">Web sitemiz üzerinden yalnızca telefon numarası bilgisi toplanmaktadır. Ayrıca, teknik zorunluluklar kapsamında IP adresi ve sınırlı teknik veriler otomatik olarak işlenebilir.</p>
+
+    <h2 class="privacy-section-title">Kişisel Verilerin İşlenme Amaçları</h2>
+    <p class="privacy-text">Toplanan kişisel verileriniz;</p>
+    <ul class="privacy-list">
+      <li>Sizinle iletişime geçmek,</li>
+      <li>Talep ettiğiniz bilgi ve danışmanlık hizmetlerini sunmak,</li>
+      <li>Gayrimenkul projeleri hakkında bilgilendirme yapmak,</li>
+      <li>Taleplerinizi değerlendirmek ve geri dönüş sağlamak,</li>
+      <li>Operasyonel süreçleri yürütmek ve hizmet kalitesini artırmak</li>
+    </ul>
+    <p class="privacy-text">amaçlarıyla işlenmektedir.</p>
+
+    <h2 class="privacy-section-title">İşlemenin Hukuki Sebebi</h2>
+    <p class="privacy-text">Kişisel verileriniz, KVKK madde 5/1 uyarınca açık rızanıza dayanarak işlenmektedir.</p>
+
+    <h2 class="privacy-section-title">Kişisel Verilerin Aktarılması</h2>
+    <p class="privacy-text">Kişisel verileriniz;</p>
+    <ul class="privacy-list">
+      <li>Sizinle iletişime geçmek amacıyla yetkilendirilmiş satış temsilcileri ile,</li>
+      <li>Teknik altyapı, veri barındırma ve form hizmeti sağlayan üçüncü taraf servis sağlayıcıları ile,</li>
+      <li>Yasal yükümlülükler kapsamında yetkili kamu kurum ve kuruluşları ile</li>
+    </ul>
+    <p class="privacy-text">sınırlı olarak paylaşılabilir. Kişisel verileriniz, yukarıda belirtilen amaçlar dışında üçüncü kişilerle izniniz olmadan paylaşılmaz.</p>
+
+    <h2 class="privacy-section-title">Yurt Dışına Aktarım</h2>
+    <p class="privacy-text">Kullanılan teknik altyapı hizmetlerinin niteliği gereği kişisel verileriniz yurt dışında bulunan sunucularda işlenebilir ve saklanabilir. Veri aktarımı, KVKK kapsamında uygun güvenlik önlemleri alınarak gerçekleştirilmektedir.</p>
+
+    <h2 class="privacy-section-title">Kişisel Verilerin Toplanma Yöntemi</h2>
+    <p class="privacy-text">Kişisel verileriniz, web sitesi üzerindeki form aracılığıyla otomatik yollarla toplanmaktadır.</p>
+
+    <h2 class="privacy-section-title">Kişisel Verilerin Saklama Süresi</h2>
+    <p class="privacy-text">Toplanan kişisel verileriniz, işlenme amaçlarının gerektirdiği süre boyunca ve her halükarda en fazla 1 yıl süreyle saklanmaktadır. Bu sürenin sonunda veriler silinir, yok edilir veya anonim hale getirilir.</p>
+
+    <h2 class="privacy-section-title">Veri Güvenliği</h2>
+    <p class="privacy-text">Kişisel verilerinizin hukuka aykırı olarak işlenmesini ve erişilmesini önlemek amacıyla uygun teknik ve idari güvenlik önlemleri alınmaktadır.</p>
+
+    <h2 class="privacy-section-title">İlgili Kişinin Hakları</h2>
+    <p class="privacy-text">KVKK'nın 11. maddesi kapsamında;</p>
+    <ul class="privacy-list">
+      <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
+      <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
+      <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+      <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme,</li>
+      <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme,</li>
+      <li>KVKK'ya uygun olarak silinmesini veya yok edilmesini isteme,</li>
+      <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme,</li>
+      <li>Kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme</li>
+    </ul>
+    <p class="privacy-text">haklarına sahipsiniz.</p>
+
+    <h2 class="privacy-section-title">Başvuru Yöntemi</h2>
+    <p class="privacy-text">Yukarıda belirtilen haklarınıza ilişkin taleplerinizi aşağıdaki e-posta adresi üzerinden iletebilirsiniz: <a href="mailto:smartage116@gmail.com">smartage116@gmail.com</a></p>
+    <p class="privacy-text">Başvurularınız en geç 30 gün içerisinde ücretsiz olarak sonuçlandırılacaktır.</p>
+  </div>
+
+  <!-- ENGLISH -->
+  <div class="privacy-block" id="block-en">
+    <h1 class="privacy-title">Personal Data Processing Policy</h1>
+
+    <h2 class="privacy-section-title">Data Controller</h2>
+    <p class="privacy-text">Name: Tagir Nasyrov</p>
+    <p class="privacy-text">Email: <a href="mailto:smartage116@gmail.com">smartage116@gmail.com</a></p>
+
+    <h2 class="privacy-section-title">Collected Data</h2>
+    <p class="privacy-text">Only the user's phone number is collected via the website. Certain technical data such as IP address may also be processed automatically.</p>
+
+    <h2 class="privacy-section-title">Purpose of Processing</h2>
+    <p class="privacy-text">Personal data is processed for:</p>
+    <ul class="privacy-list">
+      <li>contacting you;</li>
+      <li>providing consultation;</li>
+      <li>informing about real estate projects;</li>
+      <li>handling requests;</li>
+      <li>improving operational processes.</li>
+    </ul>
+
+    <h2 class="privacy-section-title">Legal Basis</h2>
+    <p class="privacy-text">Processing is based on your explicit consent.</p>
+
+    <h2 class="privacy-section-title">Data Sharing</h2>
+    <p class="privacy-text">Your data may be shared with:</p>
+    <ul class="privacy-list">
+      <li>authorized sales representatives;</li>
+      <li>technical service providers (e.g. form processing services);</li>
+      <li>public authorities when required by law.</li>
+    </ul>
+    <p class="privacy-text">No other third-party sharing occurs without your consent.</p>
+
+    <h2 class="privacy-section-title">International Transfer</h2>
+    <p class="privacy-text">Due to the use of technical services, your data may be processed and stored outside your country. Appropriate safeguards are applied.</p>
+
+    <h2 class="privacy-section-title">Collection Method</h2>
+    <p class="privacy-text">Data is collected automatically via the website form.</p>
+
+    <h2 class="privacy-section-title">Retention</h2>
+    <p class="privacy-text">Data is stored for up to 1 year, after which it is deleted, destroyed, or anonymized.</p>
+
+    <h2 class="privacy-section-title">Security</h2>
+    <p class="privacy-text">Appropriate technical and organizational measures are implemented.</p>
+
+    <h2 class="privacy-section-title">Your Rights</h2>
+    <p class="privacy-text">You have the right to:</p>
+    <ul class="privacy-list">
+      <li>access your data;</li>
+      <li>request information;</li>
+      <li>learn processing purposes;</li>
+      <li>know recipients;</li>
+      <li>request correction;</li>
+      <li>request deletion;</li>
+      <li>object to automated processing;</li>
+      <li>claim compensation.</li>
+    </ul>
+
+    <h2 class="privacy-section-title">Contact</h2>
+    <p class="privacy-text"><a href="mailto:smartage116@gmail.com">smartage116@gmail.com</a></p>
+
+    <h2 class="privacy-section-title">Response Time</h2>
+    <p class="privacy-text">Requests will be processed within 30 days.</p>
+  </div>
+
+  <!-- RUSSIAN -->
+  <div class="privacy-block" id="block-ru">
+    <h1 class="privacy-title">Политика обработки персональных данных</h1>
+
+    <h2 class="privacy-section-title">Контроллер данных</h2>
+    <p class="privacy-text">ФИО: Тагир Насыров (Tagir Nasyrov)</p>
+    <p class="privacy-text">E-mail: <a href="mailto:smartage116@gmail.com">smartage116@gmail.com</a></p>
+
+    <h2 class="privacy-section-title">Собираемые данные</h2>
+    <p class="privacy-text">Через сайт собирается только номер телефона. Также могут автоматически обрабатываться технические данные (например, IP-адрес).</p>
+
+    <h2 class="privacy-section-title">Цели обработки</h2>
+    <p class="privacy-text">Персональные данные обрабатываются для:</p>
+    <ul class="privacy-list">
+      <li>связи с вами;</li>
+      <li>предоставления консультации;</li>
+      <li>информирования о проектах недвижимости;</li>
+      <li>обработки запросов;</li>
+      <li>обеспечения и улучшения операционных процессов.</li>
+    </ul>
+
+    <h2 class="privacy-section-title">Правовое основание</h2>
+    <p class="privacy-text">Обработка осуществляется на основании вашего согласия.</p>
+
+    <h2 class="privacy-section-title">Передача данных</h2>
+    <p class="privacy-text">Данные могут передаваться:</p>
+    <ul class="privacy-list">
+      <li>уполномоченным представителям отдела продаж;</li>
+      <li>поставщикам технических сервисов (например, сервисам обработки форм);</li>
+      <li>государственным органам в случаях, предусмотренных законом.</li>
+    </ul>
+    <p class="privacy-text">Передача третьим лицам вне указанных случаев не осуществляется без вашего согласия.</p>
+
+    <h2 class="privacy-section-title">Передача за границу</h2>
+    <p class="privacy-text">В связи с использованием технических сервисов данные могут обрабатываться и храниться за пределами страны. Передача осуществляется с применением необходимых мер безопасности.</p>
+
+    <h2 class="privacy-section-title">Способ сбора</h2>
+    <p class="privacy-text">Данные собираются автоматически через форму сайта.</p>
+
+    <h2 class="privacy-section-title">Срок хранения</h2>
+    <p class="privacy-text">Данные хранятся не более 1 года. После этого удаляются, уничтожаются или анонимизируются.</p>
+
+    <h2 class="privacy-section-title">Безопасность</h2>
+    <p class="privacy-text">Применяются технические и организационные меры защиты данных.</p>
+
+    <h2 class="privacy-section-title">Права пользователя</h2>
+    <p class="privacy-text">Вы имеете право:</p>
+    <ul class="privacy-list">
+      <li>узнать об обработке данных;</li>
+      <li>получить информацию;</li>
+      <li>узнать цели обработки;</li>
+      <li>узнать получателей данных;</li>
+      <li>требовать исправления;</li>
+      <li>требовать удаления;</li>
+      <li>возражать против автоматизированной обработки;</li>
+      <li>требовать компенсации ущерба.</li>
+    </ul>
+
+    <h2 class="privacy-section-title">Контакты</h2>
+    <p class="privacy-text"><a href="mailto:smartage116@gmail.com">smartage116@gmail.com</a></p>
+
+    <h2 class="privacy-section-title">Срок ответа</h2>
+    <p class="privacy-text">Ваш запрос будет рассмотрен в течение 30 дней.</p>
+  </div>
+
+</main>
+
+<script>
+(function() {
+  var backTexts = { en: 'Back to site', ru: 'Вернуться на сайт', tr: 'Siteye dön' };
+  var lang = localStorage.getItem('lang') || 'en';
+
+  function activate(l) {
+    lang = l;
+    localStorage.setItem('lang', l);
+    document.querySelectorAll('.privacy-block').forEach(function(b) { b.classList.remove('active'); });
+    var block = document.getElementById('block-' + l);
+    if (block) block.classList.add('active');
+    document.getElementById('plangToggle').textContent = l.toUpperCase();
+    document.getElementById('backLink').textContent = backTexts[l] || backTexts.en;
+    document.querySelectorAll('.plang-option').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.lang === l);
+    });
+  }
+
+  activate(lang);
+
+  var switcher = document.getElementById('plangSwitcher');
+  document.getElementById('plangToggle').addEventListener('click', function(e) {
+    e.stopPropagation();
+    switcher.classList.toggle('open');
+  });
+  document.querySelectorAll('.plang-option').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      activate(btn.dataset.lang);
+      switcher.classList.remove('open');
+    });
+  });
+  document.addEventListener('click', function() { switcher.classList.remove('open'); });
+})();
+</script>
+
+</body>
+</html>

@@ -61,7 +61,9 @@ var T = {
     modal_btn: 'Send Request',
     modal_privacy: 'By submitting you agree to our privacy policy.',
     modal_thanks_title: 'Thank you',
-    modal_thanks_text: 'We will call you back within 24 hours.'
+    modal_thanks_text: 'We will call you back within 24 hours.',
+    consent_text: 'I have read the <a href="privacy.html" target="_blank" class="consent-link">Privacy Policy</a> and give my explicit consent',
+    footer_privacy: 'Privacy Policy'
   },
 
   ru: {
@@ -122,7 +124,9 @@ var T = {
     modal_btn: 'Отправить заявку',
     modal_privacy: 'Отправляя форму, вы соглашаетесь с политикой конфиденциальности.',
     modal_thanks_title: 'Спасибо',
-    modal_thanks_text: 'Мы перезвоним вам в течение 24 часов.'
+    modal_thanks_text: 'Мы перезвоним вам в течение 24 часов.',
+    consent_text: 'Я ознакомился с <a href="privacy.html" target="_blank" class="consent-link">Политикой обработки персональных данных</a> и даю согласие на обработку',
+    footer_privacy: 'Политика конфиденциальности'
   },
 
   tr: {
@@ -183,7 +187,9 @@ var T = {
     modal_btn: 'Talep Gönder',
     modal_privacy: 'Formu göndererek gizlilik politikamızı kabul etmiş olursunuz.',
     modal_thanks_title: 'Teşekkür ederiz',
-    modal_thanks_text: '24 saat içinde sizi arayacağız.'
+    modal_thanks_text: '24 saat içinde sizi arayacağız.',
+    consent_text: '<a href="privacy.html" target="_blank" class="consent-link">Aydınlatma Metni</a>\'ni okudum ve kişisel verilerimin işlenmesine açık rıza veriyorum',
+    footer_privacy: 'Gizlilik Politikası'
   }
 };
 

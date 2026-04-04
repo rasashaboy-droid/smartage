@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Raleway:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Forum&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -204,6 +205,10 @@
             </div>
             <button class="pres-btn" type="submit" data-i18n="pres_btn">Get Presentation</button>
           </div>
+          <label class="consent-label">
+            <input type="checkbox" class="consent-checkbox" required>
+            <span class="consent-text" data-i18n-html="consent_text">I have read the <a href="privacy.html" target="_blank" class="consent-link">Privacy Policy</a> and give my explicit consent</span>
+          </label>
         </form>
       </div>
     </div>
@@ -316,9 +321,20 @@
         <input class="pres-phone" id="mtnPhone" type="tel" placeholder="+90 (000) 000-0000" required>
       </div>
       <button class="mtn-btn" type="submit" data-i18n="mtn_btn">Get Consultation</button>
+      <label class="consent-label">
+        <input type="checkbox" class="consent-checkbox" required>
+        <span class="consent-text" data-i18n-html="consent_text">I have read the <a href="privacy.html" target="_blank" class="consent-link">Privacy Policy</a> and give my explicit consent</span>
+      </label>
     </form>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <a href="privacy.html" class="footer-privacy-link" data-i18n="footer_privacy">Privacy Policy</a>
+</footer>
 
 <!-- ═══════════════════════════════════════════
      MODAL — PRICING
@@ -334,6 +350,10 @@
         <input class="pres-phone" id="pricingPhone" type="tel" placeholder="+90 (000) 000-0000" required>
       </div>
       <button class="mtn-btn" type="submit" data-i18n="pricing_btn">View Prices</button>
+      <label class="consent-label">
+        <input type="checkbox" class="consent-checkbox" required>
+        <span class="consent-text" data-i18n-html="consent_text">I have read the <a href="privacy.html" target="_blank" class="consent-link">Privacy Policy</a> and give my explicit consent</span>
+      </label>
     </form>
   </div>
 </div>
@@ -359,8 +379,11 @@
         />
       </div>
       <button type="submit" class="modal-submit" data-i18n="modal_btn">Send Request</button>
+      <label class="consent-label consent-label-modal">
+        <input type="checkbox" class="consent-checkbox" required>
+        <span class="consent-text" data-i18n-html="consent_text">I have read the <a href="privacy.html" target="_blank" class="consent-link">Privacy Policy</a> and give my explicit consent</span>
+      </label>
     </form>
-    <p class="modal-privacy" data-i18n="modal_privacy">By submitting you agree to our privacy policy.</p>
   </div>
 </div>
 
